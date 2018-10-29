@@ -34,6 +34,7 @@ class MoPubBannerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bannerAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String : MOPUB_BANNER_AD_UNIT_ID
+        bannerAdUnitIDTextField.inputAccessoryView = toolBar
         moPubBanner = MPAdView(adUnitId: bannerAdUnitIDTextField.text, size: MOPUB_BANNER_SIZE)
         moPubBanner.delegate = self
         moPubBanner.stopAutomaticallyRefreshingContents()
