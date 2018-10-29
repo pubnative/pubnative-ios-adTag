@@ -22,6 +22,8 @@
 
 import UIKit
 import MoPub
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
         let moPubConfig = MPMoPubConfiguration (adUnitIdForAppInitialization: MOPUB_BANNER_AD_UNIT_ID)
         MoPub.sharedInstance().initializeSdk(with: moPubConfig, completion: nil)
         return true

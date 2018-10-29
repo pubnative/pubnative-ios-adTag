@@ -36,7 +36,6 @@
 		5AC83902218315F100F0B3C3 /* MoPub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoPub.storyboard; sourceTree = "<group>"; };
 		5AC839042183167300F0B3C3 /* DFP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DFP.storyboard; sourceTree = "<group>"; };
 		5AC839062183203300F0B3C3 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		5AC83908218338D900F0B3C3 /* MoPubSDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPubSDKFramework.framework; sourceTree = "<group>"; };
 		BF2B36D5D34D529E2580FDD9 /* Pods_AdTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871E58BB683FE226CBF27F1 /* Pods-AdTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdTag/Pods-AdTag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +65,6 @@
 		5AC838E32183137900F0B3C3 = {
 			isa = PBXGroup;
 			children = (
-				5AC83908218338D900F0B3C3 /* MoPubSDKFramework.framework */,
 				5AC838EE2183137900F0B3C3 /* AdTag */,
 				5AC838ED2183137900F0B3C3 /* Products */,
 				F6C86A93B334A3DB5A0BFE84 /* Pods */,
@@ -136,7 +134,7 @@
 				5AC838E92183137900F0B3C3 /* Frameworks */,
 				5AC838EA2183137900F0B3C3 /* Resources */,
 				187DE6CADF54A8767FC3C131 /* [CP] Embed Pods Frameworks */,
-				7C574B958167C8385258AE3A /* [CP] Copy Pods Resources */,
+				E7008BA721871B84001C8D1E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,21 +211,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C574B958167C8385258AE3A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CD4490A26A7F9CDAB4ABDB08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +228,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E7008BA721871B84001C8D1E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5f47059acaae5ee632c02be30614c88c5e5d9cc5 e3049db5ebcf1e28e2a92559633814533bf40f9f1b9e027c9eadf26ccc69dfc4\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

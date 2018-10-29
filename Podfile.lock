@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.10.9):
+    - Fabric (~> 1.7.13)
+  - Fabric (1.7.13)
   - mopub-ios-sdk (5.4.0):
     - mopub-ios-sdk/MoPubSDK (= 5.4.0)
   - mopub-ios-sdk/Avid (5.4.0):
@@ -12,11 +15,21 @@ PODS:
     - mopub-ios-sdk/Moat
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - mopub-ios-sdk (~> 5.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - mopub-ios-sdk
+
 SPEC CHECKSUMS:
+  Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
+  Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   mopub-ios-sdk: 6e331c6cf6052426a750568578f55dd3de0a67f1
 
-PODFILE CHECKSUM: 07e9ff1dae8696897205a76c556bd85798faa1f6
+PODFILE CHECKSUM: 08a356a46a6be7e59f15edda9e1a46cf95587899
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
