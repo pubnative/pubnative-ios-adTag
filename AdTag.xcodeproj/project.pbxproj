@@ -135,6 +135,7 @@
 				5AC838EA2183137900F0B3C3 /* Resources */,
 				187DE6CADF54A8767FC3C131 /* [CP] Embed Pods Frameworks */,
 				E7008BA721871B84001C8D1E /* ShellScript */,
+				E90EB8E434ED037F4AD17FE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,18 +235,29 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5f47059acaae5ee632c02be30614c88c5e5d9cc5 e3049db5ebcf1e28e2a92559633814533bf40f9f1b9e027c9eadf26ccc69dfc4\n";
+		};
+		E90EB8E434ED037F4AD17FE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -19,12 +19,6 @@ DEPENDENCIES:
   - Fabric
   - mopub-ios-sdk (~> 5.0)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Crashlytics
-    - Fabric
-    - mopub-ios-sdk
-
 SPEC CHECKSUMS:
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
@@ -32,4 +26,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 08a356a46a6be7e59f15edda9e1a46cf95587899
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0
