@@ -24,10 +24,25 @@ import UIKit
 
 class BaseViewController : UIViewController {
 
+    let toolBar = UIToolbar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        createToolBarAndDoneButton()
     }
 
+    func createToolBarAndDoneButton() {
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem (barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem (barButtonSystemItem: .done, target: self, action: #selector(self.doneClicked))
+        doneButton.tintColor = UIColor(red:0.45, green:0.16, blue:0.49, alpha:1.00)
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
+    }
+    
     func showAlertAction(withMessage message: String) {
         let alert = UIAlertController (title: Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String,
                                        message: message,
@@ -35,5 +50,4 @@ class BaseViewController : UIViewController {
         alert.addAction(UIAlertAction (title: "Dismiss", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
 }

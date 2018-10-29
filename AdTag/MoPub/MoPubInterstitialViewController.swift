@@ -34,6 +34,7 @@ class MoPubInterstitialViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         interstitialAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") as? String : MOPUB_INTERSTITIAL_AD_UNIT_ID
+        interstitialAdUnitIDTextField.inputAccessoryView = toolBar
         moPubInterstitial = MPInterstitialAdController (forAdUnitId: interstitialAdUnitIDTextField.text)
         moPubInterstitial.delegate = self
     }
