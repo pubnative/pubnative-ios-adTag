@@ -20,6 +20,7 @@
 		5AC839052183167300F0B3C3 /* DFP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC839042183167300F0B3C3 /* DFP.storyboard */; };
 		5AC839072183203300F0B3C3 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC839062183203300F0B3C3 /* ScannerViewController.swift */; };
 		5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD8C2188766000563C39 /* DFPBannerViewController.swift */; };
+		5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD8F2188947000563C39 /* DFPMRectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5AC839042183167300F0B3C3 /* DFP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DFP.storyboard; sourceTree = "<group>"; };
 		5AC839062183203300F0B3C3 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		5ACADD8C2188766000563C39 /* DFPBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFPBannerViewController.swift; sourceTree = "<group>"; };
+		5ACADD8F2188947000563C39 /* DFPMRectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFPMRectViewController.swift; sourceTree = "<group>"; };
 		BF2B36D5D34D529E2580FDD9 /* Pods_AdTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871E58BB683FE226CBF27F1 /* Pods-AdTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdTag/Pods-AdTag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				5ACADD8C2188766000563C39 /* DFPBannerViewController.swift */,
+				5ACADD8F2188947000563C39 /* DFPMRectViewController.swift */,
 			);
 			path = DFP;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				5AC839072183203300F0B3C3 /* ScannerViewController.swift in Sources */,
 				5A5CCD1D2183427E00835B2C /* MoPubMRectViewController.swift in Sources */,
 				5AC838F02183137900F0B3C3 /* AppDelegate.swift in Sources */,
+				5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */,
 				5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */,
 				5A5CCD2221834B0000835B2C /* Constants.swift in Sources */,
 				5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */,

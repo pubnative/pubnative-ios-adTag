@@ -293,7 +293,7 @@
         <!--DFP MRect-->
         <scene sceneID="f7I-Mf-UnN">
             <objects>
-                <viewController title="DFP MRect" id="Px7-0p-DId" userLabel="DFP MRect" sceneMemberID="viewController">
+                <viewController title="DFP MRect" id="Px7-0p-DId" userLabel="DFP MRect" customClass="DFPMRectViewController" customModule="AdTag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Pb-fe-oV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

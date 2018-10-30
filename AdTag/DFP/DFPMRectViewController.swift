@@ -23,35 +23,35 @@
 import UIKit
 import GoogleMobileAds
 
-class DFPBannerViewController : BaseViewController {
+class DFPMRectViewController : BaseViewController {
 
-    @IBOutlet weak var bannerAdContainer: UIView!
+    @IBOutlet weak var mRectAdContainer: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var bannerAdUnitIDTextField: UITextField!
-    
-    var dfpBanner: DFPBannerView!
-    
+    @IBOutlet weak var mRectAdUnitIDTextField: UITextField!
+
+    var dfpMRect: DFPBannerView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "DFPBannerAdUnitID") != nil && UserDefaults.standard.object(forKey: "DFPBannerAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "DFPBannerAdUnitID") as? String : DFP_BANNER_AD_UNIT_ID
-        bannerAdUnitIDTextField.inputAccessoryView = toolBar
-        dfpBanner = DFPBannerView(adSize: kGADAdSizeBanner)
-        dfpBanner.adUnitID = bannerAdUnitIDTextField.text
-        dfpBanner.delegate = self
-        dfpBanner.rootViewController = self
-        bannerAdContainer.addSubview(dfpBanner)
+        mRectAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "DFPMRectAdUnitID") != nil && UserDefaults.standard.object(forKey: "DFPMRectAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "DFPMRectAdUnitID") as? String : DFP_MRECT_AD_UNIT_ID
+        mRectAdUnitIDTextField.inputAccessoryView = toolBar
+        dfpMRect = DFPBannerView(adSize: kGADAdSizeMediumRectangle)
+        dfpMRect.adUnitID = mRectAdUnitIDTextField.text
+        dfpMRect.delegate = self
+        dfpMRect.rootViewController = self
+        mRectAdContainer.addSubview(dfpMRect)
     }
     
     @IBAction func saveAdUnitIDTouchUpInside(_ sender: UIButton){
-        if bannerAdUnitIDTextField.text != nil {
-            UserDefaults.standard.set(bannerAdUnitIDTextField.text, forKey: "DFPBannerAdUnitID")
+        if mRectAdUnitIDTextField.text != nil {
+            UserDefaults.standard.set(mRectAdUnitIDTextField.text, forKey: "DFPMRectAdUnitID")
             showAlertAction(withMessage: "Ad Unit ID Saved")
         }
     }
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
-        dfpBanner.load(DFPRequest())
+        dfpMRect.load(DFPRequest())
     }
     
     @IBAction func scanQRCodeTouchUpInside(_ sender: UIButton) {
@@ -59,18 +59,19 @@ class DFPBannerViewController : BaseViewController {
         scanner.delegate = self
         self.present(scanner, animated: true, completion: nil)
     }
+
 }
 
-extension DFPBannerViewController : GADBannerViewDelegate
+extension DFPMRectViewController : GADBannerViewDelegate
 {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         activityIndicator.stopAnimating()
-        showAlertAction(withMessage: "DFP Banner did load")
+        showAlertAction(withMessage: "DFP MRect did load")
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         activityIndicator.stopAnimating()
-        showAlertAction(withMessage: "DFP Banner did fail to load with error: \(error.localizedDescription)")
+        showAlertAction(withMessage: "DFP MRect did fail to load with error: \(error.localizedDescription)")
     }
     
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
@@ -90,9 +91,9 @@ extension DFPBannerViewController : GADBannerViewDelegate
     }
 }
 
-extension DFPBannerViewController : ScannerViewControllerDelegate
+extension DFPMRectViewController : ScannerViewControllerDelegate
 {
     func scannerDetectedQRCode(withContent content: String) {
-        bannerAdUnitIDTextField.text = content
+        mRectAdUnitIDTextField.text = content
     }
 }
