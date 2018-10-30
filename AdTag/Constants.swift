@@ -25,3 +25,7 @@ import Foundation
 var MOPUB_BANNER_AD_UNIT_ID : String = "3a50c1fdb19941beb899b4767583149c"
 var MOPUB_MRECT_AD_UNIT_ID : String = "478a536015414f34868977289a3dceae"
 var MOPUB_INTERSTITIAL_AD_UNIT_ID : String = "8d6c3e0184394b4dbb92a49b1b91f8a2"
+
+var DFP_BANNER_AD_UNIT_ID : String = "/6499/example/banner"
+var DFP_MRECT_AD_UNIT_ID : String = "/6499/example/banner"
+var DFP_INTERSTITIAL_AD_UNIT_ID : String = "/6499/example/interstitial"
