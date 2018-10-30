@@ -22,6 +22,7 @@
 		5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD8C2188766000563C39 /* DFPBannerViewController.swift */; };
 		5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD8F2188947000563C39 /* DFPMRectViewController.swift */; };
 		5ACADD922188A52E00563C39 /* DFPInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD912188A52E00563C39 /* DFPInterstitialViewController.swift */; };
+		5ACADD942188C65C00563C39 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACADD932188C65B00563C39 /* UIApplication+TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5ACADD8C2188766000563C39 /* DFPBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFPBannerViewController.swift; sourceTree = "<group>"; };
 		5ACADD8F2188947000563C39 /* DFPMRectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFPMRectViewController.swift; sourceTree = "<group>"; };
 		5ACADD912188A52E00563C39 /* DFPInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFPInterstitialViewController.swift; sourceTree = "<group>"; };
+		5ACADD932188C65B00563C39 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		BF2B36D5D34D529E2580FDD9 /* Pods_AdTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D871E58BB683FE226CBF27F1 /* Pods-AdTag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdTag.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdTag/Pods-AdTag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				5AC838EF2183137900F0B3C3 /* AppDelegate.swift */,
 				5A5CCD2121834B0000835B2C /* Constants.swift */,
 				5A5CCD2521834D8B00835B2C /* BaseViewController.swift */,
+				5ACADD932188C65B00563C39 /* UIApplication+TopViewController.swift */,
 				5AC839062183203300F0B3C3 /* ScannerViewController.swift */,
 				5ACADD8E2188766F00563C39 /* DFP */,
 				5A5CCD1E2183445F00835B2C /* MoPub */,
@@ -291,6 +294,7 @@
 				5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */,
 				5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */,
 				5A5CCD2221834B0000835B2C /* Constants.swift in Sources */,
+				5ACADD942188C65C00563C39 /* UIApplication+TopViewController.swift in Sources */,
 				5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */,
 				5ACADD922188A52E00563C39 /* DFPInterstitialViewController.swift in Sources */,
 			);
