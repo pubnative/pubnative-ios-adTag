@@ -73,18 +73,6 @@ extension DFPBannerViewController : GADBannerViewDelegate
         showAlertAction(withMessage: "DFP Banner did fail to load with error: \(error.localizedDescription)")
     }
     
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        showAlertAction(withMessage: "DFP Banner will present screen")
-    }
-    
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        showAlertAction(withMessage: "DFP Banner will dismiss screen")
-    }
-    
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        showAlertAction(withMessage: "DFP Banner did dismiss screen")
-    }
-    
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         showAlertAction(withMessage: "View Controller will leave application")
     }

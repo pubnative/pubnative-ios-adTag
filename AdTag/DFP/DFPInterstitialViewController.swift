@@ -83,18 +83,6 @@ extension DFPInterstitialViewController : GADInterstitialDelegate
         showAlertAction(withMessage: "DFP Interstitial did fail to load with error: \(error.localizedDescription)")
     }
     
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        showAlertAction(withMessage: "DFP Interstitial will be presented")
-    }
-    
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        showAlertAction(withMessage: "DFP Interstitial will be animated off the screen")
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        showAlertAction(withMessage: "DFP Interstitial had been animated off the screen")
-    }
-    
     func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
         showAlertAction(withMessage: "View Controller will leave application")
     }

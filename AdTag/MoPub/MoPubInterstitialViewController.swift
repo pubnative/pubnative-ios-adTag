@@ -77,26 +77,6 @@ extension MoPubInterstitialViewController : MPInterstitialAdControllerDelegate
         showAlertAction(withMessage: "MoPub Interstitial did fail load")
     }
     
-    func interstitialWillAppear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial will appear")
-    }
-    
-    func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did appear")
-    }
-    
-    func interstitialWillDisappear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial will disappear")
-    }
-    
-    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did disappear")
-    }
-    
-    func interstitialDidExpire(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did expire")
-    }
-    
     func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
         showAlertAction(withMessage: "MoPub Interstitial did receive tap event")
     }
