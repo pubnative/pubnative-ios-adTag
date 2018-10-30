@@ -439,7 +439,7 @@
         <!--DFP Interstitial-->
         <scene sceneID="73e-b0-HIi">
             <objects>
-                <viewController title="DFP Interstitial" id="wVH-l6-7UC" userLabel="DFP Interstitial" sceneMemberID="viewController">
+                <viewController title="DFP Interstitial" id="wVH-l6-7UC" userLabel="DFP Interstitial" customClass="DFPInterstitialViewController" customModule="AdTag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SMq-Ve-cwK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
