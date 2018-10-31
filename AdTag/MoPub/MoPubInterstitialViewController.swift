@@ -53,7 +53,11 @@ class MoPubInterstitialViewController: BaseViewController {
     }
     
     @IBAction func showAdTouchUpInside(_ sender: UIButton) {
-        moPubInterstitial.show(from: self)
+        if moPubInterstitial.ready {
+            moPubInterstitial.show(from: self)
+        } else {
+            print("Ad wasn't ready")
+        }
     }
     
     @IBAction func scanQRCodeTouchUpInside(_ sender: UIButton) {
@@ -73,32 +77,15 @@ extension MoPubInterstitialViewController : MPInterstitialAdControllerDelegate
     
     func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!) {
         activityIndicator.stopAnimating()
-        showAdButton.isHidden = true
         showAlertAction(withMessage: "MoPub Interstitial did fail load")
-    }
-    
-    func interstitialWillAppear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial will appear")
-    }
-    
-    func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did appear")
-    }
-    
-    func interstitialWillDisappear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial will disappear")
-    }
-    
-    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did disappear")
-    }
-    
-    func interstitialDidExpire(_ interstitial: MPInterstitialAdController!) {
-        showAlertAction(withMessage: "MoPub Interstitial did expire")
     }
     
     func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
         showAlertAction(withMessage: "MoPub Interstitial did receive tap event")
+    }
+    
+    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
+        showAdButton.isHidden = true
     }
 }
 

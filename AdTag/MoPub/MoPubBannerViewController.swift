@@ -76,14 +76,6 @@ extension MoPubBannerViewController : MPAdViewDelegate
         showAlertAction(withMessage: "MoPub Banner did fail to load")
     }
     
-    func willPresentModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller will present Modal View")
-    }
-    
-    func didDismissModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller did dismiss Modal View")
-    }
-    
     func willLeaveApplication(fromAd view: MPAdView!) {
         showAlertAction(withMessage: "View Controller will leave application")
     }

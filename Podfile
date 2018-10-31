@@ -9,4 +9,5 @@ target 'AdTag' do
   pod 'mopub-ios-sdk', '~> 5.0'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Google-Mobile-Ads-SDK'
 end

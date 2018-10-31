@@ -48,6 +48,7 @@ class BaseViewController : UIViewController {
                                        message: message,
                                        preferredStyle: .alert)
         alert.addAction(UIAlertAction (title: "Dismiss", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        let topViewController = UIApplication.shared.topViewController()
+        topViewController.present(alert, animated: true, completion: nil)
     }
 }
