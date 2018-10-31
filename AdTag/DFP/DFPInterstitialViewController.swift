@@ -86,6 +86,10 @@ extension DFPInterstitialViewController : GADInterstitialDelegate
     func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
         showAlertAction(withMessage: "View Controller will leave application")
     }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        showAdButton.isHidden = true
+    }
 }
 
 extension DFPInterstitialViewController : ScannerViewControllerDelegate
