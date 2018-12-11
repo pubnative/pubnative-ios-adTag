@@ -51,6 +51,7 @@ class DFPMRectViewController : BaseViewController {
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
+        dfpMRect.adUnitID = mRectAdUnitIDTextField.text
         dfpMRect.load(DFPRequest())
     }
     
