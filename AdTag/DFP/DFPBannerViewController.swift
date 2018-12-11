@@ -51,6 +51,7 @@ class DFPBannerViewController : BaseViewController {
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
+        dfpBanner.adUnitID = bannerAdUnitIDTextField.text
         dfpBanner.load(DFPRequest())
     }
     

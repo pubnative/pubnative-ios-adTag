@@ -35,8 +35,6 @@ class MoPubInterstitialViewController: BaseViewController {
         super.viewDidLoad()
         interstitialAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubInterstitialAdUnitID") as? String : MOPUB_INTERSTITIAL_AD_UNIT_ID
         interstitialAdUnitIDTextField.inputAccessoryView = toolBar
-        moPubInterstitial = MPInterstitialAdController (forAdUnitId: interstitialAdUnitIDTextField.text)
-        moPubInterstitial.delegate = self
     }
     
     @IBAction func saveAdUnitIDTouchUpInside(_ sender: UIButton){
@@ -49,6 +47,9 @@ class MoPubInterstitialViewController: BaseViewController {
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         showAdButton.isHidden = true
         activityIndicator.startAnimating()
+        moPubInterstitial = MPInterstitialAdController (forAdUnitId: interstitialAdUnitIDTextField.text)
+        moPubInterstitial.delegate = self
+        moPubInterstitial.adUnitId = interstitialAdUnitIDTextField.text
         moPubInterstitial.loadAd()
     }
     

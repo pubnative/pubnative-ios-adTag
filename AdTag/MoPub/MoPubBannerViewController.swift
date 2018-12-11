@@ -50,6 +50,7 @@ class MoPubBannerViewController: BaseViewController {
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
+        moPubBanner.adUnitId = bannerAdUnitIDTextField.text
         moPubBanner.loadAd()
     }
     
