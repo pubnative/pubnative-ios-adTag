@@ -34,6 +34,7 @@ class MoPubBannerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bannerAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String : MOPUB_BANNER_AD_UNIT_ID
+        bannerAdUnitIDTextField.inputAccessoryView = toolBar
         moPubBanner = MPAdView(adUnitId: bannerAdUnitIDTextField.text, size: MOPUB_BANNER_SIZE)
         moPubBanner.delegate = self
         moPubBanner.stopAutomaticallyRefreshingContents()
@@ -49,6 +50,7 @@ class MoPubBannerViewController: BaseViewController {
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
+        moPubBanner.adUnitId = bannerAdUnitIDTextField.text
         moPubBanner.loadAd()
     }
     
@@ -73,14 +75,6 @@ extension MoPubBannerViewController : MPAdViewDelegate
     func adViewDidFail(toLoadAd view: MPAdView!) {
         activityIndicator.stopAnimating()
         showAlertAction(withMessage: "MoPub Banner did fail to load")
-    }
-    
-    func willPresentModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller will present Modal View")
-    }
-    
-    func didDismissModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller did dismiss Modal View")
     }
     
     func willLeaveApplication(fromAd view: MPAdView!) {

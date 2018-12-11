@@ -125,19 +125,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ewa-Js-wEg" firstAttribute="trailing" secondItem="jc9-aW-9lP" secondAttribute="trailing" constant="16" id="Amu-EW-6LM"/>
-                            <constraint firstItem="jc9-aW-9lP" firstAttribute="leading" secondItem="ewa-Js-wEg" secondAttribute="leading" constant="16" id="Nnb-rS-7HA"/>
+                            <constraint firstItem="cjd-PH-SaI" firstAttribute="trailing" secondItem="jc9-aW-9lP" secondAttribute="trailing" constant="16" id="Amu-EW-6LM"/>
+                            <constraint firstItem="jc9-aW-9lP" firstAttribute="leading" secondItem="cjd-PH-SaI" secondAttribute="leading" constant="16" id="Nnb-rS-7HA"/>
                             <constraint firstItem="n99-zG-6Ly" firstAttribute="top" secondItem="jc9-aW-9lP" secondAttribute="bottom" constant="8" id="Rql-dK-mTa"/>
                             <constraint firstItem="f3u-yl-dJW" firstAttribute="top" secondItem="Ahk-wj-SAn" secondAttribute="bottom" constant="8" id="Z1b-Tz-IIS"/>
                             <constraint firstItem="jc9-aW-9lP" firstAttribute="top" secondItem="f3u-yl-dJW" secondAttribute="bottom" constant="8" id="aBk-5F-97w"/>
-                            <constraint firstItem="Ahk-wj-SAn" firstAttribute="leading" secondItem="ewa-Js-wEg" secondAttribute="leading" constant="16" id="bCq-zz-5ZS"/>
-                            <constraint firstItem="Ahk-wj-SAn" firstAttribute="top" secondItem="ewa-Js-wEg" secondAttribute="top" constant="8" id="c13-3e-EbP"/>
-                            <constraint firstItem="n99-zG-6Ly" firstAttribute="leading" secondItem="ewa-Js-wEg" secondAttribute="leading" constant="16" id="hZu-7r-QmN"/>
-                            <constraint firstItem="ewa-Js-wEg" firstAttribute="trailing" secondItem="f3u-yl-dJW" secondAttribute="trailing" constant="16" id="kcn-Gg-Wh0"/>
-                            <constraint firstItem="f3u-yl-dJW" firstAttribute="leading" secondItem="ewa-Js-wEg" secondAttribute="leading" constant="16" id="maD-Ss-Igj"/>
-                            <constraint firstItem="ewa-Js-wEg" firstAttribute="trailing" secondItem="n99-zG-6Ly" secondAttribute="trailing" constant="16" id="y4A-uq-zxh"/>
+                            <constraint firstItem="Ahk-wj-SAn" firstAttribute="leading" secondItem="cjd-PH-SaI" secondAttribute="leading" constant="16" id="bCq-zz-5ZS"/>
+                            <constraint firstItem="Ahk-wj-SAn" firstAttribute="top" secondItem="cjd-PH-SaI" secondAttribute="top" constant="8" id="c13-3e-EbP"/>
+                            <constraint firstItem="n99-zG-6Ly" firstAttribute="leading" secondItem="cjd-PH-SaI" secondAttribute="leading" constant="16" id="hZu-7r-QmN"/>
+                            <constraint firstItem="cjd-PH-SaI" firstAttribute="trailing" secondItem="f3u-yl-dJW" secondAttribute="trailing" constant="16" id="kcn-Gg-Wh0"/>
+                            <constraint firstItem="f3u-yl-dJW" firstAttribute="leading" secondItem="cjd-PH-SaI" secondAttribute="leading" constant="16" id="maD-Ss-Igj"/>
+                            <constraint firstItem="cjd-PH-SaI" firstAttribute="trailing" secondItem="n99-zG-6Ly" secondAttribute="trailing" constant="16" id="y4A-uq-zxh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ewa-Js-wEg"/>
+                        <viewLayoutGuide key="safeArea" id="cjd-PH-SaI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXk-Xz-1S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,10 +148,6 @@
         <scene sceneID="t9c-Wd-VKv">
             <objects>
                 <viewController title="MoPub Banner" id="mQm-vH-Y0L" customClass="MoPubBannerViewController" customModule="AdTag" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FcV-5a-F95"/>
-                        <viewControllerLayoutGuide type="bottom" id="fGH-mr-toH"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KX5-w7-nn8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +181,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="mQm-vH-Y0L" id="H7T-2H-DuF"/>
                                 </connections>
@@ -265,24 +261,24 @@
                         <constraints>
                             <constraint firstItem="q2V-ua-4zX" firstAttribute="top" secondItem="wQg-TF-EJJ" secondAttribute="bottom" constant="8" id="5cQ-ph-eh2"/>
                             <constraint firstItem="cgw-mW-F13" firstAttribute="top" secondItem="xgQ-eB-ayj" secondAttribute="bottom" constant="8" id="77L-GT-5Sr"/>
-                            <constraint firstItem="xgQ-eB-ayj" firstAttribute="leading" secondItem="zmP-I7-xs5" secondAttribute="leading" constant="16" id="8KB-fm-6v8"/>
+                            <constraint firstItem="xgQ-eB-ayj" firstAttribute="leading" secondItem="4zh-48-9xf" secondAttribute="leading" constant="16" id="8KB-fm-6v8"/>
                             <constraint firstItem="lwC-qM-gKF" firstAttribute="top" secondItem="wQg-TF-EJJ" secondAttribute="bottom" constant="16" id="8mQ-oM-GPn"/>
-                            <constraint firstItem="lwC-qM-gKF" firstAttribute="centerX" secondItem="KX5-w7-nn8" secondAttribute="centerX" id="FHb-vh-Rgi"/>
-                            <constraint firstItem="Q7B-Cz-Csg" firstAttribute="centerX" secondItem="KX5-w7-nn8" secondAttribute="centerX" id="OkH-Sd-EMz"/>
-                            <constraint firstItem="fGH-mr-toH" firstAttribute="top" secondItem="Q7B-Cz-Csg" secondAttribute="bottom" constant="8" id="Phx-12-XBt"/>
+                            <constraint firstItem="lwC-qM-gKF" firstAttribute="centerX" secondItem="4zh-48-9xf" secondAttribute="centerX" id="FHb-vh-Rgi"/>
+                            <constraint firstItem="Q7B-Cz-Csg" firstAttribute="centerX" secondItem="4zh-48-9xf" secondAttribute="centerX" id="OkH-Sd-EMz"/>
+                            <constraint firstItem="4zh-48-9xf" firstAttribute="bottom" secondItem="Q7B-Cz-Csg" secondAttribute="bottom" constant="8" id="Phx-12-XBt"/>
                             <constraint firstItem="wQg-TF-EJJ" firstAttribute="top" secondItem="cgw-mW-F13" secondAttribute="bottom" constant="8" id="R3X-Wi-xIH"/>
-                            <constraint firstItem="cgw-mW-F13" firstAttribute="leading" secondItem="zmP-I7-xs5" secondAttribute="leading" constant="16" id="SOv-HI-hma"/>
-                            <constraint firstItem="q2V-ua-4zX" firstAttribute="centerX" secondItem="KX5-w7-nn8" secondAttribute="centerX" id="TD3-fL-j9w"/>
+                            <constraint firstItem="cgw-mW-F13" firstAttribute="leading" secondItem="4zh-48-9xf" secondAttribute="leading" constant="16" id="SOv-HI-hma"/>
+                            <constraint firstItem="q2V-ua-4zX" firstAttribute="centerX" secondItem="4zh-48-9xf" secondAttribute="centerX" id="TD3-fL-j9w"/>
                             <constraint firstItem="211-CI-08y" firstAttribute="leading" secondItem="cgw-mW-F13" secondAttribute="trailing" constant="8" id="Ufs-sy-zfN"/>
-                            <constraint firstItem="xgQ-eB-ayj" firstAttribute="top" secondItem="FcV-5a-F95" secondAttribute="bottom" constant="8" id="dk6-ZF-W4w"/>
-                            <constraint firstItem="zmP-I7-xs5" firstAttribute="trailing" secondItem="211-CI-08y" secondAttribute="trailing" constant="16" id="fHU-5n-CVS"/>
-                            <constraint firstItem="Q7B-Cz-Csg" firstAttribute="leading" secondItem="zmP-I7-xs5" secondAttribute="leading" constant="16" id="fzc-Rp-eVI"/>
+                            <constraint firstItem="xgQ-eB-ayj" firstAttribute="top" secondItem="4zh-48-9xf" secondAttribute="top" constant="8" id="dk6-ZF-W4w"/>
+                            <constraint firstItem="4zh-48-9xf" firstAttribute="trailing" secondItem="211-CI-08y" secondAttribute="trailing" constant="16" id="fHU-5n-CVS"/>
+                            <constraint firstItem="Q7B-Cz-Csg" firstAttribute="leading" secondItem="4zh-48-9xf" secondAttribute="leading" constant="16" id="fzc-Rp-eVI"/>
                             <constraint firstItem="211-CI-08y" firstAttribute="top" secondItem="cgw-mW-F13" secondAttribute="top" id="owX-7r-UI6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wQg-TF-EJJ" secondAttribute="trailing" id="pkf-ew-IS3"/>
                             <constraint firstItem="wQg-TF-EJJ" firstAttribute="leading" secondItem="KX5-w7-nn8" secondAttribute="leadingMargin" id="wwg-uS-JBD"/>
-                            <constraint firstItem="zmP-I7-xs5" firstAttribute="trailing" secondItem="Q7B-Cz-Csg" secondAttribute="trailing" constant="16" id="x2m-AX-H8h"/>
+                            <constraint firstItem="4zh-48-9xf" firstAttribute="trailing" secondItem="Q7B-Cz-Csg" secondAttribute="trailing" constant="16" id="x2m-AX-H8h"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zmP-I7-xs5"/>
+                        <viewLayoutGuide key="safeArea" id="4zh-48-9xf"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="lwC-qM-gKF" id="Xwq-5r-Luk"/>
@@ -298,10 +294,6 @@
         <scene sceneID="DRL-0t-Xwt">
             <objects>
                 <viewController title="MoPub MRect" id="gyw-rW-g7T" customClass="MoPubMRectViewController" customModule="AdTag" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PH0-K4-cuL"/>
-                        <viewControllerLayoutGuide type="bottom" id="VY2-pb-Odw"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5JN-U5-jUr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,6 +319,35 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub MRect Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GSV-ce-HtV" userLabel="MRect Ad Unit ID Text Field">
+                                <rect key="frame" x="16" y="57" width="273" height="30"/>
+                                <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7OG-gN-adi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gyw-rW-g7T" id="RYK-cH-3W6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-Qv-a2b">
+                                <rect key="frame" x="297" y="57" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="hG0-uY-6uA"/>
+                                    <constraint firstAttribute="height" constant="30" id="xaR-90-Bco"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAdUnitIDTouchUpInside:" destination="gyw-rW-g7T" eventType="touchUpInside" id="ZKm-9S-UJ2"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akb-Sa-yt2">
                                 <rect key="frame" x="16" y="95" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -381,58 +402,29 @@
                                     <action selector="scanQRCodeTouchUpInside:" destination="gyw-rW-g7T" eventType="touchUpInside" id="Lb4-OW-taM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub MRect Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GSV-ce-HtV" userLabel="Banner Ad Unit ID Text Field">
-                                <rect key="frame" x="16" y="57" width="273" height="30"/>
-                                <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7OG-gN-adi"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="gyw-rW-g7T" id="RYK-cH-3W6"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-Qv-a2b">
-                                <rect key="frame" x="297" y="57" width="62" height="30"/>
-                                <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="hG0-uY-6uA"/>
-                                    <constraint firstAttribute="height" constant="30" id="xaR-90-Bco"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveAdUnitIDTouchUpInside:" destination="gyw-rW-g7T" eventType="touchUpInside" id="ZKm-9S-UJ2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="akb-Sa-yt2" firstAttribute="leading" secondItem="5JN-U5-jUr" secondAttribute="leading" constant="16" id="3bW-2r-OgM"/>
-                            <constraint firstItem="0YI-sX-aNr" firstAttribute="centerX" secondItem="5JN-U5-jUr" secondAttribute="centerX" id="4rU-kn-84a"/>
+                            <constraint firstItem="akb-Sa-yt2" firstAttribute="leading" secondItem="0gB-vr-woZ" secondAttribute="leading" constant="16" id="3bW-2r-OgM"/>
+                            <constraint firstItem="0YI-sX-aNr" firstAttribute="centerX" secondItem="0gB-vr-woZ" secondAttribute="centerX" id="4rU-kn-84a"/>
                             <constraint firstItem="rnH-Qv-a2b" firstAttribute="leading" secondItem="GSV-ce-HtV" secondAttribute="trailing" constant="8" id="93S-Zt-RNB"/>
                             <constraint firstItem="74I-BE-wMf" firstAttribute="top" secondItem="akb-Sa-yt2" secondAttribute="bottom" constant="8" id="9b6-Ue-iJu"/>
                             <constraint firstItem="akb-Sa-yt2" firstAttribute="top" secondItem="GSV-ce-HtV" secondAttribute="bottom" constant="8" id="ARy-pk-mrU"/>
-                            <constraint firstItem="hon-XG-ndH" firstAttribute="top" secondItem="PH0-K4-cuL" secondAttribute="bottom" constant="8" id="Bnb-GU-vbV"/>
-                            <constraint firstItem="hon-XG-ndH" firstAttribute="leading" secondItem="9Jj-Vb-Pep" secondAttribute="leading" constant="16" id="CGT-z6-ZrH"/>
-                            <constraint firstItem="GSV-ce-HtV" firstAttribute="leading" secondItem="9Jj-Vb-Pep" secondAttribute="leading" constant="16" id="HtP-eD-dmu"/>
-                            <constraint firstItem="0YI-sX-aNr" firstAttribute="leading" secondItem="9Jj-Vb-Pep" secondAttribute="leading" constant="16" id="PxR-N7-eVw"/>
+                            <constraint firstItem="hon-XG-ndH" firstAttribute="top" secondItem="0gB-vr-woZ" secondAttribute="top" constant="8" id="Bnb-GU-vbV"/>
+                            <constraint firstItem="hon-XG-ndH" firstAttribute="leading" secondItem="0gB-vr-woZ" secondAttribute="leading" constant="16" id="CGT-z6-ZrH"/>
+                            <constraint firstItem="GSV-ce-HtV" firstAttribute="leading" secondItem="0gB-vr-woZ" secondAttribute="leading" constant="16" id="HtP-eD-dmu"/>
+                            <constraint firstItem="0YI-sX-aNr" firstAttribute="leading" secondItem="0gB-vr-woZ" secondAttribute="leading" constant="16" id="PxR-N7-eVw"/>
                             <constraint firstItem="n02-rN-1zd" firstAttribute="top" secondItem="akb-Sa-yt2" secondAttribute="bottom" constant="114" id="VO3-Iy-tzD"/>
-                            <constraint firstItem="74I-BE-wMf" firstAttribute="centerX" secondItem="5JN-U5-jUr" secondAttribute="centerX" id="akC-g0-Lyw"/>
-                            <constraint firstItem="VY2-pb-Odw" firstAttribute="top" secondItem="0YI-sX-aNr" secondAttribute="bottom" constant="8" id="bMI-cJ-q7w"/>
-                            <constraint firstItem="n02-rN-1zd" firstAttribute="centerX" secondItem="5JN-U5-jUr" secondAttribute="centerX" id="gBh-B6-ekw"/>
-                            <constraint firstItem="9Jj-Vb-Pep" firstAttribute="trailing" secondItem="0YI-sX-aNr" secondAttribute="trailing" constant="16" id="gI7-BT-rsR"/>
-                            <constraint firstItem="9Jj-Vb-Pep" firstAttribute="trailing" secondItem="rnH-Qv-a2b" secondAttribute="trailing" constant="16" id="ijG-NM-L2w"/>
+                            <constraint firstItem="74I-BE-wMf" firstAttribute="centerX" secondItem="0gB-vr-woZ" secondAttribute="centerX" id="akC-g0-Lyw"/>
+                            <constraint firstItem="0gB-vr-woZ" firstAttribute="bottom" secondItem="0YI-sX-aNr" secondAttribute="bottom" constant="8" id="bMI-cJ-q7w"/>
+                            <constraint firstItem="n02-rN-1zd" firstAttribute="centerX" secondItem="0gB-vr-woZ" secondAttribute="centerX" id="gBh-B6-ekw"/>
+                            <constraint firstItem="0gB-vr-woZ" firstAttribute="trailing" secondItem="0YI-sX-aNr" secondAttribute="trailing" constant="16" id="gI7-BT-rsR"/>
+                            <constraint firstItem="0gB-vr-woZ" firstAttribute="trailing" secondItem="rnH-Qv-a2b" secondAttribute="trailing" constant="16" id="ijG-NM-L2w"/>
                             <constraint firstItem="rnH-Qv-a2b" firstAttribute="top" secondItem="GSV-ce-HtV" secondAttribute="top" id="nSM-hF-uG5"/>
-                            <constraint firstAttribute="trailing" secondItem="akb-Sa-yt2" secondAttribute="trailing" constant="16" id="rn1-Rg-EmS"/>
+                            <constraint firstItem="0gB-vr-woZ" firstAttribute="trailing" secondItem="akb-Sa-yt2" secondAttribute="trailing" constant="16" id="rn1-Rg-EmS"/>
                             <constraint firstItem="GSV-ce-HtV" firstAttribute="top" secondItem="hon-XG-ndH" secondAttribute="bottom" constant="8" id="vOe-V9-jjH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9Jj-Vb-Pep"/>
+                        <viewLayoutGuide key="safeArea" id="0gB-vr-woZ"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="n02-rN-1zd" id="nmE-p9-N3X"/>
@@ -448,10 +440,6 @@
         <scene sceneID="1gS-Sx-Zjq">
             <objects>
                 <viewController title="MoPub Interstitial" id="TaO-wY-hoI" customClass="MoPubInterstitialViewController" customModule="AdTag" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5tG-Hd-5ya"/>
-                        <viewControllerLayoutGuide type="bottom" id="zp3-ai-429"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7rY-84-VXU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,6 +465,35 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub Interstitial Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-pc-zQ6" userLabel="Interstitial Ad Unit ID Text Field">
+                                <rect key="frame" x="16" y="57" width="273" height="30"/>
+                                <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pnY-6H-eF0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TaO-wY-hoI" id="lww-hh-YAH"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-vF-dru">
+                                <rect key="frame" x="297" y="57" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="9U5-7p-7rA"/>
+                                    <constraint firstAttribute="height" constant="30" id="P1e-9p-HzJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAdUnitIDTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="bwf-gl-dzf"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-wv-tKN">
                                 <rect key="frame" x="16" y="95" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -488,6 +505,19 @@
                                 <state key="normal" title="Load Ad"/>
                                 <connections>
                                     <action selector="loadAdTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="KIq-7C-RE7"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkK-0j-skE">
+                                <rect key="frame" x="16" y="133" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hae-XJ-Hdy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="5VN-v0-zuY"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-a7-7Th">
@@ -524,72 +554,30 @@
                                     <action selector="scanQRCodeTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="eLl-Ii-GEr"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkK-0j-skE">
-                                <rect key="frame" x="16" y="133" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Hae-XJ-Hdy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Show Ad"/>
-                                <connections>
-                                    <action selector="showAdTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="5VN-v0-zuY"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub Interstitial Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-pc-zQ6" userLabel="Banner Ad Unit ID Text Field">
-                                <rect key="frame" x="16" y="57" width="273" height="30"/>
-                                <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="pnY-6H-eF0"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="TaO-wY-hoI" id="lww-hh-YAH"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-vF-dru">
-                                <rect key="frame" x="297" y="57" width="62" height="30"/>
-                                <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="9U5-7p-7rA"/>
-                                    <constraint firstAttribute="height" constant="30" id="P1e-9p-HzJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveAdUnitIDTouchUpInside:" destination="TaO-wY-hoI" eventType="touchUpInside" id="bwf-gl-dzf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ggs-Ah-y5g" firstAttribute="trailing" secondItem="svi-vA-5KI" secondAttribute="trailing" constant="16" id="0fL-9d-jVX"/>
-                            <constraint firstItem="zp3-ai-429" firstAttribute="top" secondItem="svi-vA-5KI" secondAttribute="bottom" constant="8" id="8eX-S4-uhz"/>
+                            <constraint firstItem="doa-SW-gAc" firstAttribute="trailing" secondItem="svi-vA-5KI" secondAttribute="trailing" constant="16" id="0fL-9d-jVX"/>
+                            <constraint firstItem="doa-SW-gAc" firstAttribute="bottom" secondItem="svi-vA-5KI" secondAttribute="bottom" constant="8" id="8eX-S4-uhz"/>
                             <constraint firstItem="ugD-wv-tKN" firstAttribute="top" secondItem="Gte-pc-zQ6" secondAttribute="bottom" constant="8" id="AEB-Og-mmj"/>
-                            <constraint firstItem="Gte-pc-zQ6" firstAttribute="leading" secondItem="ggs-Ah-y5g" secondAttribute="leading" constant="16" id="BPW-Z9-0f4"/>
+                            <constraint firstItem="Gte-pc-zQ6" firstAttribute="leading" secondItem="doa-SW-gAc" secondAttribute="leading" constant="16" id="BPW-Z9-0f4"/>
                             <constraint firstItem="Gte-pc-zQ6" firstAttribute="top" secondItem="x2e-VC-R5L" secondAttribute="bottom" constant="8" id="GzJ-c3-0yE"/>
-                            <constraint firstItem="svi-vA-5KI" firstAttribute="leading" secondItem="ggs-Ah-y5g" secondAttribute="leading" constant="16" id="STh-jR-umB"/>
+                            <constraint firstItem="svi-vA-5KI" firstAttribute="leading" secondItem="doa-SW-gAc" secondAttribute="leading" constant="16" id="STh-jR-umB"/>
                             <constraint firstItem="ugD-wv-tKN" firstAttribute="leading" secondItem="7rY-84-VXU" secondAttribute="leadingMargin" id="T5Q-27-xE8"/>
-                            <constraint firstItem="svi-vA-5KI" firstAttribute="centerX" secondItem="7rY-84-VXU" secondAttribute="centerX" id="TFV-aX-984"/>
+                            <constraint firstItem="svi-vA-5KI" firstAttribute="centerX" secondItem="doa-SW-gAc" secondAttribute="centerX" id="TFV-aX-984"/>
                             <constraint firstItem="hAw-vF-dru" firstAttribute="top" secondItem="Gte-pc-zQ6" secondAttribute="top" id="VK6-dQ-gKU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ugD-wv-tKN" secondAttribute="trailing" id="WDw-sv-8Bq"/>
-                            <constraint firstItem="ggs-Ah-y5g" firstAttribute="trailing" secondItem="hAw-vF-dru" secondAttribute="trailing" constant="16" id="XWD-e4-pu8"/>
-                            <constraint firstItem="ggs-Ah-y5g" firstAttribute="trailing" secondItem="qkK-0j-skE" secondAttribute="trailing" constant="16" id="ado-4g-Vjd"/>
+                            <constraint firstItem="doa-SW-gAc" firstAttribute="trailing" secondItem="hAw-vF-dru" secondAttribute="trailing" constant="16" id="XWD-e4-pu8"/>
+                            <constraint firstItem="doa-SW-gAc" firstAttribute="trailing" secondItem="qkK-0j-skE" secondAttribute="trailing" constant="16" id="ado-4g-Vjd"/>
                             <constraint firstItem="hAw-vF-dru" firstAttribute="leading" secondItem="Gte-pc-zQ6" secondAttribute="trailing" constant="8" id="bOR-sG-S9P"/>
                             <constraint firstItem="Lqu-a7-7Th" firstAttribute="centerY" secondItem="7rY-84-VXU" secondAttribute="centerY" id="cga-YU-IrV"/>
-                            <constraint firstItem="qkK-0j-skE" firstAttribute="leading" secondItem="ggs-Ah-y5g" secondAttribute="leading" constant="16" id="gbH-P9-fqh"/>
-                            <constraint firstItem="x2e-VC-R5L" firstAttribute="leading" secondItem="ggs-Ah-y5g" secondAttribute="leading" constant="16" id="k0A-wm-J2h"/>
+                            <constraint firstItem="qkK-0j-skE" firstAttribute="leading" secondItem="doa-SW-gAc" secondAttribute="leading" constant="16" id="gbH-P9-fqh"/>
+                            <constraint firstItem="x2e-VC-R5L" firstAttribute="leading" secondItem="doa-SW-gAc" secondAttribute="leading" constant="16" id="k0A-wm-J2h"/>
                             <constraint firstItem="qkK-0j-skE" firstAttribute="top" secondItem="ugD-wv-tKN" secondAttribute="bottom" constant="8" id="lIp-pY-ZFD"/>
-                            <constraint firstItem="x2e-VC-R5L" firstAttribute="top" secondItem="5tG-Hd-5ya" secondAttribute="bottom" constant="8" id="npq-2w-4JR"/>
-                            <constraint firstItem="Lqu-a7-7Th" firstAttribute="centerX" secondItem="7rY-84-VXU" secondAttribute="centerX" id="sUh-c8-ynG"/>
+                            <constraint firstItem="x2e-VC-R5L" firstAttribute="top" secondItem="doa-SW-gAc" secondAttribute="top" constant="8" id="npq-2w-4JR"/>
+                            <constraint firstItem="Lqu-a7-7Th" firstAttribute="centerX" secondItem="doa-SW-gAc" secondAttribute="centerX" id="sUh-c8-ynG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ggs-Ah-y5g"/>
+                        <viewLayoutGuide key="safeArea" id="doa-SW-gAc"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Lqu-a7-7Th" id="bSS-kS-jSS"/>

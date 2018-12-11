@@ -34,6 +34,7 @@ class MoPubMRectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mRectAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") as? String : MOPUB_MRECT_AD_UNIT_ID
+        mRectAdUnitIDTextField.inputAccessoryView = toolBar
         moPubMRect = MPAdView(adUnitId: mRectAdUnitIDTextField.text, size: MOPUB_MEDIUM_RECT_SIZE)
         moPubMRect.delegate = self
         moPubMRect.stopAutomaticallyRefreshingContents()
@@ -49,6 +50,7 @@ class MoPubMRectViewController: BaseViewController {
     
     @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
         activityIndicator.startAnimating()
+        moPubMRect.adUnitId = mRectAdUnitIDTextField.text
         moPubMRect.loadAd()
     }
     
@@ -73,14 +75,6 @@ extension MoPubMRectViewController : MPAdViewDelegate
     func adViewDidFail(toLoadAd view: MPAdView!) {
         activityIndicator.stopAnimating()
         showAlertAction(withMessage: "MoPub MRect did fail to load")
-    }
-    
-    func willPresentModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller will present Modal View")
-    }
-    
-    func didDismissModalView(forAd view: MPAdView!) {
-        showAlertAction(withMessage: "View Controller did dismiss Modal View")
     }
     
     func willLeaveApplication(fromAd view: MPAdView!) {
