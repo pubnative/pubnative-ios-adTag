@@ -80,6 +80,7 @@ extension DFPInterstitialViewController : GADInterstitialDelegate
     
     func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
         activityIndicator.stopAnimating()
+        showAdButton.isHidden = true
         showAlertAction(withMessage: "DFP Interstitial did fail to load with error: \(error.localizedDescription)")
     }
     
