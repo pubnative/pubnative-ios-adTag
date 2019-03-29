@@ -1,7 +1,7 @@
 //
 //  MPInterstitialAdController.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -76,13 +76,13 @@
 - (void)showFromViewController:(UIViewController *)controller
 {
     if (!controller) {
-        MPLogWarn(@"The interstitial could not be shown: "
+        MPLogInfo(@"The interstitial could not be shown: "
                   @"a nil view controller was passed to -showFromViewController:.");
         return;
     }
 
     if (![controller.view.window isKeyWindow]) {
-        MPLogWarn(@"Attempted to present an interstitial ad in non-key window. The ad may not render properly");
+        MPLogInfo(@"Attempted to present an interstitial ad in non-key window. The ad may not render properly");
     }
 
     [self.manager presentInterstitialFromViewController:controller];

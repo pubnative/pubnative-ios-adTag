@@ -1,13 +1,13 @@
 //
 //  MPWebView.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
 #import "MPWebView.h"
-
+#import "MPContentBlocker.h"
 #import <WebKit/WebKit.h>
 
 static BOOL const kMoPubAllowsInlineMediaPlaybackDefault = YES;
@@ -27,7 +27,7 @@ static BOOL gForceWKWebView = NO;
 @property (weak, nonatomic) WKWebView *wkWebView;
 @property (weak, nonatomic) UIWebView *uiWebView;
 
-@property (strong, nonatomic) NSArray<NSLayoutConstraint *> *wkWebViewLayoutConstraints;
+@property (strong, nonatomic) NSArray<NSLayoutConstraint *> *webViewLayoutConstraints;
 
 @property (nonatomic, assign) BOOL hasMovedToWindow;
 
@@ -81,6 +81,14 @@ static BOOL gForceWKWebView = NO;
             config.mediaPlaybackRequiresUserAction = kMoPubRequiresUserActionForMediaPlaybackDefault;
         }
         config.userContentController = contentController;
+
+        if (@available(iOS 11.0, *)) {
+            [WKContentRuleListStore.defaultStore compileContentRuleListForIdentifier:@"ContentBlockingRules" encodedContentRuleList:MPContentBlocker.blockedResourcesList completionHandler:^(WKContentRuleList * rulesList, NSError * error) {
+                if (error == nil) {
+                    [config.userContentController addContentRuleList:rulesList];
+                }
+            }];
+        }
 
         WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:self.bounds configuration:config];
 
@@ -173,11 +181,18 @@ static UIView *gOffscreenView = nil;
         && [self.wkWebView.superview isEqual:gOffscreenView]) {
         self.wkWebView.frame = self.bounds;
         [self addSubview:self.wkWebView];
-        [self constrainWebViewShouldUseSafeArea:self.shouldConformToSafeArea];
+        [self constrainView:self.wkWebView shouldUseSafeArea:self.shouldConformToSafeArea];
         self.hasMovedToWindow = YES;
 
         // Don't keep OffscreenView if we don't need it; it can always be re-allocated again later
         [self cleanUpOffscreenView];
+    }
+    // UIWebView doesn't need to be moved to the window per se, but the constraints
+    // binding it to the view need to be activated.
+    else if (self.uiWebView != nil && !self.hasMovedToWindow) {
+        self.uiWebView.frame = self.bounds;
+        [self constrainView:self.uiWebView shouldUseSafeArea:self.shouldConformToSafeArea];
+        self.hasMovedToWindow = YES;
     }
 }
 
@@ -229,35 +244,36 @@ static UIView *gOffscreenView = nil;
     _shouldConformToSafeArea = shouldConformToSafeArea;
 
     if (self.hasMovedToWindow) {
-        [self constrainWebViewShouldUseSafeArea:shouldConformToSafeArea];
+        UIView * webviewToConstrain = (self.uiWebView != nil ? self.uiWebView : self.wkWebView);
+        [self constrainView:webviewToConstrain shouldUseSafeArea:shouldConformToSafeArea];
     }
 }
 
-- (void)constrainWebViewShouldUseSafeArea:(BOOL)shouldUseSafeArea {
+- (void)constrainView:(UIView *)view shouldUseSafeArea:(BOOL)shouldUseSafeArea {
     if (@available(iOS 11.0, *)) {
-        self.wkWebView.translatesAutoresizingMaskIntoConstraints = NO;
+        view.translatesAutoresizingMaskIntoConstraints = NO;
 
-        if (self.wkWebViewLayoutConstraints) {
-            [NSLayoutConstraint deactivateConstraints:self.wkWebViewLayoutConstraints];
+        if (self.webViewLayoutConstraints) {
+            [NSLayoutConstraint deactivateConstraints:self.webViewLayoutConstraints];
         }
 
         if (shouldUseSafeArea) {
-            self.wkWebViewLayoutConstraints = @[
-                                                [self.wkWebView.topAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.topAnchor],
-                                                [self.wkWebView.leadingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.leadingAnchor],
-                                                [self.wkWebView.trailingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.trailingAnchor],
-                                                [self.wkWebView.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor],
-                                                ];
+            self.webViewLayoutConstraints = @[
+                [view.topAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.topAnchor],
+                [view.leadingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.leadingAnchor],
+                [view.trailingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.trailingAnchor],
+                [view.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor],
+            ];
         } else {
-            self.wkWebViewLayoutConstraints = @[
-                                                [self.wkWebView.topAnchor constraintEqualToAnchor:self.topAnchor],
-                                                [self.wkWebView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-                                                [self.wkWebView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-                                                [self.wkWebView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
-                                                ];
+            self.webViewLayoutConstraints = @[
+                [view.topAnchor constraintEqualToAnchor:self.topAnchor],
+                [view.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+                [view.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
+                [view.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
+            ];
         }
 
-        [NSLayoutConstraint activateConstraints:self.wkWebViewLayoutConstraints];
+        [NSLayoutConstraint activateConstraints:self.webViewLayoutConstraints];
     }
 }
 

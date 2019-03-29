@@ -1,7 +1,7 @@
 //
 //  MPGlobal.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -40,9 +40,22 @@ CGFloat MPStatusBarHeight() {
     return (width < height) ? width : height;
 }
 
-CGRect MPApplicationFrame()
+CGRect MPApplicationFrame(BOOL includeSafeAreaInsets)
 {
     CGRect frame = MPScreenBounds();
+
+    if (@available(iOS 11.0, *)) {
+        if (includeSafeAreaInsets) {
+            // Safe area insets include the status bar offset.
+            UIEdgeInsets safeInsets = UIApplication.sharedApplication.keyWindow.safeAreaInsets;
+            frame.origin.x = safeInsets.left;
+            frame.size.width -= (safeInsets.left + safeInsets.right);
+            frame.origin.y = safeInsets.top;
+            frame.size.height -= (safeInsets.top + safeInsets.bottom);
+
+            return frame;
+        }
+    }
 
     frame.origin.y += MPStatusBarHeight();
     frame.size.height -= MPStatusBarHeight();
@@ -223,6 +236,15 @@ NSArray *MPConvertStringArrayToURLArray(NSArray *strArray)
     return urls;
 }
 
+UIInterfaceOrientationMask MPInterstitialOrientationTypeToUIInterfaceOrientationMask(MPInterstitialOrientationType type)
+{
+    switch (type) {
+        case MPInterstitialOrientationTypePortrait: return UIInterfaceOrientationMaskPortrait;
+        case MPInterstitialOrientationTypeLandscape: return UIInterfaceOrientationMaskLandscape;
+        default: return UIInterfaceOrientationMaskAll;
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation UIDevice (MPAdditions)
@@ -325,7 +347,7 @@ NSArray *MPConvertStringArrayToURLArray(NSArray *strArray)
 {
     if (![url mp_hasTelephoneScheme] && ![url mp_hasTelephonePromptScheme]) {
         // Shouldn't be here as the url must have a tel or telPrompt scheme.
-        MPLogError(@"Processing URL as a telephone URL when %@ doesn't follow the tel:// or telprompt:// schemes", url.absoluteString);
+        MPLogInfo(@"Processing URL as a telephone URL when %@ doesn't follow the tel:// or telprompt:// schemes", url.absoluteString);
         return nil;
     }
 
@@ -336,7 +358,7 @@ NSArray *MPConvertStringArrayToURLArray(NSArray *strArray)
         if (!phoneNumber) {
             phoneNumber = [url resourceSpecifier];
             if ([phoneNumber length] == 0) {
-                MPLogError(@"Invalid telelphone URL: %@.", url.absoluteString);
+                MPLogInfo(@"Invalid telelphone URL: %@.", url.absoluteString);
                 return nil;
             }
         }

@@ -1,7 +1,7 @@
 //
 //  MPAdImpressionTimer.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -67,12 +67,12 @@ static const CGFloat kDefaultPixelCountWhenUsingPercentage = CGFLOAT_MIN;
 - (void)startTrackingView:(UIView *)view
 {
     if (!view) {
-        MPLogError(@"Cannot track empty view");
+        MPLogInfo(@"Cannot track empty view");
         return;
     }
 
     if (self.viewVisibilityTimer.isScheduled) {
-        MPLogWarn(@"viewVisibilityTimer is already started.");
+        MPLogInfo(@"viewVisibilityTimer is already started.");
         return;
     }
 
@@ -86,7 +86,7 @@ static const CGFloat kDefaultPixelCountWhenUsingPercentage = CGFLOAT_MIN;
 {
     CGFloat adViewArea = CGRectGetWidth(self.adView.bounds) * CGRectGetHeight(self.adView.bounds);
     if (adViewArea == 0) {
-        MPLogError(@"ad view area cannot be 0");
+        MPLogInfo(@"ad view area cannot be 0");
         return;
     }
 
