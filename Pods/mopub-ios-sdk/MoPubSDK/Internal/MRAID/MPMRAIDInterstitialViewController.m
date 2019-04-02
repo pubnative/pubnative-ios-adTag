@@ -1,7 +1,7 @@
 //
 //  MPMRAIDInterstitialViewController.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -32,6 +32,7 @@
         CGFloat height = MAX(configuration.preferredSize.height, 1);
         CGRect frame = CGRectMake(0, 0, width, height);
         self.mraidController = [[MRController alloc] initWithAdViewFrame:frame
+                                                   supportedOrientations:configuration.orientationType
                                                          adPlacementType:MRAdViewPlacementTypeInterstitial
                                                                 delegate:self];
 
@@ -50,7 +51,7 @@
 
 - (void)willPresentInterstitial
 {
-    [self.mraidController disableRequestHandling];
+    [self.mraidController handleMRAIDInterstitialWillPresentWithViewController:self];
     if ([self.delegate respondsToSelector:@selector(interstitialWillAppear:)]) {
         [self.delegate interstitialWillAppear:self];
     }
@@ -184,7 +185,7 @@
 - (NSUInteger)supportedInterfaceOrientations
 #endif
 {
-    return ([[UIApplication sharedApplication] mp_supportsOrientationMask:self.supportedOrientationMask]) ? self.supportedOrientationMask : UIInterfaceOrientationMaskAll;
+    return ([[UIApplication sharedApplication] mp_supportsOrientationMask:self.supportedOrientationMask]) ? self.supportedOrientationMask : [super supportedInterfaceOrientations];
 }
 
 - (BOOL)shouldAutorotate

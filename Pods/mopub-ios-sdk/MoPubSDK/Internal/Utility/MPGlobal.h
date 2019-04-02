@@ -1,7 +1,7 @@
 //
 //  MPGlobal.h
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -16,7 +16,7 @@
 UIInterfaceOrientation MPInterfaceOrientation(void);
 UIWindow *MPKeyWindow(void);
 CGFloat MPStatusBarHeight(void);
-CGRect MPApplicationFrame(void);
+CGRect MPApplicationFrame(BOOL includeSafeAreaInsets);
 CGRect MPScreenBounds(void);
 CGSize MPScreenResolution(void);
 CGFloat MPDeviceScaleFactor(void);
@@ -62,6 +62,8 @@ typedef NS_ENUM(NSUInteger, MPInterstitialOrientationType) {
     MPInterstitialOrientationTypeLandscape,
     MPInterstitialOrientationTypeAll,
 };
+
+UIInterfaceOrientationMask MPInterstitialOrientationTypeToUIInterfaceOrientationMask(MPInterstitialOrientationType type);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,7 +1,7 @@
 //
 //  MPAdConfiguration.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -46,7 +46,7 @@ NSString * const kRefreshTimeMetadataKey = @"x-refreshtime";
 NSString * const kAdTimeoutMetadataKey = @"x-ad-timeout-ms";
 NSString * const kWidthMetadataKey = @"x-width";
 NSString * const kDspCreativeIdKey = @"x-dspcreativeid";
-NSString * const kPrecacheRequiredKey = @"x-precacheRequired";
+NSString * const kPrecacheRequiredKey = @"x-precacherequired";
 NSString * const kIsVastVideoPlayerKey = @"x-vastvideoplayer";
 
 NSString * const kInterstitialAdTypeMetadataKey = @"x-fulladtype";
@@ -107,7 +107,6 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
 @property (nonatomic, copy) NSArray <NSString *> *afterLoadSuccessUrlsWithMacros;
 @property (nonatomic, copy) NSArray <NSString *> *afterLoadFailureUrlsWithMacros;
 
-- (MPAdType)adTypeFromMetadata:(NSDictionary *)metadata;
 - (NSString *)networkTypeFromMetadata:(NSDictionary *)metadata;
 - (NSTimeInterval)refreshIntervalFromMetadata:(NSDictionary *)metadata;
 - (NSDictionary *)dictionaryFromMetadata:(NSDictionary *)metadata forKey:(NSString *)key;
@@ -121,13 +120,13 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
 
 @implementation MPAdConfiguration
 
-- (id)initWithMetadata:(NSDictionary *)metadata data:(NSData *)data
+- (instancetype)initWithMetadata:(NSDictionary *)metadata data:(NSData *)data adType:(MPAdType)adType
 {
     self = [super init];
     if (self) {
         self.adResponseData = data;
 
-        self.adType = [self adTypeFromMetadata:metadata];
+        self.adType = adType;
         self.adUnitWarmingUp = [metadata mp_boolForKey:kAdUnitWarmingUpMetadataKey];
 
         self.networkType = [self networkTypeFromMetadata:metadata];
@@ -262,14 +261,14 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
     NSString *customEventClassName = [metadata objectForKey:kCustomEventClassNameMetadataKey];
 
     NSMutableDictionary *convertedCustomEvents = [NSMutableDictionary dictionary];
-    if (self.adType == MPAdTypeBanner) {
+    if (self.adType == MPAdTypeInline) {
         [convertedCustomEvents setObject:@"MPGoogleAdMobBannerCustomEvent" forKey:@"admob_native"];
         [convertedCustomEvents setObject:@"MPMillennialBannerCustomEvent" forKey:@"millennial_native"];
         [convertedCustomEvents setObject:@"MPHTMLBannerCustomEvent" forKey:@"html"];
         [convertedCustomEvents setObject:@"MPMRAIDBannerCustomEvent" forKey:@"mraid"];
         [convertedCustomEvents setObject:@"MOPUBNativeVideoCustomEvent" forKey:@"json_video"];
         [convertedCustomEvents setObject:@"MPMoPubNativeCustomEvent" forKey:@"json"];
-    } else if (self.adType == MPAdTypeInterstitial) {
+    } else if (self.adType == MPAdTypeFullscreen) {
         [convertedCustomEvents setObject:@"MPGoogleAdMobInterstitialCustomEvent" forKey:@"admob_full"];
         [convertedCustomEvents setObject:@"MPMillennialInterstitialCustomEvent" forKey:@"millennial_full"];
         [convertedCustomEvents setObject:@"MPHTMLInterstitialCustomEvent" forKey:@"html"];
@@ -284,7 +283,7 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
     Class customEventClass = NSClassFromString(customEventClassName);
 
     if (customEventClassName && !customEventClass) {
-        MPLogWarn(@"Could not find custom event class named %@", customEventClassName);
+        MPLogInfo(@"Could not find custom event class named %@", customEventClassName);
     }
 
     return customEventClass;
@@ -379,22 +378,6 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
     }
 
     return [baseArray arrayByAddingObjectsFromArray:conditionalArray];
-}
-
-- (MPAdType)adTypeFromMetadata:(NSDictionary *)metadata
-{
-    NSString *adTypeString = [metadata objectForKey:kAdTypeMetadataKey];
-
-    if ([adTypeString isEqualToString:@"interstitial"] || [adTypeString isEqualToString:@"rewarded_video"] || [adTypeString isEqualToString:@"rewarded_playable"]) {
-        return MPAdTypeInterstitial;
-    } else if (adTypeString &&
-               [metadata objectForKey:kOrientationTypeMetadataKey]) {
-        return MPAdTypeInterstitial;
-    } else if (adTypeString) {
-        return MPAdTypeBanner;
-    } else {
-        return MPAdTypeUnknown;
-    }
 }
 
 - (NSString *)networkTypeFromMetadata:(NSDictionary *)metadata
@@ -591,7 +574,7 @@ NSString * const kAdvancedBiddingMarkupMetadataKey = @"adm";
     // This is an error.
     NSArray * rewards = [currencies objectForKey:@"rewards"];
     if (rewards.count == 0) {
-        MPLogError(@"No available rewards found.");
+        MPLogDebug(@"No available rewards found.");
         return nil;
     }
 

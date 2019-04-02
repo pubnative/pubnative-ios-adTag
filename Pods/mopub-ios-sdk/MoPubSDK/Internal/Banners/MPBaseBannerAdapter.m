@@ -1,7 +1,7 @@
 //
 //  MPBaseBannerAdapter.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -91,7 +91,7 @@
 
 - (void)timeout
 {
-    NSError * error = [MOPUBError errorWithCode:MOPUBErrorAdRequestTimedOut
+    NSError * error = [NSError errorWithCode:MOPUBErrorAdRequestTimedOut
                            localizedDescription:@"Banner ad request timed out"];
     [self.delegate adapter:self didFailToLoadAdWithError:error];
 }
@@ -101,8 +101,6 @@
 - (void)rotateToOrientation:(UIInterfaceOrientation)newOrientation
 {
     // Do nothing by default. Subclasses can override.
-    MPLogDebug(@"rotateToOrientation %d called for adapter %@ (%p)",
-          newOrientation, NSStringFromClass([self class]), self);
 }
 
 #pragma mark - Metrics
