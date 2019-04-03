@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWg-va-i4K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWg-va-i4K">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Format" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-wj-SAn">
                                 <rect key="frame" x="16" y="28" width="64" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adFormatLabel" label="Ad Format Label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Fxl-1y-kOH"/>
                                 </constraints>
@@ -35,6 +36,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3u-yl-dJW" userLabel="Banner Button">
                                 <rect key="frame" x="16" y="57" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="bannerButton" label="Banner Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="Ena-KF-b4y"/>
                                     <constraint firstAttribute="height" constant="33" id="Zkh-ZW-ckb"/>
@@ -65,6 +67,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-aW-9lP" userLabel="MRect Button">
                                 <rect key="frame" x="16" y="98" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="mRectButton" label="MRect Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="dWW-M6-ml0"/>
                                     <constraint firstAttribute="height" constant="33" id="eNk-yf-u6h"/>
@@ -95,6 +98,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n99-zG-6Ly" userLabel="Interstitial Button">
                                 <rect key="frame" x="16" y="139" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="interstitialButton" label="Interstitial Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="aqm-AI-DNK"/>
                                     <constraint firstAttribute="height" constant="33" id="o75-tY-cEh"/>
@@ -154,6 +158,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banner Ad Unit ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgQ-eB-ayj">
                                 <rect key="frame" x="16" y="28" width="108.5" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="bannerAdUnitIDLabel" label="Banner Ad Unit ID Label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="QdH-8L-vgr"/>
                                     <constraint firstAttribute="height" constant="21" id="YJR-Zn-qZk"/>
@@ -176,6 +181,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub Banner Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cgw-mW-F13" userLabel="Banner Ad Unit ID Text Field">
                                 <rect key="frame" x="16" y="57" width="273" height="30"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adUnitIDTextField" label="Ad Unit ID Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="x7j-XR-9ZG"/>
                                 </constraints>
@@ -189,6 +195,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="211-CI-08y">
                                 <rect key="frame" x="297" y="57" width="62" height="30"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveButton" label="Save Button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="GhU-eO-ZMk"/>
                                     <constraint firstAttribute="height" constant="30" id="hqt-gU-bUY"/>
@@ -205,6 +212,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQg-TF-EJJ">
                                 <rect key="frame" x="16" y="95" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loadAdButton" label="Load Ad Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8Ue-QL-vHi"/>
                                 </constraints>
@@ -217,6 +225,9 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-ua-4zX">
                                 <rect key="frame" x="27.5" y="133" width="320" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adContainer" label="Ad Container">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Irl-CC-534"/>
                                     <constraint firstAttribute="width" constant="320" id="n8M-EI-ISl"/>
@@ -229,6 +240,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-Cz-Csg" userLabel="Scan QR Code Button">
                                 <rect key="frame" x="16" y="626" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scanQRCodeButton" label="Scan QR Code Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="EKi-jX-MpY"/>
                                     <constraint firstAttribute="height" constant="33" id="km7-wj-vQu"/>
@@ -300,6 +312,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MRect Ad Unit ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hon-XG-ndH">
                                 <rect key="frame" x="16" y="28" width="103.5" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="mRectAdUnitIDLabel" label="MRect Ad Unit ID Label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ifb-SS-X1i"/>
                                     <constraint firstAttribute="height" constant="18" id="rWO-la-irh"/>
@@ -322,6 +335,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub MRect Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GSV-ce-HtV" userLabel="MRect Ad Unit ID Text Field">
                                 <rect key="frame" x="16" y="57" width="273" height="30"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adUnitIDTextField" label="Ad Unit ID Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7OG-gN-adi"/>
                                 </constraints>
@@ -335,6 +349,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-Qv-a2b">
                                 <rect key="frame" x="297" y="57" width="62" height="30"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveButton" label="Save Button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="hG0-uY-6uA"/>
                                     <constraint firstAttribute="height" constant="30" id="xaR-90-Bco"/>
@@ -351,6 +366,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akb-Sa-yt2">
                                 <rect key="frame" x="16" y="95" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loadAdButton" label="Load Ad Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Nii-qE-vAF"/>
                                 </constraints>
@@ -363,6 +379,9 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74I-BE-wMf">
                                 <rect key="frame" x="37.5" y="133" width="300" height="250"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adContainer" label="Ad Container">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="USH-4j-RGe"/>
                                     <constraint firstAttribute="width" constant="300" id="wiR-Pi-Rcq"/>
@@ -375,6 +394,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YI-sX-aNr" userLabel="Scan QR Code Button">
                                 <rect key="frame" x="16" y="626" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scanQRCodeButton" label="Scan QR Code Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="52u-wF-cXz"/>
                                     <constraint firstAttribute="height" constant="33" id="U2V-cc-DF3"/>
@@ -446,6 +466,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstitial Ad Unit ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-VC-R5L">
                                 <rect key="frame" x="16" y="28" width="125.5" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="interstitialAdUnitIDLabel" label="Interstitial Ad Unit ID Label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="W0A-8o-eyE"/>
                                     <constraint firstAttribute="height" constant="21" id="iu5-RQ-4kt"/>
@@ -468,6 +489,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your MoPub Interstitial Ad Unit ID" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-pc-zQ6" userLabel="Interstitial Ad Unit ID Text Field">
                                 <rect key="frame" x="16" y="57" width="273" height="30"/>
                                 <color key="backgroundColor" red="0.85098618270000004" green="0.85097014900000001" blue="0.85098105670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="adUnitIDTextField" label="Ad Unit ID Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pnY-6H-eF0"/>
                                 </constraints>
@@ -481,6 +503,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-vF-dru">
                                 <rect key="frame" x="297" y="57" width="62" height="30"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveButton" label="Save Button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="9U5-7p-7rA"/>
                                     <constraint firstAttribute="height" constant="30" id="P1e-9p-HzJ"/>
@@ -497,6 +520,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-wv-tKN">
                                 <rect key="frame" x="16" y="95" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loadAdButton" label="Load Ad Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zhh-Cz-bEH"/>
                                 </constraints>
@@ -510,6 +534,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkK-0j-skE">
                                 <rect key="frame" x="16" y="133" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="showAdButton" label="Show Ad Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Hae-XJ-Hdy"/>
                                 </constraints>
@@ -527,6 +552,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svi-vA-5KI" userLabel="Scan QR Code Button">
                                 <rect key="frame" x="16" y="626" width="343" height="33"/>
                                 <color key="backgroundColor" red="0.49019607840000001" green="0.039215686270000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scanQRCodeButton" label="Scan QR Code Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="apq-ab-TTi"/>
                                     <constraint firstAttribute="height" constant="33" id="sHx-68-Qph"/>
