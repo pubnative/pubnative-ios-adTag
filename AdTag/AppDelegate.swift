@@ -24,6 +24,7 @@ import UIKit
 import MoPub
 import Fabric
 import Crashlytics
+import HyBid
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         let moPubConfig = MPMoPubConfiguration (adUnitIdForAppInitialization: MOPUB_BANNER_AD_UNIT_ID)
         MoPub.sharedInstance().initializeSdk(with: moPubConfig, completion: nil)
+        HyBid.initWithAppToken("543027b8e954474cbcd9a98481622a3b") { (success) in
+            print("HyBid Successfully Initialized")
+        }
+
         return true
     }
 
