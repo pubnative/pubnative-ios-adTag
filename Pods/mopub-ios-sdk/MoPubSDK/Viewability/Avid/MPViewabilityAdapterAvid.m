@@ -1,7 +1,7 @@
 //
 //  MPViewabilityAdapterAvid.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -45,7 +45,7 @@
 
         if (startTracking) {
             _isTracking = YES;
-            MPLogInfo(@"[Viewability] IAS tracking started");
+            MPLogInfo(@"IAS tracking started");
         }
 #endif
     }
@@ -61,7 +61,7 @@
     if (!self.isTracking && self.avidAdSession != nil) {
         [self.avidAdSession.avidDeferredAdSessionListener recordReadyEvent];
         self.isTracking = YES;
-        MPLogInfo(@"[Viewability] IAS tracking started");
+        MPLogInfo(@"IAS tracking started");
     }
 #endif
 }
@@ -73,7 +73,7 @@
     if (self.isTracking) {
         [self.avidAdSession endSession];
         if (self.avidAdSession) {
-            MPLogInfo(@"[Viewability] IAS tracking stopped");
+            MPLogInfo(@"IAS tracking stopped");
         }
     }
 

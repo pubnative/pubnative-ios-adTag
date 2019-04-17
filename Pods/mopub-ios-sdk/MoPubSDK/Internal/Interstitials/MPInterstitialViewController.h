@@ -1,7 +1,7 @@
 //
 //  MPInterstitialViewController.h
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, weak) id<MPInterstitialViewControllerDelegate> delegate;
 
-- (void)presentInterstitialFromViewController:(UIViewController *)controller;
+- (void)presentInterstitialFromViewController:(UIViewController *)controller complete:(void(^)(NSError *))complete;
 - (void)dismissInterstitialAnimated:(BOOL)animated;
 - (BOOL)shouldDisplayCloseButton;
 - (void)willPresentInterstitial;

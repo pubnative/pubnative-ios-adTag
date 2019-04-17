@@ -1,7 +1,7 @@
 //
 //  MPAdDestinationDisplayAgent.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -269,7 +269,7 @@ static NSString * const kDisplayAgentErrorDomain = @"com.mopub.displayagent";
         case MPMoPubShareHostCommandTweet:
             return [self.activityViewControllerHelper presentActivityViewControllerWithTweetShareURL:URL];
         default:
-            MPLogWarn(@"MPAdDestinationDisplayAgent - unsupported Share URL: %@", [URL absoluteString]);
+            MPLogInfo(@"MPAdDestinationDisplayAgent - unsupported Share URL: %@", [URL absoluteString]);
             return NO;
     }
 }
