@@ -1,7 +1,7 @@
 //
 //  MPAdServerURLBuilder.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -10,19 +10,22 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-#import "MPAdvancedBiddingManager.h"
 #import "MPAdServerKeys.h"
+#import "MPAPIEndpoints.h"
+#import "MPConsentManager.h"
 #import "MPConstants.h"
+#import "MPCoreInstanceProvider+MRAID.h"
+#import "MPError.h"
 #import "MPGeolocationProvider.h"
 #import "MPGlobal.h"
 #import "MPIdentityProvider.h"
-#import "MPCoreInstanceProvider+MRAID.h"
+#import "MPLogging.h"
+#import "MPMediationManager.h"
+#import "MPRateLimitManager.h"
 #import "MPReachabilityManager.h"
-#import "MPAPIEndpoints.h"
 #import "MPViewabilityTracker.h"
 #import "NSString+MPAdditions.h"
 #import "NSString+MPConsentStatus.h"
-#import "MPConsentManager.h"
 
 static NSString * const kMoPubInterfaceOrientationPortrait = @"p";
 static NSString * const kMoPubInterfaceOrientationLandscape = @"l";
@@ -201,6 +204,8 @@ static NSInteger const kAdSequenceNone = -1;
     queryParams[kUserDataKeywordsKey]           = [self userDataKeywordsValue:userDataKeywords];
     queryParams[kViewabilityStatusKey]          = [self viewabilityStatusValue:viewability];
     queryParams[kAdvancedBiddingKey]            = [self advancedBiddingValue];
+    queryParams[kBackoffMsKey]                  = [self backoffMillisecondsValueForAdUnitID:adUnitID];
+    queryParams[kBackoffReasonKey]              = [[MPRateLimitManager sharedInstance] lastRateLimitReasonForAdUnitId:adUnitID];
     [queryParams addEntriesFromDictionary:[self locationInformationDictionary:location]];
 
     return [self URLWithEndpointPath:MOPUB_API_PATH_AD_REQUEST postData:queryParams];
@@ -323,18 +328,31 @@ static NSInteger const kAdSequenceNone = -1;
 }
 
 + (NSString *)advancedBiddingValue {
-    // Opted out of advanced bidding, no query parameter should be sent.
-    if (![MPAdvancedBiddingManager sharedManager].advancedBiddingEnabled) {
-        return nil;
-    }
-
-    // No JSON at this point means that no advanced bidders were initialized.
-    NSString * tokens = MPAdvancedBiddingManager.sharedManager.bidderTokensJson;
+    // Retrieve the tokens
+    NSDictionary * tokens = MPMediationManager.sharedManager.advancedBiddingTokens;
     if (tokens == nil) {
         return nil;
     }
 
-    return tokens;
+    // Serialize the JSON dictionary into a JSON string.
+    NSError * error = nil;
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:tokens options:0 error:&error];
+    if (jsonData == nil) {
+        NSError * jsonError = [NSError serializationOfJson:tokens failedWithError:error];
+        MPLogEvent([MPLogEvent error:jsonError message:nil]);
+        return nil;
+    }
+
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)backoffMillisecondsValueForAdUnitID:(NSString *)adUnitID {
+    NSUInteger lastRateLimitWaitTimeMilliseconds = [[MPRateLimitManager sharedInstance] lastRateLimitMillisecondsForAdUnitId:adUnitID];
+    return lastRateLimitWaitTimeMilliseconds > 0 ? [NSString stringWithFormat:@"%@", @(lastRateLimitWaitTimeMilliseconds)] : nil;
+}
+
++ (NSDictionary *)adapterInformation {
+    return MPMediationManager.sharedManager.adRequestPayload;
 }
 
 + (NSDictionary *)locationInformationDictionary:(CLLocation *)location {

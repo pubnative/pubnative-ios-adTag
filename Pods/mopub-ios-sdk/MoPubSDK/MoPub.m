@@ -1,13 +1,12 @@
 //
 //  MoPub.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
 #import "MoPub.h"
-#import "MPAdvancedBiddingManager.h"
 #import "MPConsentManager.h"
 #import "MPConstants.h"
 #import "MPCoreInstanceProvider.h"
@@ -15,7 +14,6 @@
 #import "MPLogging.h"
 #import "MPMediationManager.h"
 #import "MPRewardedVideo.h"
-#import "MPRewardedVideoCustomEvent+Caching.h"
 #import "MPIdentityProvider.h"
 #import "MPWebView.h"
 #import "MOPUBExperimentProvider.h"
@@ -79,24 +77,14 @@
     return [MPWebView isForceWKWebView];
 }
 
-- (void)setLogLevel:(MPLogLevel)level
+- (void)setLogLevel:(MPBLogLevel)level
 {
-    MPLogSetLevel(level);
+    MPLogging.consoleLogLevel = level;
 }
 
-- (MPLogLevel)logLevel
+- (MPBLogLevel)logLevel
 {
-    return MPLogGetLevel();
-}
-
-- (void)setEnableAdvancedBidding:(BOOL)enableAdvancedBidding
-{
-    [MPAdvancedBiddingManager sharedManager].advancedBiddingEnabled = enableAdvancedBidding;
-}
-
-- (BOOL)enableAdvancedBidding
-{
-    return [MPAdvancedBiddingManager sharedManager].advancedBiddingEnabled;
+    return MPLogging.consoleLogLevel;
 }
 
 - (void)setClickthroughDisplayAgentType:(MOPUBDisplayAgentType)displayAgentType
@@ -133,6 +121,9 @@
                      completion:(void(^_Nullable)(void))completionBlock
 {
     @synchronized (self) {
+        // Set the console logging level.
+        MPLogging.consoleLogLevel = configuration.loggingLevel;
+
         // Store the global mediation settings
         self.globalMediationSettings = configuration.globalMediationSettings;
 
@@ -143,6 +134,7 @@
         // of `checkForDoNotTrackAndTransition`.
         dispatch_group_enter(initializationGroup);
         MPConsentManager.sharedManager.adUnitIdUsedForConsent = configuration.adUnitIdForAppInitialization;
+        MPConsentManager.sharedManager.allowLegitimateInterest = configuration.allowLegitimateInterest;
         [MPConsentManager.sharedManager checkForDoNotTrackAndTransition];
         [MPConsentManager.sharedManager synchronizeConsentWithCompletion:^(NSError * _Nullable error) {
             dispatch_group_leave(initializationGroup);
@@ -152,21 +144,20 @@
         [MPSessionTracker initializeNotificationObservers];
 
         // Configure mediated network SDKs
+        __block NSArray<id<MPAdapterConfiguration>> * initializedNetworks = nil;
         dispatch_group_enter(initializationGroup);
-        NSArray<Class<MPMediationSdkInitializable>> * mediatedNetworks = configuration.mediatedNetworks;
-        [MPMediationManager.sharedManager initializeMediatedNetworks:mediatedNetworks completion:^(NSError * _Nullable error) {
-            dispatch_group_leave(initializationGroup);
-        }];
-
-        // Configure advanced bidders
-        dispatch_group_enter(initializationGroup);
-        [MPAdvancedBiddingManager.sharedManager initializeBidders:configuration.advancedBidders complete:^{
+        [MPMediationManager.sharedManager initializeWithAdditionalProviders:configuration.additionalNetworks
+                                                             configurations:configuration.mediatedNetworkConfigurations
+                                                             requestOptions:configuration.moPubRequestOptions
+                                                                   complete:^(NSError * error, NSArray<id<MPAdapterConfiguration>> * initializedAdapters) {
+            initializedNetworks = initializedAdapters;
             dispatch_group_leave(initializationGroup);
         }];
 
         // Once all of the asynchronous tasks have completed, notify the
         // completion handler.
         dispatch_group_notify(initializationGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            MPLogEvent([MPLogEvent sdkInitializedWithNetworks:initializedNetworks]);
             self.isSdkInitialized = YES;
             if (completionBlock) {
                 completionBlock();
@@ -202,8 +193,33 @@
 
 @implementation MoPub (Mediation)
 
-- (NSArray<Class<MPMediationSdkInitializable>> * _Nullable)allCachedNetworks {
-    return [MPMediationManager.sharedManager allCachedNetworks];
+- (id<MPAdapterConfiguration>)adapterConfigurationNamed:(NSString *)className {
+    // No class name
+    if (className == nil) {
+        return nil;
+    }
+
+    // Class doesn't exist.
+    Class classToFind = NSClassFromString(className);
+    if (classToFind == Nil) {
+        return nil;
+    }
+
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"self isKindOfClass: %@", classToFind];
+    NSArray * adapters = [MPMediationManager.sharedManager.adapters.allValues filteredArrayUsingPredicate:predicate];
+    return adapters.firstObject;
+}
+
+- (NSArray<NSString *> * _Nullable)availableAdapterClassNames {
+    NSMutableArray<NSString *> * adapterClassNames = [NSMutableArray arrayWithCapacity:MPMediationManager.sharedManager.adapters.count];
+    [MPMediationManager.sharedManager.adapters.allValues enumerateObjectsUsingBlock:^(id<MPAdapterConfiguration>  _Nonnull adapter, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString * className = NSStringFromClass(adapter.class);
+        if (className != nil) {
+            [adapterClassNames addObject:className];
+        }
+    }];
+
+    return adapterClassNames;
 }
 
 - (void)clearCachedNetworks {
@@ -274,6 +290,14 @@
     [self showConsentDialogFromViewController:viewController
                                       didShow:completion
                                    didDismiss:nil];
+}
+
+- (BOOL)allowLegitimateInterest {
+    return [MPConsentManager sharedManager].allowLegitimateInterest;
+}
+
+- (void)setAllowLegitimateInterest:(BOOL)allowLegitimateInterest {
+    [MPConsentManager sharedManager].allowLegitimateInterest = allowLegitimateInterest;
 }
 
 - (BOOL)isConsentDialogReady {

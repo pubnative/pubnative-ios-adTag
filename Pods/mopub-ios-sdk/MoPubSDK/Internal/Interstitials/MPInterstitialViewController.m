@@ -1,13 +1,14 @@
 //
 //  MPInterstitialViewController.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
 #import "MPInterstitialViewController.h"
 
+#import "MPError.h"
 #import "MPGlobal.h"
 #import "MPLogging.h"
 #import "UIButton+MPAdditions.h"
@@ -52,10 +53,12 @@ static NSString * const kCloseButtonXImageName = @"MPCloseButtonX.png";
 
 #pragma mark - Public
 
-- (void)presentInterstitialFromViewController:(UIViewController *)controller
+- (void)presentInterstitialFromViewController:(UIViewController *)controller complete:(void(^)(NSError *))complete
 {
     if (self.presentingViewController) {
-        MPLogWarn(@"Cannot present an interstitial that is already on-screen.");
+        if (complete != nil) {
+            complete(NSError.fullscreenAdAlreadyOnScreen);
+        }
         return;
     }
 
@@ -68,6 +71,9 @@ static NSString * const kCloseButtonXImageName = @"MPCloseButtonX.png";
 
     [controller presentViewController:self animated:MP_ANIMATED completion:^{
         [self didPresentInterstitial];
+        if (complete != nil) {
+            complete(nil);
+        }
     }];
 }
 
@@ -234,7 +240,7 @@ static NSString * const kCloseButtonXImageName = @"MPCloseButtonX.png";
     // just return the application's supported orientations.
 
     if (!interstitialSupportedOrientations) {
-        MPLogError(@"Your application does not support this interstitial's desired orientation "
+        MPLogInfo(@"Your application does not support this interstitial's desired orientation "
                    @"(%@).", orientationDescription);
         return applicationSupportedOrientations;
     } else {

@@ -1,7 +1,7 @@
 //
 //  MPRewardedVideo.m
 //
-//  Copyright 2018 Twitter, Inc.
+//  Copyright 2018-2019 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -13,7 +13,6 @@
 #import "MPRewardedVideoError.h"
 #import "MPRewardedVideoConnection.h"
 #import "MPRewardedVideoCustomEvent.h"
-#import "MPRewardedVideoCustomEvent+Caching.h"
 
 static MPRewardedVideo *gSharedInstance = nil;
 
@@ -157,21 +156,21 @@ static MPRewardedVideo *gSharedInstance = nil;
     MPRewardedVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
 
     if (!adManager) {
-        MPLogWarn(@"The rewarded video could not be shown: "
+        MPLogInfo(@"The rewarded video could not be shown: "
                   @"no ads have been loaded for adUnitID: %@", adUnitID);
 
         return;
     }
 
     if (!viewController) {
-        MPLogWarn(@"The rewarded video could not be shown: "
+        MPLogInfo(@"The rewarded video could not be shown: "
                   @"a nil view controller was passed to -presentRewardedVideoAdForAdUnitID:fromViewController:.");
 
         return;
     }
 
     if (![viewController.view.window isKeyWindow]) {
-        MPLogWarn(@"Attempting to present a rewarded video ad in non-key window. The ad may not render properly.");
+        MPLogInfo(@"Attempting to present a rewarded video ad in non-key window. The ad may not render properly.");
     }
 
     [adManager presentRewardedVideoAdFromViewController:viewController withReward:reward customData:customData];
