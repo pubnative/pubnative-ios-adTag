@@ -47,6 +47,12 @@ class MoPubLeaderboardViewController: BaseViewController {
         }
     }
     
+    @IBAction func loadAdTouchUpInside(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+        moPubLeaderboard.adUnitId = leaderboardAdUnitIDTextField.text
+        moPubLeaderboard.loadAd()
+    }
+    
     @IBAction func scanQRCodeTouchUpInside(_ sender: UIButton) {
         let scanner = ScannerViewController()
         scanner.delegate = self
