@@ -35,7 +35,7 @@ class MoPubMRectViewController: BaseViewController {
         super.viewDidLoad()
         mRectAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubMRectAdUnitID") as? String : MOPUB_MRECT_AD_UNIT_ID
         mRectAdUnitIDTextField.inputAccessoryView = toolBar
-        moPubMRect = MPAdView(adUnitId: mRectAdUnitIDTextField.text, size: kMPPresetMaxAdSize250Height)
+        moPubMRect = MPAdView(adUnitId: mRectAdUnitIDTextField.text)
         moPubMRect.delegate = self
         moPubMRect.stopAutomaticallyRefreshingContents()
         mRectAdContainer.addSubview(moPubMRect)
