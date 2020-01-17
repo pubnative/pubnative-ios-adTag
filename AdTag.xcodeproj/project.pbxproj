@@ -3,46 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3FA62EB0DFB5BA9E99D2C385 /* Pods_AdTag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2B36D5D34D529E2580FDD9 /* Pods_AdTag.framework */; };
-		5A5370BF22672D3C000AC540 /* HyBid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5370BE22672D3C000AC540 /* HyBid.framework */; };
-		5A5370C022672D3C000AC540 /* HyBid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5370BE22672D3C000AC540 /* HyBid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A53714322672EFE000AC540 /* HyBidMoPubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53710622672EFE000AC540 /* HyBidMoPubUtils.m */; };
-		5A53714422672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53710822672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.m */; };
-		5A53714522672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53710922672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.m */; };
-		5A53714622672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53710C22672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.m */; };
-		5A53714722672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711022672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.m */; };
-		5A53714822672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711422672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.m */; };
-		5A53714922672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711522672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.m */; };
-		5A53714A22672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711722672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.m */; };
-		5A53714B22672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711822672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.m */; };
-		5A53714C22672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711922672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.m */; };
-		5A53714D22672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711B22672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.m */; };
-		5A53714E22672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711C22672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.m */; };
-		5A53714F22672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53711F22672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.m */; };
-		5A53715022672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712022672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.m */; };
-		5A53715122672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712122672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.m */; };
-		5A53715222672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712222672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.m */; };
-		5A53715322672EFE000AC540 /* HyBidMoPubMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712322672EFE000AC540 /* HyBidMoPubMRectCustomEvent.m */; };
-		5A53715422672EFE000AC540 /* HyBidMoPubBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712422672EFE000AC540 /* HyBidMoPubBannerCustomEvent.m */; };
-		5A53715522672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712B22672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.m */; };
-		5A53715622672EFE000AC540 /* PNLiteMoPubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53712E22672EFE000AC540 /* PNLiteMoPubUtils.m */; };
-		5A53715722672EFE000AC540 /* HyBidDFPBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713022672EFE000AC540 /* HyBidDFPBannerCustomEvent.m */; };
-		5A53715822672EFE000AC540 /* PNLiteDFPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713122672EFE000AC540 /* PNLiteDFPUtils.m */; };
-		5A53715922672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713222672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.m */; };
-		5A53715A22672EFE000AC540 /* HyBidDFPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713322672EFE000AC540 /* HyBidDFPUtils.m */; };
-		5A53715B22672EFE000AC540 /* PNLiteDFPMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713522672EFE000AC540 /* PNLiteDFPMRectCustomEvent.m */; };
-		5A53715C22672EFE000AC540 /* PNLiteDFPBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713722672EFE000AC540 /* PNLiteDFPBannerCustomEvent.m */; };
-		5A53715D22672EFE000AC540 /* HyBidDFPMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713B22672EFE000AC540 /* HyBidDFPMRectCustomEvent.m */; };
-		5A53715E22672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53713F22672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.m */; };
-		5A53715F22672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A53714122672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.m */; };
 		5A5CCD1D2183427E00835B2C /* MoPubMRectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD1C2183427E00835B2C /* MoPubMRectViewController.swift */; };
 		5A5CCD20218344FD00835B2C /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD1F218344FD00835B2C /* MoPubInterstitialViewController.swift */; };
 		5A5CCD2221834B0000835B2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD2121834B0000835B2C /* Constants.swift */; };
 		5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD2521834D8B00835B2C /* BaseViewController.swift */; };
+		5A75B04823CF46BF00DC8EBB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A75B04723CF46BF00DC8EBB /* Launch Screen.storyboard */; };
+		5A75B06E23CF4B6800DC8EBB /* HyBidMoPubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */; };
+		5A75B06F23CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */; };
+		5A75B07023CF4B6800DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */; };
+		5A75B07123CF4B6800DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */; };
+		5A75B07223CF4B6800DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */; };
+		5A75B07323CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */; };
+		5A75B07423CF4B6800DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */; };
+		5A75B07523CF4B6800DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */; };
+		5A75B07623CF4B6800DC8EBB /* HyBidMoPubInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */; };
+		5A75B07723CF4B6800DC8EBB /* HyBidMoPubMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */; };
+		5A75B07823CF4B6800DC8EBB /* HyBidMoPubBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */; };
+		5A75B07923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */; };
+		5A75B07A23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */; };
+		5A75B07B23CF4B6800DC8EBB /* HyBidDFPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */; };
+		5A75B07C23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */; };
+		5A75B07D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */; };
+		5A75B07F23CF515E00DC8EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A75B07E23CF515E00DC8EBB /* GoogleService-Info.plist */; };
 		5AC838F02183137900F0B3C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC838EF2183137900F0B3C3 /* AppDelegate.swift */; };
 		5AC838F22183137900F0B3C3 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC838F12183137900F0B3C3 /* MoPubBannerViewController.swift */; };
 		5AC838F52183137900F0B3C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC838F32183137900F0B3C3 /* Main.storyboard */; };
@@ -65,7 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5A5370C022672D3C000AC540 /* HyBid.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,70 +60,45 @@
 
 /* Begin PBXFileReference section */
 		3F833AF597C24F3015696ED0 /* Pods-AdTag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdTag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdTag/Pods-AdTag.debug.xcconfig"; sourceTree = "<group>"; };
-		5A5370BE22672D3C000AC540 /* HyBid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyBid.framework; sourceTree = "<group>"; };
-		5A53710522672EFE000AC540 /* PNLiteMoPubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubUtils.h; sourceTree = "<group>"; };
-		5A53710622672EFE000AC540 /* HyBidMoPubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubUtils.m; sourceTree = "<group>"; };
-		5A53710822672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMediationNativeAdAdapter.m; sourceTree = "<group>"; };
-		5A53710922672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMediationNativeAdCustomEvent.m; sourceTree = "<group>"; };
-		5A53710A22672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMediationBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53710B22672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53710C22672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdAdapter.m; sourceTree = "<group>"; };
-		5A53710D22672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdCustomEvent.h; sourceTree = "<group>"; };
-		5A53710E22672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A53710F22672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53711022672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53711122672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53711222672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMediationMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53711322672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMediationNativeAdAdapter.h; sourceTree = "<group>"; };
-		5A53711422672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53711522672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMediationBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53711622672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMediationNativeAdCustomEvent.h; sourceTree = "<group>"; };
-		5A53711722672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53711822672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A53711922672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdCustomEvent.m; sourceTree = "<group>"; };
-		5A53711A22672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdAdapter.h; sourceTree = "<group>"; };
-		5A53711B22672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMediationMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53711C22672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53711D22672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53711F22672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A53712022672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53712122672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53712222672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53712322672EFE000AC540 /* HyBidMoPubMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53712422672EFE000AC540 /* HyBidMoPubBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53712522672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53712622672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53712722672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteMoPubMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53712822672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A53712922672EFE000AC540 /* HyBidMoPubMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53712A22672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53712B22672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53712C22672EFE000AC540 /* HyBidMoPubBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53712D22672EFE000AC540 /* HyBidMoPubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubUtils.h; sourceTree = "<group>"; };
-		5A53712E22672EFE000AC540 /* PNLiteMoPubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteMoPubUtils.m; sourceTree = "<group>"; };
-		5A53713022672EFE000AC540 /* HyBidDFPBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53713122672EFE000AC540 /* PNLiteDFPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteDFPUtils.m; sourceTree = "<group>"; };
-		5A53713222672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A53713322672EFE000AC540 /* HyBidDFPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPUtils.m; sourceTree = "<group>"; };
-		5A53713422672EFE000AC540 /* HyBidDFPMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53713522672EFE000AC540 /* PNLiteDFPMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteDFPMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53713622672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53713722672EFE000AC540 /* PNLiteDFPBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteDFPBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A53713822672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteDFPInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A53713922672EFE000AC540 /* PNLiteDFPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteDFPUtils.h; sourceTree = "<group>"; };
-		5A53713A22672EFE000AC540 /* HyBidDFPBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53713B22672EFE000AC540 /* HyBidDFPMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A53713C22672EFE000AC540 /* HyBidDFPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPUtils.h; sourceTree = "<group>"; };
-		5A53713D22672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A53713E22672EFE000AC540 /* PNLiteDFPMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteDFPMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A53713F22672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLiteDFPInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53714022672EFE000AC540 /* PNLiteDFPBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLiteDFPBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A53714122672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A53714222672EFE000AC540 /* HyBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HyBid-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A5CCD1C2183427E00835B2C /* MoPubMRectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubMRectViewController.swift; sourceTree = "<group>"; };
 		5A5CCD1F218344FD00835B2C /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
 		5A5CCD2121834B0000835B2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5A5CCD2521834D8B00835B2C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5A75B04723CF46BF00DC8EBB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubUtils.m; sourceTree = "<group>"; };
+		5A75B04C23CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdAdapter.m; sourceTree = "<group>"; };
+		5A75B04E23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdCustomEvent.h; sourceTree = "<group>"; };
+		5A75B04F23CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05123CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05523CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdAdapter.h; sourceTree = "<group>"; };
+		5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05723CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A75B05D23CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A75B05E23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A75B05F23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06023CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06123CF4B6600DC8EBB /* HyBidMoPubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubUtils.h; sourceTree = "<group>"; };
+		5A75B06223CF4B6700DC8EBB /* HyBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HyBid-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPUtils.m; sourceTree = "<group>"; };
+		5A75B06723CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06823CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A75B06B23CF4B6800DC8EBB /* HyBidDFPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPUtils.h; sourceTree = "<group>"; };
+		5A75B06C23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A75B07E23CF515E00DC8EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AC838EC2183137900F0B3C3 /* AdTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC838EF2183137900F0B3C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC838F12183137900F0B3C3 /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA62EB0DFB5BA9E99D2C385 /* Pods_AdTag.framework in Frameworks */,
-				5A5370BF22672D3C000AC540 /* HyBid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,99 +133,11 @@
 		5A53710322672EFE000AC540 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				5A53710422672EFE000AC540 /* MoPubAdapter */,
-				5A53712F22672EFE000AC540 /* DFPAdapter */,
-				5A53714222672EFE000AC540 /* HyBid-Bridging-Header.h */,
+				5A75B06223CF4B6700DC8EBB /* HyBid-Bridging-Header.h */,
+				5A75B06323CF4B6800DC8EBB /* DFPAdapter */,
+				5A75B04923CF4B6600DC8EBB /* MoPubAdapter */,
 			);
 			path = Adapters;
-			sourceTree = "<group>";
-		};
-		5A53710422672EFE000AC540 /* MoPubAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				5A53710522672EFE000AC540 /* PNLiteMoPubUtils.h */,
-				5A53710622672EFE000AC540 /* HyBidMoPubUtils.m */,
-				5A53710722672EFE000AC540 /* Mediation */,
-				5A53711E22672EFE000AC540 /* HyBid */,
-				5A53712D22672EFE000AC540 /* HyBidMoPubUtils.h */,
-				5A53712E22672EFE000AC540 /* PNLiteMoPubUtils.m */,
-			);
-			path = MoPubAdapter;
-			sourceTree = "<group>";
-		};
-		5A53710722672EFE000AC540 /* Mediation */ = {
-			isa = PBXGroup;
-			children = (
-				5A53710822672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.m */,
-				5A53710922672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.m */,
-				5A53710A22672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.h */,
-				5A53710B22672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.h */,
-				5A53710C22672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.m */,
-				5A53710D22672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.h */,
-				5A53710E22672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.h */,
-				5A53710F22672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.h */,
-				5A53711022672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.m */,
-				5A53711122672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.h */,
-				5A53711222672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.h */,
-				5A53711322672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.h */,
-				5A53711422672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.m */,
-				5A53711522672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.m */,
-				5A53711622672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.h */,
-				5A53711722672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.m */,
-				5A53711822672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.m */,
-				5A53711922672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.m */,
-				5A53711A22672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.h */,
-				5A53711B22672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.m */,
-				5A53711C22672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.m */,
-				5A53711D22672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.h */,
-			);
-			path = Mediation;
-			sourceTree = "<group>";
-		};
-		5A53711E22672EFE000AC540 /* HyBid */ = {
-			isa = PBXGroup;
-			children = (
-				5A53711F22672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.m */,
-				5A53712022672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.m */,
-				5A53712122672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.m */,
-				5A53712222672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.m */,
-				5A53712322672EFE000AC540 /* HyBidMoPubMRectCustomEvent.m */,
-				5A53712422672EFE000AC540 /* HyBidMoPubBannerCustomEvent.m */,
-				5A53712522672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.h */,
-				5A53712622672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.h */,
-				5A53712722672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.h */,
-				5A53712822672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.h */,
-				5A53712922672EFE000AC540 /* HyBidMoPubMRectCustomEvent.h */,
-				5A53712A22672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.h */,
-				5A53712B22672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.m */,
-				5A53712C22672EFE000AC540 /* HyBidMoPubBannerCustomEvent.h */,
-			);
-			path = HyBid;
-			sourceTree = "<group>";
-		};
-		5A53712F22672EFE000AC540 /* DFPAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				5A53713022672EFE000AC540 /* HyBidDFPBannerCustomEvent.m */,
-				5A53713122672EFE000AC540 /* PNLiteDFPUtils.m */,
-				5A53713222672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.m */,
-				5A53713322672EFE000AC540 /* HyBidDFPUtils.m */,
-				5A53713422672EFE000AC540 /* HyBidDFPMRectCustomEvent.h */,
-				5A53713522672EFE000AC540 /* PNLiteDFPMRectCustomEvent.m */,
-				5A53713622672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.h */,
-				5A53713722672EFE000AC540 /* PNLiteDFPBannerCustomEvent.m */,
-				5A53713822672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.h */,
-				5A53713922672EFE000AC540 /* PNLiteDFPUtils.h */,
-				5A53713A22672EFE000AC540 /* HyBidDFPBannerCustomEvent.h */,
-				5A53713B22672EFE000AC540 /* HyBidDFPMRectCustomEvent.m */,
-				5A53713C22672EFE000AC540 /* HyBidDFPUtils.h */,
-				5A53713D22672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.h */,
-				5A53713E22672EFE000AC540 /* PNLiteDFPMRectCustomEvent.h */,
-				5A53713F22672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.m */,
-				5A53714022672EFE000AC540 /* PNLiteDFPBannerCustomEvent.h */,
-				5A53714122672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.m */,
-			);
-			path = DFPAdapter;
 			sourceTree = "<group>";
 		};
 		5A5CCD1E2183445F00835B2C /* MoPub */ = {
@@ -279,10 +151,71 @@
 			path = MoPub;
 			sourceTree = "<group>";
 		};
+		5A75B04923CF4B6600DC8EBB /* MoPubAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */,
+				5A75B04B23CF4B6600DC8EBB /* Mediation */,
+				5A75B05823CF4B6600DC8EBB /* HyBid */,
+				5A75B06123CF4B6600DC8EBB /* HyBidMoPubUtils.h */,
+			);
+			path = MoPubAdapter;
+			sourceTree = "<group>";
+		};
+		5A75B04B23CF4B6600DC8EBB /* Mediation */ = {
+			isa = PBXGroup;
+			children = (
+				5A75B04C23CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.h */,
+				5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */,
+				5A75B04E23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.h */,
+				5A75B04F23CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.h */,
+				5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */,
+				5A75B05123CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.h */,
+				5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */,
+				5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */,
+				5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */,
+				5A75B05523CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.h */,
+				5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */,
+				5A75B05723CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.h */,
+			);
+			path = Mediation;
+			sourceTree = "<group>";
+		};
+		5A75B05823CF4B6600DC8EBB /* HyBid */ = {
+			isa = PBXGroup;
+			children = (
+				5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */,
+				5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */,
+				5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */,
+				5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */,
+				5A75B05D23CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.h */,
+				5A75B05E23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.h */,
+				5A75B05F23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.h */,
+				5A75B06023CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.h */,
+			);
+			path = HyBid;
+			sourceTree = "<group>";
+		};
+		5A75B06323CF4B6800DC8EBB /* DFPAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */,
+				5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */,
+				5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */,
+				5A75B06723CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.h */,
+				5A75B06823CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.h */,
+				5A75B06923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.h */,
+				5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */,
+				5A75B06B23CF4B6800DC8EBB /* HyBidDFPUtils.h */,
+				5A75B06C23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.h */,
+				5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */,
+			);
+			path = DFPAdapter;
+			sourceTree = "<group>";
+		};
 		5AC838E32183137900F0B3C3 = {
 			isa = PBXGroup;
 			children = (
-				5A5370BE22672D3C000AC540 /* HyBid.framework */,
 				5AC838EE2183137900F0B3C3 /* AdTag */,
 				5AC838ED2183137900F0B3C3 /* Products */,
 				F6C86A93B334A3DB5A0BFE84 /* Pods */,
@@ -312,6 +245,7 @@
 				5AC83901218315D400F0B3C3 /* Storyboards */,
 				5AC838F62183137B00F0B3C3 /* Assets.xcassets */,
 				5AC838FB2183137C00F0B3C3 /* Info.plist */,
+				5A75B07E23CF515E00DC8EBB /* GoogleService-Info.plist */,
 			);
 			path = AdTag;
 			sourceTree = "<group>";
@@ -322,6 +256,7 @@
 				5AC838F32183137900F0B3C3 /* Main.storyboard */,
 				5AC83902218315F100F0B3C3 /* MoPub.storyboard */,
 				5AC839042183167300F0B3C3 /* DFP.storyboard */,
+				5A75B04723CF46BF00DC8EBB /* Launch Screen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -366,10 +301,7 @@
 				5AC838E92183137900F0B3C3 /* Frameworks */,
 				5AC838EA2183137900F0B3C3 /* Resources */,
 				187DE6CADF54A8767FC3C131 /* [CP] Embed Pods Frameworks */,
-				E7008BA721871B84001C8D1E /* ShellScript */,
-				60C3EA897B2F8BD8ED7B9F0E /* [CP] Copy Pods Resources */,
 				5A5370C122672D3C000AC540 /* Embed Frameworks */,
-				5A5370C222672D54000AC540 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -421,7 +353,9 @@
 				5AC838F72183137B00F0B3C3 /* Assets.xcassets in Resources */,
 				5AC83903218315F100F0B3C3 /* MoPub.storyboard in Resources */,
 				5AC839052183167300F0B3C3 /* DFP.storyboard in Resources */,
+				5A75B04823CF46BF00DC8EBB /* Launch Screen.storyboard in Resources */,
 				5AC838F52183137900F0B3C3 /* Main.storyboard in Resources */,
+				5A75B07F23CF515E00DC8EBB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,53 +367,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A5370C222672D54000AC540 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
 			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\nfind \"$APP_PATH\" -name 'HyBid.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
-		};
-		60C3EA897B2F8BD8ED7B9F0E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdTag/Pods-AdTag-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD4490A26A7F9CDAB4ABDB08 /* [CP] Check Pods Manifest.lock */ = {
@@ -500,20 +397,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7008BA721871B84001C8D1E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" f61a9f30a8156746aae4b1cc84856189a3bf8575 537c5f9f76b46d7a1d200e942627095296d712b141ae62d982d273c1ef1bd9ee\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -521,47 +404,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A53714522672EFE000AC540 /* PNLiteMoPubMediationNativeAdCustomEvent.m in Sources */,
-				5A53714722672EFE000AC540 /* HyBidMoPubMediationBannerCustomEvent.m in Sources */,
+				5A75B07A23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m in Sources */,
 				5AC838F22183137900F0B3C3 /* MoPubBannerViewController.swift in Sources */,
-				5A53715122672EFE000AC540 /* PNLiteMoPubBannerCustomEvent.m in Sources */,
+				5A75B07023CF4B6800DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m in Sources */,
 				5A5CCD20218344FD00835B2C /* MoPubInterstitialViewController.swift in Sources */,
-				5A53714922672EFE000AC540 /* PNLiteMoPubMediationBannerCustomEvent.m in Sources */,
-				5A53715322672EFE000AC540 /* HyBidMoPubMRectCustomEvent.m in Sources */,
-				5A53715E22672EFE000AC540 /* PNLiteDFPInterstitialCustomEvent.m in Sources */,
-				5A53715422672EFE000AC540 /* HyBidMoPubBannerCustomEvent.m in Sources */,
 				5AC839072183203300F0B3C3 /* ScannerViewController.swift in Sources */,
-				5A53714A22672EFE000AC540 /* PNLiteMoPubMediationInterstitialCustomEvent.m in Sources */,
 				5A5CCD1D2183427E00835B2C /* MoPubMRectViewController.swift in Sources */,
-				5A53715222672EFE000AC540 /* HyBidMoPubInterstitialCustomEvent.m in Sources */,
-				5A53715922672EFE000AC540 /* HyBidDFPLeaderboardCustomEvent.m in Sources */,
-				5A53715022672EFE000AC540 /* PNLiteMoPubMRectCustomEvent.m in Sources */,
-				5A53715522672EFE000AC540 /* PNLiteMoPubInterstitialCustomEvent.m in Sources */,
-				5A53714C22672EFE000AC540 /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */,
-				5A53714322672EFE000AC540 /* HyBidMoPubUtils.m in Sources */,
-				5A53715D22672EFE000AC540 /* HyBidDFPMRectCustomEvent.m in Sources */,
-				5A53715A22672EFE000AC540 /* HyBidDFPUtils.m in Sources */,
-				5A53714D22672EFE000AC540 /* PNLiteMoPubMediationMRectCustomEvent.m in Sources */,
-				5A53714B22672EFE000AC540 /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */,
-				5A53714622672EFE000AC540 /* HyBidMoPubMediationNativeAdAdapter.m in Sources */,
-				5A53715822672EFE000AC540 /* PNLiteDFPUtils.m in Sources */,
-				5A53715722672EFE000AC540 /* HyBidDFPBannerCustomEvent.m in Sources */,
+				5A75B06E23CF4B6800DC8EBB /* HyBidMoPubUtils.m in Sources */,
+				5A75B07523CF4B6800DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m in Sources */,
 				5AF61E38229D38240071DB58 /* DFPLeaderboardViewController.swift in Sources */,
+				5A75B07D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m in Sources */,
+				5A75B06F23CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m in Sources */,
+				5A75B07923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m in Sources */,
+				5A75B07C23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m in Sources */,
 				5AC838F02183137900F0B3C3 /* AppDelegate.swift in Sources */,
+				5A75B07323CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */,
 				5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */,
-				5A53714E22672EFE000AC540 /* HyBidMoPubMediationMRectCustomEvent.m in Sources */,
 				5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */,
-				5A53715F22672EFE000AC540 /* HyBidDFPInterstitialCustomEvent.m in Sources */,
 				5AF61E36229D2FB70071DB58 /* MoPubLeaderboardViewController.swift in Sources */,
+				5A75B07823CF4B6800DC8EBB /* HyBidMoPubBannerCustomEvent.m in Sources */,
 				5A5CCD2221834B0000835B2C /* Constants.swift in Sources */,
-				5A53714F22672EFE000AC540 /* HyBidMoPubLeaderboardCustomEvent.m in Sources */,
-				5A53715C22672EFE000AC540 /* PNLiteDFPBannerCustomEvent.m in Sources */,
+				5A75B07223CF4B6800DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */,
 				5ACADD942188C65C00563C39 /* UIApplication+TopViewController.swift in Sources */,
-				5A53715622672EFE000AC540 /* PNLiteMoPubUtils.m in Sources */,
 				5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */,
-				5A53715B22672EFE000AC540 /* PNLiteDFPMRectCustomEvent.m in Sources */,
-				5A53714422672EFE000AC540 /* PNLiteMoPubMediationNativeAdAdapter.m in Sources */,
-				5A53714822672EFE000AC540 /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */,
+				5A75B07623CF4B6800DC8EBB /* HyBidMoPubInterstitialCustomEvent.m in Sources */,
+				5A75B07723CF4B6800DC8EBB /* HyBidMoPubMRectCustomEvent.m in Sources */,
+				5A75B07B23CF4B6800DC8EBB /* HyBidDFPUtils.m in Sources */,
+				5A75B07423CF4B6800DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m in Sources */,
+				5A75B07123CF4B6800DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */,
 				5ACADD922188A52E00563C39 /* DFPInterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,7 +571,7 @@
 			baseConfigurationReference = 3F833AF597C24F3015696ED0 /* Pods-AdTag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL55SBB4FM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -714,7 +584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.pubnative.AdTag.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pubnative.AdTag.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdTag/Adapters/HyBid-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -727,7 +597,7 @@
 			baseConfigurationReference = D871E58BB683FE226CBF27F1 /* Pods-AdTag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TL55SBB4FM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -740,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.pubnative.AdTag.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pubnative.AdTag.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdTag/Adapters/HyBid-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

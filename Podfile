@@ -7,7 +7,7 @@ target 'AdTag' do
 
   # Pods for AdTag
   pod 'mopub-ios-sdk', '~> 5.0'
-  pod 'Fabric'
-  pod 'Crashlytics'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'HyBid'
+  pod 'Firebase/Analytics'
 end

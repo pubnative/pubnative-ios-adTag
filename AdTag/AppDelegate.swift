@@ -22,9 +22,8 @@
 
 import UIKit
 import MoPub
-import Fabric
-import Crashlytics
 import HyBid
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Fabric.with([Crashlytics.self])
+        
+        FirebaseApp.configure()
         let moPubConfig = MPMoPubConfiguration (adUnitIdForAppInitialization: MOPUB_BANNER_AD_UNIT_ID)
         MoPub.sharedInstance().initializeSdk(with: moPubConfig, completion: nil)
         HyBid.initWithAppToken("543027b8e954474cbcd9a98481622a3b") { (success) in
