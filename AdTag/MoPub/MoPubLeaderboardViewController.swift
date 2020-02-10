@@ -35,6 +35,7 @@ class MoPubLeaderboardViewController: BaseViewController {
         leaderboardAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubLeaderboardAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubLeaderboardAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubLeaderboardAdUnitID") as? String : MOPUB_LEADERBOARD_AD_UNIT_ID
         leaderboardAdUnitIDTextField.inputAccessoryView = toolBar
         moPubLeaderboard = MPAdView(adUnitId: leaderboardAdUnitIDTextField.text)
+        moPubLeaderboard.frame = CGRect(x: 0, y: 0, width: self.leaderboardAdContainer.frame.size.width, height: self.leaderboardAdContainer.frame.size.height)
         moPubLeaderboard.delegate = self
         moPubLeaderboard.stopAutomaticallyRefreshingContents()
         leaderboardAdContainer.addSubview(moPubLeaderboard)

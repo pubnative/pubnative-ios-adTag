@@ -36,6 +36,7 @@ class MoPubBannerViewController: BaseViewController {
         bannerAdUnitIDTextField.text = (UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") != nil && UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String != "") ? UserDefaults.standard.object(forKey: "MoPubBannerAdUnitID") as? String : MOPUB_BANNER_AD_UNIT_ID
         bannerAdUnitIDTextField.inputAccessoryView = toolBar
         moPubBanner = MPAdView(adUnitId: bannerAdUnitIDTextField.text)
+        moPubBanner.frame = CGRect(x: 0, y: 0, width: self.bannerAdContainer.frame.size.width, height: self.bannerAdContainer.frame.size.height)
         moPubBanner.delegate = self
         moPubBanner.stopAutomaticallyRefreshingContents()
         bannerAdContainer.addSubview(moPubBanner)
