@@ -1,7 +1,7 @@
 //
 //  MPConsentChangedReason.h
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -16,6 +16,7 @@ extern NSString * const kConsentedChangedReasonPublisherDenied;
 extern NSString * const kConsentedChangedReasonDoNotTrackEnabled;
 extern NSString * const kConsentedChangedReasonDoNotTrackDisabled;
 extern NSString * const kConsentedChangedReasonDoNotTrackDisabledNeedConsent;
+extern NSString * const kConsentedChangedReasonDoNotTrackDisabledPreserveConsent;
 extern NSString * const kConsentedChangedReasonIfaChanged;
 extern NSString * const kConsentedChangedReasonPrivacyPolicyChange;
 extern NSString * const kConsentedChangedReasonVendorListChange;

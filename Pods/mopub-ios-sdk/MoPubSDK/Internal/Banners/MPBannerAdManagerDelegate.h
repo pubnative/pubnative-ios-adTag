@@ -1,7 +1,7 @@
 //
 //  MPBannerAdManagerDelegate.h
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -23,7 +23,7 @@
 - (UIViewController *)viewControllerForPresentingModalView;
 
 /**
- * The latest ad targeting information for ad refresh and other scenarios.
+ The latest ad targeting information for ad refresh and other scenarios.
  */
 - (MPAdTargeting *)adTargeting;
 

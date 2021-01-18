@@ -1,7 +1,7 @@
 //
 //  MPTableViewAdPlacer.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -82,11 +82,11 @@ static NSString * const kTableViewAdPlacerReuseIdentifier = @"MPTableViewAdPlace
 - (void)loadAdsForAdUnitID:(NSString *)adUnitID targeting:(MPNativeAdRequestTargeting *)targeting
 {
     if (!self.insertionTimer) {
-        self.insertionTimer = [MPTimer timerWithTimeInterval:kUpdateVisibleCellsInterval
-                                                      target:self
-                                                    selector:@selector(updateVisibleCells)
-                                                     repeats:YES
-                                                 runLoopMode:NSRunLoopCommonModes];
+        __typeof__(self) __weak weakSelf = self;
+        self.insertionTimer = [MPTimer timerWithTimeInterval:kUpdateVisibleCellsInterval repeats:YES runLoopMode:NSRunLoopCommonModes block:^(MPTimer * _Nonnull timer) {
+            __typeof__(self) strongSelf = weakSelf;
+            [strongSelf updateVisibleCells];
+        }];
         [self.insertionTimer scheduleNow];
     }
     [self.streamAdPlacer loadAdsForAdUnitID:adUnitID targeting:targeting];
@@ -144,7 +144,7 @@ static NSString * const kTableViewAdPlacerReuseIdentifier = @"MPTableViewAdPlace
     BOOL originalAnimationsEnabled = [UIView areAnimationsEnabled];
     [UIView setAnimationsEnabled:NO];
     [self.tableView mp_beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView deleteRowsAtIndexPaths:validIndexPaths withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView mp_endUpdates];
     [UIView setAnimationsEnabled:originalAnimationsEnabled];
 }
@@ -601,7 +601,7 @@ static char kAdPlacerKey;
     [self reloadData];
 }
 
-- (CGRect)mp_rectForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGRect)mp_rectForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath
 {
     MPTableViewAdPlacer *adPlacer = [self mp_adPlacer];
     NSIndexPath *adjustedIndexPath = indexPath;
@@ -867,7 +867,7 @@ static char kAdPlacerKey;
     }
 }
 
-- (void)mp_deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated
+- (void)mp_deselectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath animated:(BOOL)animated
 {
     MPTableViewAdPlacer *adPlacer = [self mp_adPlacer];
     NSIndexPath *adjustedIndexPath = indexPath;
@@ -881,7 +881,7 @@ static char kAdPlacerKey;
     }
 }
 
-- (id)mp_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath
+- (id)mp_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath * _Nonnull)indexPath
 {
     MPTableViewAdPlacer *adPlacer = [self mp_adPlacer];
     NSIndexPath *adjustedIndexPath = indexPath;

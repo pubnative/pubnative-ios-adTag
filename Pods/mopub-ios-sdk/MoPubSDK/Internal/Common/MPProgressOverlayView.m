@@ -1,7 +1,7 @@
 //
 //  MPProgressOverlayView.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MPProgressOverlayView.h"
 #import "MPGlobal.h"
+#import "UIImage+MPAdditions.h"
 
 // Constants
 #define kProgressOverlayAlpha               0.6f
@@ -20,8 +21,6 @@
 #define kProgressOverlayShadowOpacity       0.8f
 #define kProgressOverlayShadowRadius        8.0f
 #define kProgressOverlaySide                60.0f
-
-static NSString * const kCloseButtonXImageName = @"MPCloseButtonX.png";
 
 @interface MPProgressOverlayView ()
 @property (nonatomic, strong) UIActivityIndicatorView * activityIndicator;
@@ -53,10 +52,7 @@ static NSString * const kCloseButtonXImageName = @"MPCloseButtonX.png";
             button.hidden = YES;    // Set to hidden to participate in autoresizing, but not capture user input
 
             [button addTarget:self action:@selector(closeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-
-            UIImage * image = [UIImage imageNamed:MPResourcePathForResource(kCloseButtonXImageName)];
-            [button setImage:image forState:UIControlStateNormal];
-
+            [button setImage:[UIImage imageForAsset:kMPImageAssetCloseButton] forState:UIControlStateNormal];
             [button sizeToFit];
             button;
         });

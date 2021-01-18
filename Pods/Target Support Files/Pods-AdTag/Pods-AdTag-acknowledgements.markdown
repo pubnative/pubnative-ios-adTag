@@ -639,7 +639,7 @@ Copyright 2019 Google
 
 MIT License
 
-Copyright (c) 2018 PubNative GmbH
+Copyright (c) 2020 PubNative GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

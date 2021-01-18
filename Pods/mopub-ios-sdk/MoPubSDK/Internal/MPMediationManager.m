@@ -1,7 +1,7 @@
 //
 //  MPMediationManager.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -290,8 +290,11 @@ static NSString const * kTokenKey             = @"token";
     // Generate the JSON dictionary for all participating bidders.
     NSMutableDictionary * tokens = [NSMutableDictionary dictionary];
     [self.adapters enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull networkName, id<MPAdapterConfiguration>  _Nonnull adapter, BOOL * _Nonnull stop) {
-        if (adapter.biddingToken != nil) {
-            tokens[networkName] = @{ kTokenKey: adapter.biddingToken };
+        // Extract the value of `biddingToken` only once from the adapter since some mediated
+        // networks count the number of tokens they give out for analytics purposes.
+        NSString *token = adapter.biddingToken;
+        if (token != nil) {
+            tokens[networkName] = @{ kTokenKey: token };
         }
     }];
 

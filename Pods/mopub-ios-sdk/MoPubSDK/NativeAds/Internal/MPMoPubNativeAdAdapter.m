@@ -1,7 +1,7 @@
 //
 //  MPMoPubNativeAdAdapter.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -22,7 +22,7 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
 @interface MPMoPubNativeAdAdapter () <MPAdDestinationDisplayAgentDelegate, MPAdImpressionTimerDelegate>
 
 @property (nonatomic, strong) MPAdImpressionTimer *impressionTimer;
-@property (nonatomic, strong) MPAdDestinationDisplayAgent *destinationDisplayAgent;
+@property (nonatomic, strong) id<MPAdDestinationDisplayAgent> destinationDisplayAgent;
 
 @end
 
@@ -38,9 +38,9 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
 
         // Let's make sure the data types of all the provided native ad properties are strings before creating the adapter
 
-        NSArray *keysToCheck = @[kAdIconImageKey, kAdMainImageKey, kAdTextKey, kAdTitleKey, kAdCTATextKey, kAdPrivacyIconImageUrlKey, kAdPrivacyIconClickUrlKey];
+        NSArray *stringKeysToCheck = @[kAdIconImageKey, kAdMainImageKey, kAdTextKey, kAdSponsoredByCompanyKey, kAdTitleKey, kAdCTATextKey, kAdPrivacyIconImageUrlKey, kAdPrivacyIconClickUrlKey];
 
-        for (NSString *key in keysToCheck) {
+        for (NSString *key in stringKeysToCheck) {
             id value = properties[key];
             if (value != nil && ![value isKindOfClass:[NSString class]]) {
                 return nil;
@@ -57,13 +57,6 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
         }
 
         BOOL valid = YES;
-        NSArray *impressionTrackers = [properties objectForKey:kImpressionTrackerURLsKey];
-        if (![impressionTrackers isKindOfClass:[NSArray class]] || [impressionTrackers count] < 1) {
-            valid = NO;
-        } else {
-            _impressionTrackerURLs = MPConvertStringArrayToURLArray(impressionTrackers);
-        }
-
         NSObject *clickTracker = [properties objectForKey:kClickTrackerURLKey];
 
         // The click tracker could either be a single URL or an array of URLS.
@@ -80,7 +73,12 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
             valid = NO;
         }
 
-        _defaultActionURL = [NSURL URLWithString:[properties objectForKey:kDefaultActionURLKey]];
+        // Validate that the clickthrough URL is a string before attempting to parse into a URL
+        id clickthroughUrl = [properties objectForKey:kDefaultActionURLKey];
+        if ([clickthroughUrl isKindOfClass:[NSString class]]) {
+            NSString *clickthroughUrlString = (NSString *)clickthroughUrl;
+            _defaultActionURL = [NSURL URLWithString:clickthroughUrlString];
+        }
 
         // Grab the config, figure out requiredSecondsForImpression and requiredViewVisibilityPercentage,
         // and set up the timer.
@@ -96,7 +94,7 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
         }
         _impressionTimer.delegate = self;
 
-        [properties removeObjectsForKeys:@[kImpressionTrackerURLsKey, kClickTrackerURLKey, kDefaultActionURLKey, kNativeAdConfigKey]];
+        [properties removeObjectsForKeys:@[kClickTrackerURLKey, kDefaultActionURLKey, kNativeAdConfigKey]];
         _properties = properties;
 
         if (!valid) {
@@ -159,7 +157,7 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
         return;
     }
 
-    [self.destinationDisplayAgent displayDestinationForURL:URL];
+    [self.destinationDisplayAgent displayDestinationForURL:URL skAdNetworkClickthroughData:self.adConfiguration.skAdNetworkClickthroughData];
 }
 
 #pragma mark - Privacy Icon
@@ -168,11 +166,18 @@ static const CGFloat kMoPubRequiredViewVisibilityPercentage = 0.5;
 {
     NSURL *defaultPrivacyClickUrl = [NSURL URLWithString:kPrivacyIconTapDestinationURL];
     NSURL *overridePrivacyClickUrl = ({
-        NSString *url = self.properties[kAdPrivacyIconClickUrlKey];
+        // Make sure that `kAdPrivacyIconClickUrlKey` contains a string at least.
+        id privacyIconClickUrl = self.properties[kAdPrivacyIconClickUrlKey];
+        NSString *url = nil;
+        if ([privacyIconClickUrl isKindOfClass:[NSString class]]) {
+            url = (NSString *)privacyIconClickUrl;
+        }
+
         (url != nil ? [NSURL URLWithString:url] : nil);
     });
 
-    [self.destinationDisplayAgent displayDestinationForURL:(overridePrivacyClickUrl != nil ? overridePrivacyClickUrl : defaultPrivacyClickUrl)];
+    // Since this is the privacy icon, send @c nil for skAdNetworkClickthroughData
+    [self.destinationDisplayAgent displayDestinationForURL:(overridePrivacyClickUrl != nil ? overridePrivacyClickUrl : defaultPrivacyClickUrl) skAdNetworkClickthroughData:nil];
 }
 
 #pragma mark - <MPAdImpressionTimerDelegate>

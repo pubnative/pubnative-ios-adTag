@@ -1,17 +1,14 @@
 //
 //  MPHTMLBannerCustomEvent.h
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
-#import "MPBannerCustomEvent.h"
+#import "MPInlineAdAdapter.h"
 #import "MPAdWebViewAgent.h"
-#import "MPPrivateBannerCustomEventDelegate.h"
 
-@interface MPHTMLBannerCustomEvent : MPBannerCustomEvent <MPAdWebViewAgentDelegate>
-
-@property (nonatomic, weak) id<MPPrivateBannerCustomEventDelegate> delegate;
+@interface MPHTMLBannerCustomEvent : MPInlineAdAdapter <MPAdWebViewAgentDelegate>
 
 @end

@@ -1,7 +1,7 @@
 //
 //  MoPub.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -10,19 +10,18 @@
 #import "MPAdServerURLBuilder.h"
 #import "MPConsentManager.h"
 #import "MPConstants.h"
-#import "MPCoreInstanceProvider.h"
-#import "MPGeolocationProvider.h"
+#import "MPDeviceInformation.h"
 #import "MPLogging.h"
 #import "MPMediationManager.h"
 #import "MPRewardedVideo.h"
 #import "MPIdentityProvider.h"
 #import "MPWebView.h"
 #import "MOPUBExperimentProvider.h"
-#import "MPViewabilityTracker.h"
 #import "MPAdConversionTracker.h"
 #import "MPConsentManager.h"
 #import "MPConsentChangedNotification.h"
 #import "MPSessionTracker.h"
+#import "MPViewabilityManager.h"
 
 static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-ios-sdk.initialization.publisher.entered.ad.unit.id";
 
@@ -68,17 +67,12 @@ static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-
 
 - (void)setLocationUpdatesEnabled:(BOOL)locationUpdatesEnabled
 {
-    [[[MPCoreInstanceProvider sharedProvider] sharedMPGeolocationProvider] setLocationUpdatesEnabled:locationUpdatesEnabled];
+    MPDeviceInformation.enableLocation = locationUpdatesEnabled;
 }
 
 - (BOOL)locationUpdatesEnabled
 {
-    return [[MPCoreInstanceProvider sharedProvider] sharedMPGeolocationProvider].locationUpdatesEnabled;
-}
-
-- (void)setFrequencyCappingIdUsageEnabled:(BOOL)frequencyCappingIdUsageEnabled
-{
-    [MPIdentityProvider setFrequencyCappingIdUsageEnabled:frequencyCappingIdUsageEnabled];
+    return MPDeviceInformation.enableLocation;
 }
 
 - (void)setLogLevel:(MPBLogLevel)level
@@ -96,11 +90,6 @@ static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-
     self.experimentProvider.displayAgentType = displayAgentType;
 }
 
-- (BOOL)frequencyCappingIdUsageEnabled
-{
-    return [MPIdentityProvider frequencyCappingIdUsageEnabled];
-}
-
 // Keep -version and -bundleIdentifier methods around for Fabric backwards compatibility.
 - (NSString *)version
 {
@@ -115,14 +104,14 @@ static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-
 - (void)initializeSdkWithConfiguration:(MPMoPubConfiguration *)configuration
                             completion:(void(^_Nullable)(void))completionBlock
 {
-    if (@available(iOS 9, *)) {
+    if (@available(iOS 10, *)) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             [self setSdkWithConfiguration:configuration completion:completionBlock];
         });
     } else {
-        MPLogEvent([MPLogEvent error:[NSError sdkMinimumOsVersion:9] message:nil]);
-        NSAssert(false, @"MoPub SDK requires iOS 9 and up");
+        MPLogEvent([MPLogEvent error:[NSError sdkMinimumOsVersion:10] message:nil]);
+        NSAssert(false, @"MoPub SDK requires iOS 10 and up");
     }
 }
 
@@ -157,6 +146,12 @@ static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-
 
         // Configure session tracker
         [MPSessionTracker initializeNotificationObservers];
+
+        // Configure Viewability
+        dispatch_group_enter(initializationGroup);
+        [MPViewabilityManager.sharedManager initializeWithCompletion:^(BOOL isInitialized) {
+            dispatch_group_leave(initializationGroup);
+        }];
 
         // Configure mediated network SDKs
         __block NSArray<id<MPAdapterConfiguration>> * initializedNetworks = nil;
@@ -201,7 +196,12 @@ static NSString * const kPublisherEnteredAdUnitIdStorageKey = @"com.mopub.mopub-
 
 - (void)disableViewability:(MPViewabilityOption)vendors
 {
-    [MPViewabilityTracker disableViewability:vendors];
+    [MPViewabilityManager.sharedManager disableViewability];
+}
+
+- (void)disableViewability
+{
+    [MPViewabilityManager.sharedManager disableViewability];
 }
 
 - (void)setEngineInformation:(MPEngineInfo *)info

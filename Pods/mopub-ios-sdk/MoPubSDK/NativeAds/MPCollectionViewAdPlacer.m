@@ -1,7 +1,7 @@
 //
 //  MPCollectionViewAdPlacer.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -55,11 +55,11 @@ static NSString * const kCollectionViewAdPlacerReuseIdentifier = @"MPCollectionV
         _streamAdPlacer = [MPStreamAdPlacer placerWithViewController:controller adPositioning:positioning rendererConfigurations:rendererConfigurations];
         _streamAdPlacer.delegate = self;
 
-        _insertionTimer = [MPTimer timerWithTimeInterval:kUpdateVisibleCellsInterval
-                                                  target:self
-                                                selector:@selector(updateVisibleCells)
-                                                 repeats:YES
-                                             runLoopMode:NSRunLoopCommonModes];
+        __typeof__(self) __weak weakSelf = self;
+        _insertionTimer = [MPTimer timerWithTimeInterval:kUpdateVisibleCellsInterval repeats:YES runLoopMode:NSRunLoopCommonModes block:^(MPTimer * _Nonnull timer) {
+            __typeof__(self) strongSelf = weakSelf;
+            [strongSelf updateVisibleCells];
+        }];
         [_insertionTimer scheduleNow];
 
         _originalDataSource = collectionView.dataSource;
@@ -145,7 +145,7 @@ static NSString * const kCollectionViewAdPlacerReuseIdentifier = @"MPCollectionV
     [UIView setAnimationsEnabled:NO];
 
     [self.collectionView performBatchUpdates:^{
-        [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+        [self.collectionView deleteItemsAtIndexPaths:validIndexPaths];
     } completion:^(BOOL finished) {
         [UIView setAnimationsEnabled:animationsWereEnabled];
     }];
@@ -422,7 +422,7 @@ static char kAdPlacerKey;
     }
 }
 
-- (id)mp_dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath
+- (id)mp_dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath * _Nonnull)indexPath
 {
     MPCollectionViewAdPlacer *adPlacer = [self mp_adPlacer];
     NSIndexPath *adjustedIndexPath = indexPath;
@@ -562,7 +562,7 @@ static char kAdPlacerKey;
     return adjustedIndexPaths;
 }
 
-- (void)mp_scrollToItemAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated
+- (void)mp_scrollToItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated
 {
     MPCollectionViewAdPlacer *adPlacer = [self mp_adPlacer];
     NSIndexPath *adjustedIndexPath = indexPath;

@@ -1,7 +1,7 @@
 //
 //  MPConsentChangedReason.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -17,6 +17,7 @@ NSString * const kConsentedChangedReasonPublisherDenied = @"Consent was explicit
 NSString * const kConsentedChangedReasonDoNotTrackEnabled = @"Limit ad tracking was enabled and consent implicitly denied by the user";
 NSString * const kConsentedChangedReasonDoNotTrackDisabled = @"Limit ad tracking was disabled";
 NSString * const kConsentedChangedReasonDoNotTrackDisabledNeedConsent = @"Consent needs to be reacquired because the user disabled limit ad tracking";
+NSString * const kConsentedChangedReasonDoNotTrackDisabledPreserveConsent = @"Limit ad tracking was disabled, and the prior consent status was preserved.";
 NSString * const kConsentedChangedReasonIfaChanged = @"Consent needs to be reacquired because the IFA has changed";
 NSString * const kConsentedChangedReasonPrivacyPolicyChange = @"Consent needs to be reacquired because the privacy policy has changed";
 NSString * const kConsentedChangedReasonVendorListChange = @"Consent needs to be reacquired because the vendor list has changed";

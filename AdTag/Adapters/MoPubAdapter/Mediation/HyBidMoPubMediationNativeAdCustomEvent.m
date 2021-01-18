@@ -23,8 +23,6 @@
 #import "HyBidMoPubMediationNativeAdCustomEvent.h"
 #import "HyBidMoPubMediationNativeAdAdapter.h"
 #import "HyBidMoPubUtils.h"
-#import "MPNativeAd.h"
-#import "MPLogging.h"
 
 @interface HyBidMoPubMediationNativeAdCustomEvent() <HyBidNativeAdLoaderDelegate>
 
@@ -44,6 +42,7 @@
             self.nativeAdLoader = [[HyBidNativeAdLoader alloc] init];
             self.nativeAdLoader.isMediation = YES;
             [self.nativeAdLoader loadNativeAdWithDelegate:self withZoneID:[HyBidMoPubUtils zoneID:info]];
+            MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass([self class]) dspCreativeId:nil dspName:nil]);
         } else {
             [self invokeFailWithMessage:@"The provided app token doesn't match the one used to initialise HyBid."];
             return;
@@ -55,8 +54,7 @@
 }
 
 - (void)invokeFailWithMessage:(NSString*)message {
-    MPLogError(@"%@", message);
-    [HyBidLogger errorLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:message];
+    MPLogInfo(@"%@", message);
     [self.delegate nativeCustomEvent:self
             didFailToLoadAdWithError:[NSError errorWithDomain:message
                                                          code:0
@@ -76,11 +74,12 @@
     
     [self precacheImagesWithURLs:@[bannerURL, iconURL] completionBlock:^(NSArray *errors) {
         if(errors && errors.count > 0) {
-            [self invokeFailWithMessage:@"Error caching resources."];
+            [strongSelf invokeFailWithMessage:@"Error caching resources."];
         } else {
             HyBidMoPubMediationNativeAdAdapter *adapter = [[HyBidMoPubMediationNativeAdAdapter alloc] initWithNativeAd:blockAd];
             MPNativeAd* result = [[MPNativeAd alloc] initWithAdAdapter:adapter];
             [strongSelf.delegate nativeCustomEvent:strongSelf didLoadAd:result];
+            MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass([strongSelf class])]);
         }
         blockAd = nil;
         strongSelf = nil;
@@ -88,6 +87,7 @@
 }
 
 - (void)nativeLoaderDidFailWithError:(NSError *)error {
+    MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass([self class]) error:error]);
     [self invokeFailWithMessage:error.localizedDescription];
 }
 

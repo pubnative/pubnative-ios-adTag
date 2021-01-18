@@ -48,18 +48,15 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
-  - HyBid (1.4.1)
-  - mopub-ios-sdk (5.10.0):
-    - mopub-ios-sdk/MoPubSDK (= 5.10.0)
-  - mopub-ios-sdk/Avid (5.10.0):
+  - HyBid (2.3.1)
+  - mopub-ios-sdk (5.15.0):
+    - mopub-ios-sdk/MoPubSDK (= 5.15.0)
+  - mopub-ios-sdk/Core (5.15.0)
+  - mopub-ios-sdk/MoPubSDK (5.15.0):
     - mopub-ios-sdk/Core
-  - mopub-ios-sdk/Core (5.10.0)
-  - mopub-ios-sdk/Moat (5.10.0):
+    - mopub-ios-sdk/NativeAds
+  - mopub-ios-sdk/NativeAds (5.15.0):
     - mopub-ios-sdk/Core
-  - mopub-ios-sdk/MoPubSDK (5.10.0):
-    - mopub-ios-sdk/Avid
-    - mopub-ios-sdk/Core
-    - mopub-ios-sdk/Moat
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -69,11 +66,11 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Google-Mobile-Ads-SDK
-  - HyBid
+  - HyBid (= 2.3.1)
   - mopub-ios-sdk (~> 5.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs:
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -81,9 +78,10 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - nanopb
+  trunk:
     - HyBid
     - mopub-ios-sdk
-    - nanopb
 
 SPEC CHECKSUMS:
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
@@ -93,10 +91,10 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 30a1520469efa03097af62ea0d8f9be773542267
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
-  HyBid: 806c957d8aed3dad03d0b381e42a51788a0debe0
-  mopub-ios-sdk: 3d65133b95b6498aa871a66818a11a5ba307e565
+  HyBid: ad92624733caf9c6ad1b8e8e574e176e988ac5ea
+  mopub-ios-sdk: a21098174b9420a291aca9fcdae832d0f2e2a368
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: bcec391b6ec0c194b02f2db46375c70f51bac8a8
+PODFILE CHECKSUM: 3f5dead1548d7a76ffa8cb666e838dbe2e57a3a6
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.10.0

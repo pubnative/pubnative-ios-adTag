@@ -1,7 +1,7 @@
 //
 //  MPAnalyticsTracker.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -39,15 +39,17 @@
 
 - (void)trackClickForConfiguration:(MPAdConfiguration *)configuration
 {
-    MPLogDebug(@"Tracking click: %@", configuration.clickTrackingURL);
-    MPURLRequest * request = [[MPURLRequest alloc] initWithURL:configuration.clickTrackingURL];
-    [MPHTTPNetworkSession startTaskWithHttpRequest:request];
+    MPLogDebug(@"Tracking click: %@", configuration.clickTrackingURLs.firstObject);
+    [self sendTrackingRequestForURLs:configuration.clickTrackingURLs];
 }
 
 - (void)sendTrackingRequestForURLs:(NSArray<NSURL *> *)URLs
 {
     for (NSURL *URL in URLs) {
         MPURLRequest * trackingRequest = [[MPURLRequest alloc] initWithURL:URL];
+        if (trackingRequest == nil) {
+            continue;
+        }
         [MPHTTPNetworkSession startTaskWithHttpRequest:trackingRequest];
     }
 }

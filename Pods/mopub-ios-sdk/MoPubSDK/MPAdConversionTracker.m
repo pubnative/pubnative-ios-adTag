@@ -1,18 +1,22 @@
 //
 //  MPAdConversionTracker.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
 
+#if __has_include(<MoPub/MoPub-Swift.h>)
+    #import <MoPub/MoPub-Swift.h>
+#else
+    #import "MoPub-Swift.h"
+#endif
 #import "MPAdConversionTracker.h"
 #import "MPConstants.h"
 #import "MPGlobal.h"
 #import "MPLogging.h"
 #import "MPIdentityProvider.h"
 #import "MPCoreInstanceProvider.h"
-#import "MPAPIEndpoints.h"
 #import "MPHTTPNetworkSession.h"
 #import "MPURLRequest.h"
 #import "MPConsentManager.h"

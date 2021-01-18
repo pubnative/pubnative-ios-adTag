@@ -1,7 +1,7 @@
 //
 //  MRCommand.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -280,11 +280,11 @@
     return YES;
 }
 /*
- * We allow setOrientationProperties to run while we're blocking requests because this command can occur during the presentation
- * animation of an interstitial, and has a strong effect on how an ad is presented so we want to make sure it's executed.
- *
- * Even though we return YES here, updating orientation while blocking requests is not safe. MRController receives the appropriate
- * delegate call, and caches the intended call in a block, which it executes when request-blocking is disabled.
+ We allow setOrientationProperties to run while we're blocking requests because this command can occur during the presentation
+ animation of an interstitial, and has a strong effect on how an ad is presented so we want to make sure it's executed.
+
+ Even though we return YES here, updating orientation while blocking requests is not safe. MRController receives the appropriate
+ delegate call, and caches the intended call in a block, which it executes when request-blocking is disabled.
  */
 - (BOOL)executableWhileBlockingRequests
 {

@@ -1,7 +1,7 @@
 //
 //  SKStoreProductViewController+MPAdditions.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -11,6 +11,7 @@
 @implementation SKStoreProductViewController (MPAdditions)
 
 + (BOOL)canUseStoreProductViewController {
+    // In iOS 13 and below,
     // @c SKStoreProductViewController cannot be used in an app environment that only
     // supports landscape -- portrait is required, or presenting the view controller
     // will produce an app crash -- so query the usable orientations for the app and
@@ -23,10 +24,15 @@
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        UIWindow * keyWindow = [UIApplication sharedApplication].keyWindow;
-        UIInterfaceOrientationMask appSupportedOrientations = [[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:keyWindow];
+        if (@available(iOS 14.0, *)) {
+            canUseStoreProductViewController = YES;
+        }
+        else {
+            UIWindow * keyWindow = [UIApplication sharedApplication].keyWindow;
+            UIInterfaceOrientationMask appSupportedOrientations = [[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:keyWindow];
 
-        canUseStoreProductViewController = (appSupportedOrientations & UIInterfaceOrientationMaskPortrait) != 0;
+            canUseStoreProductViewController = (appSupportedOrientations & UIInterfaceOrientationMaskPortrait) != 0;
+        }
     });
 
     return canUseStoreProductViewController;

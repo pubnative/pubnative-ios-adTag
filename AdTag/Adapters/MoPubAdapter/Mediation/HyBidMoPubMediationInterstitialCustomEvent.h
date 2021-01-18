@@ -23,11 +23,13 @@
 #if __has_include(<MoPub/MoPub.h>)
 #import <MoPub/MoPub.h>
 #else
-#import "MPInterstitialCustomEvent.h"
+#import "MPFullscreenAdAdapter.h"
+#import "MPLogging.h"
+#import "MPError.h"
 #endif
 
 #import <HyBid/HyBid.h>
 
-@interface HyBidMoPubMediationInterstitialCustomEvent : MPInterstitialCustomEvent
+@interface HyBidMoPubMediationInterstitialCustomEvent : MPFullscreenAdAdapter
 
 @end

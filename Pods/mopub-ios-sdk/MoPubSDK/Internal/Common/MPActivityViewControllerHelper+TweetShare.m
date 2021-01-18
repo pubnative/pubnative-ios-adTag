@@ -1,7 +1,7 @@
 //
 //  MPActivityViewControllerHelper+TweetShare.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -16,7 +16,7 @@ static NSString * const kShareTweetURLTemplate = @"https://twitter.com/%@/status
 static NSString * const kShareTweetMessageTemplate = @"Check out @%@'s Tweet: %@";
 
 /**
- * MPSharedTweet parses an NSURL and stores the specified screenName and tweetURL.
+ MPSharedTweet parses an NSURL and stores the specified screenName and tweetURL.
  */
 
 @interface MPSharedTweet : NSObject

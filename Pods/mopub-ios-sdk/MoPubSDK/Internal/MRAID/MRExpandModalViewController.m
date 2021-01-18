@@ -1,7 +1,7 @@
 //
 //  MRExpandModalViewController.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -56,10 +56,12 @@
     return YES;
 }
 
-#pragma mark - <MPClosableViewDelegate>
+@end
+
+@implementation MRExpandModalViewController (MPAdContainerViewWebAdDelegate)
 
 // We transfer closable view delegation to the expand view controller in the event MRController is deallocated and the expand modal is presented.
-- (void)closeButtonPressed:(MPClosableView *)closableView
+- (void)adContainerViewDidHitCloseButton:(MPAdContainerView *)adContainerView
 {
     // All we need to do is dismiss ourself.
     [self dismissViewControllerAnimated:YES completion:nil];

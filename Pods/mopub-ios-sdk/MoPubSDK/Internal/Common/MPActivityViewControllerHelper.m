@@ -1,7 +1,7 @@
 //
 //  MPActivityViewControllerHelper.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -9,8 +9,8 @@
 #import "MPActivityViewControllerHelper.h"
 
 /**
- * MPActivityItemProviderWithSubject subclasses UIActivityItemProvider
- * to provide a subject for email activity types.
+ MPActivityItemProviderWithSubject subclasses UIActivityItemProvider
+ to provide a subject for email activity types.
  */
 
 @interface MPActivityItemProviderWithSubject : UIActivityItemProvider

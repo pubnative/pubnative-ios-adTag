@@ -1,7 +1,7 @@
 //
 //  MoPub+Utility.m
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -17,11 +17,7 @@
 + (void)openURL:(NSURL*)url
         options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options
      completion:(void (^ __nullable)(BOOL success))completion {
-    if (@available(iOS 10, *)) {
-        [[UIApplication sharedApplication] openURL:url options:options completionHandler:completion];
-    } else {
-        completion([[UIApplication sharedApplication] openURL:url]);
-    }
+    [[UIApplication sharedApplication] openURL:url options:options completionHandler:completion];
 }
 
 + (void)sendImpressionNotificationFromAd:(id)ad

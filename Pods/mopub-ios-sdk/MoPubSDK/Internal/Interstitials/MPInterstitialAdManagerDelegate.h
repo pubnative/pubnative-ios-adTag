@@ -1,7 +1,7 @@
 //
 //  MPInterstitialAdManagerDelegate.h
 //
-//  Copyright 2018-2019 Twitter, Inc.
+//  Copyright 2018-2020 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -16,7 +16,6 @@
 @protocol MPInterstitialAdManagerDelegate <NSObject>
 
 - (MPInterstitialAdController *)interstitialAdController;
-- (CLLocation *)location;
 - (NSString *)adUnitId;
 - (id)interstitialDelegate;
 - (void)managerDidLoadInterstitial:(MPInterstitialAdManager *)manager;

@@ -12,23 +12,31 @@
 		5A5CCD20218344FD00835B2C /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD1F218344FD00835B2C /* MoPubInterstitialViewController.swift */; };
 		5A5CCD2221834B0000835B2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD2121834B0000835B2C /* Constants.swift */; };
 		5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CCD2521834D8B00835B2C /* BaseViewController.swift */; };
+		5A5CF54725B6177100E60276 /* HyBidAdapterConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51225B6177000E60276 /* HyBidAdapterConfiguration.m */; };
+		5A5CF54825B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51725B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.m */; };
+		5A5CF54925B6177100E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51825B6177100E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.m */; };
+		5A5CF54A25B6177100E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51925B6177100E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.m */; };
+		5A5CF54B25B6177100E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51A25B6177100E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m */; };
+		5A5CF54C25B6177100E60276 /* HyBidMoPubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51C25B6177100E60276 /* HyBidMoPubUtils.m */; };
+		5A5CF54D25B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF51E25B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.m */; };
+		5A5CF54E25B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52025B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.m */; };
+		5A5CF54F25B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52325B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.m */; };
+		5A5CF55025B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52625B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.m */; };
+		5A5CF55125B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52725B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.m */; };
+		5A5CF55225B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52825B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.m */; };
+		5A5CF55325B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF52A25B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.m */; };
+		5A5CF55425B6177100E60276 /* HyBidDFPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53025B6177100E60276 /* HyBidDFPUtils.m */; };
+		5A5CF55525B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53225B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.m */; };
+		5A5CF55625B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53325B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.m */; };
+		5A5CF55725B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53425B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.m */; };
+		5A5CF55825B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53525B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.m */; };
+		5A5CF55925B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53B25B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.m */; };
+		5A5CF55A25B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53E25B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.m */; };
+		5A5CF55B25B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF53F25B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.m */; };
+		5A5CF55C25B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF54325B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.m */; };
+		5A5CF55D25B6177100E60276 /* HyBidAdMobUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF54425B6177100E60276 /* HyBidAdMobUtils.m */; };
+		5A5CF55E25B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CF54525B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.m */; };
 		5A75B04823CF46BF00DC8EBB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A75B04723CF46BF00DC8EBB /* Launch Screen.storyboard */; };
-		5A75B06E23CF4B6800DC8EBB /* HyBidMoPubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */; };
-		5A75B06F23CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */; };
-		5A75B07023CF4B6800DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */; };
-		5A75B07123CF4B6800DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */; };
-		5A75B07223CF4B6800DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */; };
-		5A75B07323CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */; };
-		5A75B07423CF4B6800DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */; };
-		5A75B07523CF4B6800DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */; };
-		5A75B07623CF4B6800DC8EBB /* HyBidMoPubInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */; };
-		5A75B07723CF4B6800DC8EBB /* HyBidMoPubMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */; };
-		5A75B07823CF4B6800DC8EBB /* HyBidMoPubBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */; };
-		5A75B07923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */; };
-		5A75B07A23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */; };
-		5A75B07B23CF4B6800DC8EBB /* HyBidDFPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */; };
-		5A75B07C23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */; };
-		5A75B07D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */; };
 		5A75B07F23CF515E00DC8EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A75B07E23CF515E00DC8EBB /* GoogleService-Info.plist */; };
 		5AC838F02183137900F0B3C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC838EF2183137900F0B3C3 /* AppDelegate.swift */; };
 		5AC838F22183137900F0B3C3 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC838F12183137900F0B3C3 /* MoPubBannerViewController.swift */; };
@@ -64,40 +72,56 @@
 		5A5CCD1F218344FD00835B2C /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
 		5A5CCD2121834B0000835B2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5A5CCD2521834D8B00835B2C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5A5CF51225B6177000E60276 /* HyBidAdapterConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdapterConfiguration.m; sourceTree = "<group>"; };
+		5A5CF51425B6177000E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubHeaderBiddingInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF51525B6177000E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubHeaderBiddingBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF51625B6177000E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubHeaderBiddingLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF51725B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubHeaderBiddingMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF51825B6177100E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubHeaderBiddingInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF51925B6177100E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubHeaderBiddingBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF51A25B6177100E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF51B25B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubHeaderBiddingMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF51C25B6177100E60276 /* HyBidMoPubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubUtils.m; sourceTree = "<group>"; };
+		5A5CF51E25B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationRewardedAdCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF51F25B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52025B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdAdapter.m; sourceTree = "<group>"; };
+		5A5CF52125B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52225B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52325B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF52425B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52525B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationRewardedAdCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52625B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF52725B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF52825B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF52925B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdAdapter.h; sourceTree = "<group>"; };
+		5A5CF52A25B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF52B25B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF52C25B6177100E60276 /* HyBidAdapterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdapterConfiguration.h; sourceTree = "<group>"; };
+		5A5CF52D25B6177100E60276 /* HyBidMoPubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubUtils.h; sourceTree = "<group>"; };
+		5A5CF52F25B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPHeaderBiddingBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF53025B6177100E60276 /* HyBidDFPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPUtils.m; sourceTree = "<group>"; };
+		5A5CF53125B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPHeaderBiddingMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF53225B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPHeaderBiddingInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53325B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPHeaderBiddingLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53425B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPHeaderBiddingBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53525B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPHeaderBiddingMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53625B6177100E60276 /* HyBidDFPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPUtils.h; sourceTree = "<group>"; };
+		5A5CF53725B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPHeaderBiddingInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF53825B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPHeaderBiddingLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF53925B6177100E60276 /* HyBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HyBid-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A5CF53B25B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53C25B6177100E60276 /* HyBidAdMobUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobUtils.h; sourceTree = "<group>"; };
+		5A5CF53D25B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobMediationBannerCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF53E25B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobMediationMRectCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF53F25B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobMediationRewardedCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF54025B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobMediationLeaderboardCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF54125B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF54225B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobMediationMRectCustomEvent.h; sourceTree = "<group>"; };
+		5A5CF54325B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobMediationBannerCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF54425B6177100E60276 /* HyBidAdMobUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobUtils.m; sourceTree = "<group>"; };
+		5A5CF54525B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidAdMobMediationLeaderboardCustomEvent.m; sourceTree = "<group>"; };
+		5A5CF54625B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidAdMobMediationRewardedCustomEvent.h; sourceTree = "<group>"; };
 		5A75B04723CF46BF00DC8EBB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubUtils.m; sourceTree = "<group>"; };
-		5A75B04C23CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdAdapter.m; sourceTree = "<group>"; };
-		5A75B04E23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdCustomEvent.h; sourceTree = "<group>"; };
-		5A75B04F23CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05123CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationNativeAdCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05523CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationNativeAdAdapter.h; sourceTree = "<group>"; };
-		5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMediationMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05723CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMediationBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubInterstitialCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidMoPubBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A75B05D23CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A75B05E23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A75B05F23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06023CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06123CF4B6600DC8EBB /* HyBidMoPubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidMoPubUtils.h; sourceTree = "<group>"; };
-		5A75B06223CF4B6700DC8EBB /* HyBid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HyBid-Bridging-Header.h"; sourceTree = "<group>"; };
-		5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPBannerCustomEvent.m; sourceTree = "<group>"; };
-		5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPLeaderboardCustomEvent.m; sourceTree = "<group>"; };
-		5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPUtils.m; sourceTree = "<group>"; };
-		5A75B06723CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPMRectCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06823CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPBannerCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPMRectCustomEvent.m; sourceTree = "<group>"; };
-		5A75B06B23CF4B6800DC8EBB /* HyBidDFPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPUtils.h; sourceTree = "<group>"; };
-		5A75B06C23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyBidDFPLeaderboardCustomEvent.h; sourceTree = "<group>"; };
-		5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyBidDFPInterstitialCustomEvent.m; sourceTree = "<group>"; };
 		5A75B07E23CF515E00DC8EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AC838EC2183137900F0B3C3 /* AdTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC838EF2183137900F0B3C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,16 +154,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A53710322672EFE000AC540 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				5A75B06223CF4B6700DC8EBB /* HyBid-Bridging-Header.h */,
-				5A75B06323CF4B6800DC8EBB /* DFPAdapter */,
-				5A75B04923CF4B6600DC8EBB /* MoPubAdapter */,
-			);
-			path = Adapters;
-			sourceTree = "<group>";
-		};
 		5A5CCD1E2183445F00835B2C /* MoPub */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,66 +165,100 @@
 			path = MoPub;
 			sourceTree = "<group>";
 		};
-		5A75B04923CF4B6600DC8EBB /* MoPubAdapter */ = {
+		5A5CF51025B6177000E60276 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				5A75B04A23CF4B6600DC8EBB /* HyBidMoPubUtils.m */,
-				5A75B04B23CF4B6600DC8EBB /* Mediation */,
-				5A75B05823CF4B6600DC8EBB /* HyBid */,
-				5A75B06123CF4B6600DC8EBB /* HyBidMoPubUtils.h */,
+				5A5CF51125B6177000E60276 /* MoPubAdapter */,
+				5A5CF52E25B6177100E60276 /* DFPAdapter */,
+				5A5CF53925B6177100E60276 /* HyBid-Bridging-Header.h */,
+				5A5CF53A25B6177100E60276 /* AdMobAdapter */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		5A5CF51125B6177000E60276 /* MoPubAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				5A5CF51225B6177000E60276 /* HyBidAdapterConfiguration.m */,
+				5A5CF51325B6177000E60276 /* Header Bidding */,
+				5A5CF51C25B6177100E60276 /* HyBidMoPubUtils.m */,
+				5A5CF51D25B6177100E60276 /* Mediation */,
+				5A5CF52C25B6177100E60276 /* HyBidAdapterConfiguration.h */,
+				5A5CF52D25B6177100E60276 /* HyBidMoPubUtils.h */,
 			);
 			path = MoPubAdapter;
 			sourceTree = "<group>";
 		};
-		5A75B04B23CF4B6600DC8EBB /* Mediation */ = {
+		5A5CF51325B6177000E60276 /* Header Bidding */ = {
 			isa = PBXGroup;
 			children = (
-				5A75B04C23CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.h */,
-				5A75B04D23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m */,
-				5A75B04E23CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.h */,
-				5A75B04F23CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.h */,
-				5A75B05023CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m */,
-				5A75B05123CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.h */,
-				5A75B05223CF4B6600DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m */,
-				5A75B05323CF4B6600DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m */,
-				5A75B05423CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m */,
-				5A75B05523CF4B6600DC8EBB /* HyBidMoPubMediationNativeAdAdapter.h */,
-				5A75B05623CF4B6600DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m */,
-				5A75B05723CF4B6600DC8EBB /* HyBidMoPubMediationBannerCustomEvent.h */,
+				5A5CF51425B6177000E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.h */,
+				5A5CF51525B6177000E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.h */,
+				5A5CF51625B6177000E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.h */,
+				5A5CF51725B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.m */,
+				5A5CF51825B6177100E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.m */,
+				5A5CF51925B6177100E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.m */,
+				5A5CF51A25B6177100E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m */,
+				5A5CF51B25B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.h */,
+			);
+			path = "Header Bidding";
+			sourceTree = "<group>";
+		};
+		5A5CF51D25B6177100E60276 /* Mediation */ = {
+			isa = PBXGroup;
+			children = (
+				5A5CF51E25B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.m */,
+				5A5CF51F25B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.h */,
+				5A5CF52025B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.m */,
+				5A5CF52125B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.h */,
+				5A5CF52225B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.h */,
+				5A5CF52325B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.m */,
+				5A5CF52425B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.h */,
+				5A5CF52525B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.h */,
+				5A5CF52625B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.m */,
+				5A5CF52725B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.m */,
+				5A5CF52825B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.m */,
+				5A5CF52925B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.h */,
+				5A5CF52A25B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.m */,
+				5A5CF52B25B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.h */,
 			);
 			path = Mediation;
 			sourceTree = "<group>";
 		};
-		5A75B05823CF4B6600DC8EBB /* HyBid */ = {
+		5A5CF52E25B6177100E60276 /* DFPAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				5A75B05923CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m */,
-				5A75B05A23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.m */,
-				5A75B05B23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.m */,
-				5A75B05C23CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.m */,
-				5A75B05D23CF4B6600DC8EBB /* HyBidMoPubLeaderboardCustomEvent.h */,
-				5A75B05E23CF4B6600DC8EBB /* HyBidMoPubMRectCustomEvent.h */,
-				5A75B05F23CF4B6600DC8EBB /* HyBidMoPubInterstitialCustomEvent.h */,
-				5A75B06023CF4B6600DC8EBB /* HyBidMoPubBannerCustomEvent.h */,
-			);
-			path = HyBid;
-			sourceTree = "<group>";
-		};
-		5A75B06323CF4B6800DC8EBB /* DFPAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				5A75B06423CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m */,
-				5A75B06523CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m */,
-				5A75B06623CF4B6800DC8EBB /* HyBidDFPUtils.m */,
-				5A75B06723CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.h */,
-				5A75B06823CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.h */,
-				5A75B06923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.h */,
-				5A75B06A23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m */,
-				5A75B06B23CF4B6800DC8EBB /* HyBidDFPUtils.h */,
-				5A75B06C23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.h */,
-				5A75B06D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m */,
+				5A5CF52F25B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.h */,
+				5A5CF53025B6177100E60276 /* HyBidDFPUtils.m */,
+				5A5CF53125B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.h */,
+				5A5CF53225B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.m */,
+				5A5CF53325B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.m */,
+				5A5CF53425B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.m */,
+				5A5CF53525B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.m */,
+				5A5CF53625B6177100E60276 /* HyBidDFPUtils.h */,
+				5A5CF53725B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.h */,
+				5A5CF53825B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.h */,
 			);
 			path = DFPAdapter;
+			sourceTree = "<group>";
+		};
+		5A5CF53A25B6177100E60276 /* AdMobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				5A5CF53B25B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.m */,
+				5A5CF53C25B6177100E60276 /* HyBidAdMobUtils.h */,
+				5A5CF53D25B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.h */,
+				5A5CF53E25B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.m */,
+				5A5CF53F25B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.m */,
+				5A5CF54025B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.h */,
+				5A5CF54125B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.h */,
+				5A5CF54225B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.h */,
+				5A5CF54325B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.m */,
+				5A5CF54425B6177100E60276 /* HyBidAdMobUtils.m */,
+				5A5CF54525B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.m */,
+				5A5CF54625B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.h */,
+			);
+			path = AdMobAdapter;
 			sourceTree = "<group>";
 		};
 		5AC838E32183137900F0B3C3 = {
@@ -234,7 +282,7 @@
 		5AC838EE2183137900F0B3C3 /* AdTag */ = {
 			isa = PBXGroup;
 			children = (
-				5A53710322672EFE000AC540 /* Adapters */,
+				5A5CF51025B6177000E60276 /* Adapters */,
 				5AC838EF2183137900F0B3C3 /* AppDelegate.swift */,
 				5A5CCD2121834B0000835B2C /* Constants.swift */,
 				5A5CCD2521834D8B00835B2C /* BaseViewController.swift */,
@@ -302,7 +350,6 @@
 				5AC838EA2183137900F0B3C3 /* Resources */,
 				187DE6CADF54A8767FC3C131 /* [CP] Embed Pods Frameworks */,
 				5A5370C122672D3C000AC540 /* Embed Frameworks */,
-				5AAFB02A23D1CBDB0075FAFD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -380,23 +427,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdTag/Pods-AdTag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AAFB02A23D1CBDB0075FAFD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\nfind \"$APP_PATH\" -name 'HyBid.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
-		};
 		CD4490A26A7F9CDAB4ABDB08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,35 +452,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A75B07A23CF4B6800DC8EBB /* HyBidDFPLeaderboardCustomEvent.m in Sources */,
 				5AC838F22183137900F0B3C3 /* MoPubBannerViewController.swift in Sources */,
-				5A75B07023CF4B6800DC8EBB /* HyBidMoPubMediationBannerCustomEvent.m in Sources */,
+				5A5CF54925B6177100E60276 /* HyBidMoPubHeaderBiddingInterstitialCustomEvent.m in Sources */,
+				5A5CF55725B6177100E60276 /* HyBidDFPHeaderBiddingBannerCustomEvent.m in Sources */,
 				5A5CCD20218344FD00835B2C /* MoPubInterstitialViewController.swift in Sources */,
+				5A5CF55325B6177100E60276 /* HyBidMoPubMediationMRectCustomEvent.m in Sources */,
+				5A5CF55025B6177100E60276 /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */,
 				5AC839072183203300F0B3C3 /* ScannerViewController.swift in Sources */,
+				5A5CF55B25B6177100E60276 /* HyBidAdMobMediationRewardedCustomEvent.m in Sources */,
+				5A5CF55525B6177100E60276 /* HyBidDFPHeaderBiddingInterstitialCustomEvent.m in Sources */,
 				5A5CCD1D2183427E00835B2C /* MoPubMRectViewController.swift in Sources */,
-				5A75B06E23CF4B6800DC8EBB /* HyBidMoPubUtils.m in Sources */,
-				5A75B07523CF4B6800DC8EBB /* HyBidMoPubLeaderboardCustomEvent.m in Sources */,
+				5A5CF54A25B6177100E60276 /* HyBidMoPubHeaderBiddingBannerCustomEvent.m in Sources */,
 				5AF61E38229D38240071DB58 /* DFPLeaderboardViewController.swift in Sources */,
-				5A75B07D23CF4B6800DC8EBB /* HyBidDFPInterstitialCustomEvent.m in Sources */,
-				5A75B06F23CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdAdapter.m in Sources */,
-				5A75B07923CF4B6800DC8EBB /* HyBidDFPBannerCustomEvent.m in Sources */,
-				5A75B07C23CF4B6800DC8EBB /* HyBidDFPMRectCustomEvent.m in Sources */,
 				5AC838F02183137900F0B3C3 /* AppDelegate.swift in Sources */,
-				5A75B07323CF4B6800DC8EBB /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */,
 				5ACADD902188947000563C39 /* DFPMRectViewController.swift in Sources */,
+				5A5CF55925B6177100E60276 /* HyBidAdMobMediationInterstitialCustomEvent.m in Sources */,
 				5A5CCD2621834D8B00835B2C /* BaseViewController.swift in Sources */,
 				5AF61E36229D2FB70071DB58 /* MoPubLeaderboardViewController.swift in Sources */,
-				5A75B07823CF4B6800DC8EBB /* HyBidMoPubBannerCustomEvent.m in Sources */,
+				5A5CF54725B6177100E60276 /* HyBidAdapterConfiguration.m in Sources */,
+				5A5CF55125B6177100E60276 /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */,
 				5A5CCD2221834B0000835B2C /* Constants.swift in Sources */,
-				5A75B07223CF4B6800DC8EBB /* HyBidMoPubMediationLeaderboardCustomEvent.m in Sources */,
+				5A5CF54C25B6177100E60276 /* HyBidMoPubUtils.m in Sources */,
+				5A5CF55825B6177100E60276 /* HyBidDFPHeaderBiddingMRectCustomEvent.m in Sources */,
+				5A5CF55E25B6177100E60276 /* HyBidAdMobMediationLeaderboardCustomEvent.m in Sources */,
+				5A5CF55225B6177100E60276 /* HyBidMoPubMediationNativeAdCustomEvent.m in Sources */,
+				5A5CF54D25B6177100E60276 /* HyBidMoPubMediationRewardedAdCustomEvent.m in Sources */,
+				5A5CF55D25B6177100E60276 /* HyBidAdMobUtils.m in Sources */,
+				5A5CF54825B6177100E60276 /* HyBidMoPubHeaderBiddingMRectCustomEvent.m in Sources */,
+				5A5CF55A25B6177100E60276 /* HyBidAdMobMediationMRectCustomEvent.m in Sources */,
 				5ACADD942188C65C00563C39 /* UIApplication+TopViewController.swift in Sources */,
+				5A5CF54F25B6177100E60276 /* HyBidMoPubMediationBannerCustomEvent.m in Sources */,
 				5ACADD8D2188766000563C39 /* DFPBannerViewController.swift in Sources */,
-				5A75B07623CF4B6800DC8EBB /* HyBidMoPubInterstitialCustomEvent.m in Sources */,
-				5A75B07723CF4B6800DC8EBB /* HyBidMoPubMRectCustomEvent.m in Sources */,
-				5A75B07B23CF4B6800DC8EBB /* HyBidDFPUtils.m in Sources */,
-				5A75B07423CF4B6800DC8EBB /* HyBidMoPubMediationMRectCustomEvent.m in Sources */,
-				5A75B07123CF4B6800DC8EBB /* HyBidMoPubMediationInterstitialCustomEvent.m in Sources */,
+				5A5CF55425B6177100E60276 /* HyBidDFPUtils.m in Sources */,
+				5A5CF54E25B6177100E60276 /* HyBidMoPubMediationNativeAdAdapter.m in Sources */,
 				5ACADD922188A52E00563C39 /* DFPInterstitialViewController.swift in Sources */,
+				5A5CF54B25B6177100E60276 /* HyBidMoPubHeaderBiddingLeaderboardCustomEvent.m in Sources */,
+				5A5CF55C25B6177100E60276 /* HyBidAdMobMediationBannerCustomEvent.m in Sources */,
+				5A5CF55625B6177100E60276 /* HyBidDFPHeaderBiddingLeaderboardCustomEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
