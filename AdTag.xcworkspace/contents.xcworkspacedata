@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:AdTag/Scripts"
+      name = "Scripts">
+      <FileRef
+         location = "group:demo.sh">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:AdTag.xcodeproj">
    </FileRef>
