@@ -10,7 +10,7 @@ ADTAG_APP_ZIP_PATH=$BASE_DIR/AdTag.app.zip
 xcodebuild -showsdks
 
 # Generate AdTag App
-xcodebuild -arch x86_64 -sdk iphonesimulator -workspace AdTag.xcworkspace -scheme AdTag CONFIGURATION_BUILD_DIR=$ADTAG_APP_PATH
+xcodebuild -arch x86_64 -sdk iphonesimulator -workspace AdTag.xcworkspace -scheme AdTag CONFIGURATION_BUILD_DIR=$ADTAG_APP_PATH -verbose
 
 # Create a .zip AdTag App
 zip -r $ADTAG_APP_ZIP_PATH $ADTAG_APP
