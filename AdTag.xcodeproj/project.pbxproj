@@ -649,6 +649,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AdTag/Adapters/HyBid-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -679,6 +680,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AdTag/Adapters/HyBid-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
