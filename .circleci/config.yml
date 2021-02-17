@@ -40,16 +40,16 @@ jobs:
                 name: List Schemes
                 command: xcodebuild -workspace AdTag.xcworkspace -list
             - deploy:
-                name: Generate Demo App
-                command: |
-                    if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "beta" ] || [ "${CIRCLE_BRANCH}" == "development" ] || [ "${CIRCLE_BRANCH}" == "development-QA" ] ; then
-                      AdTag/Scripts/demo.sh
-                    fi
-            - deploy:
                 name: Publish to Firebase
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "beta" ] || [ "${CIRCLE_BRANCH}" == "development" ] || [ "${CIRCLE_BRANCH}" == "development-QA" ]; then
                       AdTag/Scripts/publish.sh
+                    fi
+            - deploy:
+                name: Generate Demo App
+                command: |
+                    if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "beta" ] || [ "${CIRCLE_BRANCH}" == "development" ] || [ "${CIRCLE_BRANCH}" == "development-QA" ] ; then
+                      AdTag/Scripts/demo.sh
                     fi
             - store_artifacts:
                 path: /tmp/circleci-artifacts
