@@ -5,6 +5,12 @@
       location = "container:AdTag/Scripts"
       name = "Scripts">
       <FileRef
+         location = "group:submit">
+      </FileRef>
+      <FileRef
+         location = "group:publish.sh">
+      </FileRef>
+      <FileRef
          location = "group:demo.sh">
       </FileRef>
    </Group>
