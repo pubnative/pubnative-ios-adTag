@@ -93,8 +93,8 @@
                                     <segue destination="aOK-Xv-P2Q" kind="show" id="ftN-Qy-PdD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HyBid Demo v:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rK-uJ-4nM">
-                                <rect key="frame" x="16" y="695" width="89" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AdTag App v:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rK-uJ-4nM">
+                                <rect key="frame" x="16" y="695" width="81" height="21"/>
                                 <accessibility key="accessibilityConfiguration" identifier="versionLabel" label="Version Label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bUD-II-YTP"/>
@@ -105,6 +105,21 @@
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="bUD-II-YTP"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MoPub v:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnN-a5-cwe">
+                                <rect key="frame" x="16" y="654" width="56" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="moPubVersionLabel" label="MoPub Version Label"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="H4J-VC-2Mh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="H4J-VC-2Mh"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -119,14 +134,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kV9-YF-pxX" secondAttribute="trailing" constant="16" id="P6P-ud-Hhl"/>
                             <constraint firstItem="GmV-1U-paL" firstAttribute="top" secondItem="Su4-yt-c20" secondAttribute="bottom" constant="8" id="Pli-fk-Und"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2rK-uJ-4nM" secondAttribute="bottom" constant="20" id="Trz-zd-PQa"/>
+                            <constraint firstItem="GnN-a5-cwe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UN7-m9-5SE"/>
                             <constraint firstItem="kV9-YF-pxX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZQ0-xc-EQe"/>
                             <constraint firstItem="Su4-yt-c20" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oTE-bG-kFP"/>
+                            <constraint firstItem="2rK-uJ-4nM" firstAttribute="top" secondItem="GnN-a5-cwe" secondAttribute="bottom" constant="20" id="tDV-4f-xL8"/>
                             <constraint firstItem="2rK-uJ-4nM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="w68-hv-tqF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ad-Tag" id="Bvw-VH-Q68"/>
                     <connections>
                         <outlet property="adTagAppVersionLabel" destination="2rK-uJ-4nM" id="vq7-4O-gVu"/>
+                        <outlet property="moPubVersionLabel" destination="GnN-a5-cwe" id="9Sr-IC-lFE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

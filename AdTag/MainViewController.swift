@@ -21,16 +21,19 @@
 //
 
 import UIKit
+import MoPub
 
 class MainViewController: BaseViewController {
 
     @IBOutlet weak var adTagAppVersionLabel: UILabel!
+    @IBOutlet weak var moPubVersionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            self.adTagAppVersionLabel.text = version
-            self.adTagAppVersionLabel.accessibilityValue = version
+            self.adTagAppVersionLabel.text = "AdTag App v: \(version)"
+            self.adTagAppVersionLabel.accessibilityValue = "AdTag App v: \(version)"
           }
+        self.moPubVersionLabel.text = "MoPub v: \(MoPub.sharedInstance().version())"
     }
 }

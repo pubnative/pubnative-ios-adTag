@@ -68,14 +68,14 @@ extension MoPubMRectViewController : MPAdViewDelegate
         return self
     }
     
-    func adViewDidLoadAd(_ view: MPAdView!) {
+    func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
         activityIndicator.stopAnimating()
         showAlertAction(withMessage: "MoPub MRect did load")
     }
     
-    func adViewDidFail(toLoadAd view: MPAdView!) {
+    func adView(_ view: MPAdView!, didFailToLoadAdWithError error: Error!) {
         activityIndicator.stopAnimating()
-        showAlertAction(withMessage: "MoPub MRect did fail to load")
+        showAlertAction(withMessage: "MoPub MRect did fail to load with error: \(String(describing: error))")
     }
     
     func willLeaveApplication(fromAd view: MPAdView!) {

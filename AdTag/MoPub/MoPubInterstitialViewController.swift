@@ -76,10 +76,10 @@ extension MoPubInterstitialViewController : MPInterstitialAdControllerDelegate
         showAlertAction(withMessage: "MoPub Interstitial did load")
     }
     
-    func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!) {
+    func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!, withError error: Error!) {
         activityIndicator.stopAnimating()
         showAdButton.isHidden = true
-        showAlertAction(withMessage: "MoPub Interstitial did fail load")
+        showAlertAction(withMessage: "MoPub Interstitial did fail to load with error: \(String(describing: error))")
     }
     
     func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
