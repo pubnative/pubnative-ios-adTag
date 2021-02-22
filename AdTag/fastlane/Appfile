@@ -1,0 +1,3 @@
+app_identifier("com.pubnative.AdTag.demo") # The bundle identifier of your app
+apple_id("can.soykarafakili@pubnative.net") # Your Apple email address
+team_id("TL55SBB4FM") # Developer Portal Team ID
