@@ -1,0 +1,6 @@
+framework module HyBid {
+  umbrella header "HyBid-umbrella.h"
+
+  export *
+  module * { export * }
+}

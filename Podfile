@@ -7,6 +7,6 @@ target 'AdTag' do
 
   # Pods for AdTag
   pod 'mopub-ios-sdk', '~> 5.0'
-  pod 'HyBid', '2.3.1'
+  pod 'HyBid', '2.4.1'
   pod 'Google-Mobile-Ads-SDK'
 end
