@@ -21,7 +21,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 
 class MoPubInterstitialViewController: BaseViewController {
 
@@ -86,7 +86,7 @@ extension MoPubInterstitialViewController : MPInterstitialAdControllerDelegate
         showAlertAction(withMessage: "MoPub Interstitial did receive tap event")
     }
     
-    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
+    func interstitialDidDismiss(_ interstitial: MPInterstitialAdController!) {
         showAdButton.isHidden = true
     }
 }
