@@ -35,5 +35,6 @@ class MainViewController: BaseViewController {
             self.adTagAppVersionLabel.accessibilityValue = "AdTag App v: \(version)"
           }
         self.moPubVersionLabel.text = "MoPub v: \(MoPub.sharedInstance().version())"
+        self.moPubVersionLabel.accessibilityValue = "MoPub v: \(MoPub.sharedInstance().version())"
     }
 }
