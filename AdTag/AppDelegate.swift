@@ -21,7 +21,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import HyBid
 
 @UIApplicationMain

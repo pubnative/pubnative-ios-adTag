@@ -303,7 +303,7 @@ Fuller's blog&lt;/a&gt;
 			<key>FooterText</key>
 			<string>MIT License
 
-Copyright (c) 2020 PubNative GmbH
+Copyright (c) 2021 PubNative GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -539,16 +539,6 @@ SOFTWARE.
 			<string>Apache</string>
 			<key>Title</key>
 			<string>PromisesObjC</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>The MoPub SDK License can be found at http://www.mopub.com/legal/sdk-license-agreement/</string>
-			<key>License</key>
-			<string>New BSD</string>
-			<key>Title</key>
-			<string>mopub-ios-sdk</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

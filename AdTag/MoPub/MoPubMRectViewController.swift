@@ -21,7 +21,7 @@
 //
 
 import Foundation
-import MoPub
+import MoPubSDK
 
 class MoPubMRectViewController: BaseViewController {
     

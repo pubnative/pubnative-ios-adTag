@@ -268,7 +268,7 @@ Fuller's blog</a>
 
 MIT License
 
-Copyright (c) 2020 PubNative GmbH
+Copyright (c) 2021 PubNative GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -494,10 +494,6 @@ SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 
-
-## mopub-ios-sdk
-
-The MoPub SDK License can be found at http://www.mopub.com/legal/sdk-license-agreement/
 
 ## nanopb
 
