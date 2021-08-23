@@ -1,0 +1,6 @@
+framework module MoPub_HyBid_Adapters {
+  umbrella header "MoPub-HyBid-Adapters-umbrella.h"
+
+  export *
+  module * { export * }
+}

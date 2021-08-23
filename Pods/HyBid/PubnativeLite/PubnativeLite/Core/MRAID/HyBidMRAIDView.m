@@ -31,8 +31,8 @@
 #import "HyBidViewabilityManager.h"
 #import "HyBidViewabilityWebAdSession.h"
 #import "HyBidLogger.h"
-
 #import "PNLiteCloseButton.h"
+#import "HyBidSettings.h"
 
 #import <WebKit/WebKit.h>
 #import <OMSDK_Pubnativenet/OMIDAdSession.h>
@@ -64,6 +64,8 @@ typedef enum {
     // on the native side is the useCustomClose property.
     // The width, height, and isModal properties are not used in MRAID v2.0.
     BOOL useCustomClose;
+    
+    NSInteger _skipOffset;
     
     PNLiteMRAIDOrientationProperties *orientationProperties;
     PNLiteMRAIDResizeProperties *resizeProperties;
@@ -162,7 +164,8 @@ typedef enum {
            delegate:(id<HyBidMRAIDViewDelegate>)delegate
     serviceDelegate:(id<HyBidMRAIDServiceDelegate>)serviceDelegate
  rootViewController:(UIViewController *)rootViewController
-        contentInfo:(HyBidContentInfoView *)contentInfo {
+        contentInfo:(HyBidContentInfoView *)contentInfo
+         skipOffset:(NSInteger)skipOffset {
     return [self initWithFrame:frame
                   withHtmlData:htmlData
                    withBaseURL:bsURL
@@ -171,7 +174,8 @@ typedef enum {
                       delegate:delegate
                serviceDelegate:serviceDelegate
             rootViewController:rootViewController
-                   contentInfo:contentInfo];
+                   contentInfo:contentInfo
+                    skipOffset:skipOffset];
 }
 
 // designated initializer
@@ -183,7 +187,8 @@ typedef enum {
            delegate:(id<HyBidMRAIDViewDelegate>)delegate
     serviceDelegate:(id<HyBidMRAIDServiceDelegate>)serviceDelegate
  rootViewController:(UIViewController *)rootViewController
-        contentInfo:(HyBidContentInfoView *)contentInfo {
+        contentInfo:(HyBidContentInfoView *)contentInfo
+         skipOffset:(NSInteger)skipOffset {
     self = [super initWithFrame:frame];
     if (self) {
         [self setUpTapGestureRecognizer];
@@ -197,7 +202,8 @@ typedef enum {
         state = PNLiteMRAIDStateLoading;
         _isViewable = NO;
         useCustomClose = NO;
-        
+        _skipOffset = skipOffset;
+
         orientationProperties = [[PNLiteMRAIDOrientationProperties alloc] init];
         resizeProperties = [[PNLiteMRAIDResizeProperties alloc] init];
         
@@ -208,7 +214,6 @@ typedef enum {
         mraidFeatures = @[
                           PNLiteMRAIDSupportsSMS,
                           PNLiteMRAIDSupportsTel,
-                          PNLiteMRAIDSupportsCalendar,
                           PNLiteMRAIDSupportsStorePicture,
                           PNLiteMRAIDSupportsInlineVideo,
                           ];
@@ -319,7 +324,6 @@ typedef enum {
     NSArray *kFeatures = @[
                            PNLiteMRAIDSupportsSMS,
                            PNLiteMRAIDSupportsTel,
-                           PNLiteMRAIDSupportsCalendar,
                            PNLiteMRAIDSupportsStorePicture,
                            PNLiteMRAIDSupportsInlineVideo,
                            ];
@@ -400,12 +404,14 @@ typedef enum {
 - (void)showAsInterstitial {
     [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:[NSString stringWithFormat: @"%@", NSStringFromSelector(_cmd)]];
     [self expand:nil supportVerve:NO];
+    [self setIsViewable:YES];
 }
 
 - (void)showAsInterstitialFromViewController:(UIViewController *)viewController {
     [self setRootViewController:viewController];
     [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:[NSString stringWithFormat: @"%@", NSStringFromSelector(_cmd)]];
     [self expand:nil supportVerve:NO];
+    [self setIsViewable:YES];
 }
 
 - (void)hide {
@@ -505,24 +511,6 @@ typedef enum {
     }
 }
 
-- (void)createCalendarEvent:(NSString *)eventJSON {
-    if(!bonafideTapObserved && PNLite_SUPPRESS_BANNER_AUTO_REDIRECT) {
-        [HyBidLogger infoLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Suppressing an attempt to programmatically call mraid.createCalendarEvent() when no UI touch event exists."];
-        return;  // ignore programmatic touches (taps)
-    }
-    
-    eventJSON=[eventJSON stringByRemovingPercentEncoding];
-    [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:[NSString stringWithFormat: @"JS callback %@ %@", NSStringFromSelector(_cmd), eventJSON]];
-    
-    if ([supportedFeatures containsObject:PNLiteMRAIDSupportsCalendar]) {
-        if ([self.serviceDelegate respondsToSelector:@selector(mraidServiceCreateCalendarEventWithEventJSON:)]) {
-            [self.serviceDelegate mraidServiceCreateCalendarEventWithEventJSON:eventJSON];
-        }
-    } else {
-        [HyBidLogger warningLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:[NSString stringWithFormat:@"No calendar support has been included."]];
-    }
-}
-
 // Note: This method is also used to present an interstitial ad.
 - (void)expand:(NSString *)urlString supportVerve:(BOOL)supportVerve{
     if(!bonafideTapObserved && PNLite_SUPPRESS_BANNER_AUTO_REDIRECT) {
@@ -598,7 +586,9 @@ typedef enum {
     [modalVC.view addSubview:currentWebView];
     
     // always include the close event region
-    [self addCloseEventRegion];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, _skipOffset * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self addCloseEventRegion];
+    });
     
     if ([self.rootViewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
         // used if running >= iOS 6
@@ -849,6 +839,7 @@ typedef enum {
 }
 
 - (void)addCloseEventRegion {
+    
     closeEventRegion = [UIButton buttonWithType:UIButtonTypeCustom];
     closeEventRegion.backgroundColor = [UIColor clearColor];
     [closeEventRegion addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
@@ -1124,7 +1115,10 @@ typedef enum {
             [self fireReadyEvent];
             
             if ([self.delegate respondsToSelector:@selector(mraidViewAdReady:)]) {
-                self.isViewable = YES;
+                // Interstitials isViewable flag will be fired only when they are showing.
+                if (!isInterstitial) {
+                    self.isViewable = YES;
+                }
                 [self.delegate mraidViewAdReady:self];
             }
             
@@ -1301,7 +1295,6 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
     NSString *command = [commandDict valueForKey:@"command"];
     NSObject *paramObj = [commandDict valueForKey:@"paramObj"];
     
-    NSLog(@"commandDict %@", commandDict);
     if ([command isEqualToString:@"expand:"]) {
         command = @"expand:supportVerve:";
     }

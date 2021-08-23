@@ -24,9 +24,14 @@
 #import "HyBidAd.h"
 #import "HyBidAdRequest.h"
 #import "HyBidAdPresenter.h"
-#import "HyBidSignalDataProcessor.h"
 
 @class HyBidAdView;
+
+typedef enum {
+    BANNER_POSITION_UNKNOWN,
+    BANNER_POSITION_TOP,
+    BANNER_POSITION_BOTTOM
+} HyBidBannerPosition;
 
 @protocol HyBidAdViewDelegate<NSObject>
 
@@ -37,7 +42,7 @@
 
 @end
 
-@interface HyBidAdView : UIView <HyBidAdRequestDelegate, HyBidAdPresenterDelegate, HyBidSignalDataProcessorDelegate>
+@interface HyBidAdView : UIView <HyBidAdRequestDelegate, HyBidAdPresenterDelegate>
 
 @property (nonatomic, strong) HyBidAdRequest *adRequest;
 @property (nonatomic, strong) HyBidAd *ad;
@@ -45,12 +50,13 @@
 @property (nonatomic, assign) BOOL isMediation;
 @property (nonatomic, strong) HyBidAdSize *adSize;
 @property (nonatomic, assign) BOOL autoShowOnLoad;
+@property (nonatomic) HyBidBannerPosition bannerPosition;
 
 - (instancetype)initWithSize:(HyBidAdSize *)adSize NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-//- (instancetype)init NS_UNAVAILABLE;
 - (void)loadWithZoneID:(NSString *)zoneID andWithDelegate:(NSObject<HyBidAdViewDelegate> *)delegate;
+- (void)loadWithZoneID:(NSString *)zoneID withPosition:(HyBidBannerPosition)bannerPosition andWithDelegate:(NSObject<HyBidAdViewDelegate> *)delegate;
 - (void)setupAdView:(UIView *)adView;
 - (void)renderAd;
 - (void)renderAdWithContent:(NSString *)adContent withDelegate:(NSObject<HyBidAdViewDelegate> *)delegate;

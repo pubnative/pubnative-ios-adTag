@@ -21,8 +21,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class HyBidSignalDataProcessor, HyBidAd;
+#import "HyBidAd.h"
 
 @protocol HyBidSignalDataProcessorDelegate<NSObject>
 
@@ -35,6 +34,6 @@
 
 @property (nonatomic, weak) NSObject <HyBidSignalDataProcessorDelegate> *delegate;
 
-- (void)processSignalData:(NSString *)signalDataString withZoneID:(NSString *)zoneID;
+- (void)processSignalData:(NSString *)signalDataString;
 
 @end

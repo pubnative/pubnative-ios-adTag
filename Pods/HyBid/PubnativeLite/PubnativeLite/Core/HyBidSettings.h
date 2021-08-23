@@ -26,6 +26,12 @@
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import "HyBidTargetingModel.h"
 
+typedef enum {
+    HyBidAudioStatusMuted,
+    HyBidAudioStatusON,
+    HyBidAudioStatusDefault
+} HyBidAudioStatus;
+
 @interface HyBidSettings : NSObject
 
 // CONFIGURABLE PARAMETERS
@@ -36,6 +42,9 @@
 @property (nonatomic, strong) NSString *apiURL;
 @property (nonatomic, strong) NSString *openRtbApiURL;
 @property (nonatomic, strong) NSString *appID;
+@property (nonatomic, assign) NSInteger skipOffset;
+@property (nonatomic, assign) BOOL closeOnFinish;
+@property (nonatomic, assign) HyBidAudioStatus audioStatus;
 
 // COMMON PARAMETERS
 @property (readonly) NSString *advertisingId;

@@ -32,8 +32,9 @@
 
 - (HyBidInterstitialPresenter *)createInterstitalPresenterWithAd:(HyBidAd *)ad
                                                     withSkipOffset:(NSUInteger)skipOffset
+                                               withCloseOnFinish: (BOOL)closeOnFinish
                                                     withDelegate:(NSObject<HyBidInterstitialPresenterDelegate> *)delegate {
-    HyBidInterstitialPresenter *interstitialPresenter = [self createInterstitalPresenterFromAd:ad withSkipOffset:skipOffset];
+    HyBidInterstitialPresenter *interstitialPresenter = [self createInterstitalPresenterFromAd:ad withSkipOffset:skipOffset withCloseOnFinish:closeOnFinish];
     if (!interstitialPresenter) {
         return nil;
     }
@@ -44,19 +45,19 @@
     return interstitialPresenterDecorator;
 }
 
-- (HyBidInterstitialPresenter *)createInterstitalPresenterFromAd:(HyBidAd *)ad withSkipOffset:(NSUInteger)skipOffset {
+- (HyBidInterstitialPresenter *)createInterstitalPresenterFromAd:(HyBidAd *)ad withSkipOffset:(NSUInteger)skipOffset withCloseOnFinish: (BOOL)closeOnFinish {
     switch (ad.assetGroupID.integerValue) {
         case MRAID_300x600:
         case MRAID_320x480:
         case MRAID_480x320:
         case MRAID_1024x768:
         case MRAID_768x1024:{
-            PNLiteMRAIDInterstitialPresenter *mraidInterstitalPresenter = [[PNLiteMRAIDInterstitialPresenter alloc] initWithAd:ad];
+            PNLiteMRAIDInterstitialPresenter *mraidInterstitalPresenter = [[PNLiteMRAIDInterstitialPresenter alloc] initWithAd:ad withSkipOffset:skipOffset];
             return mraidInterstitalPresenter;
             break;
         }
         case VAST_INTERSTITIAL: {
-            PNLiteVASTInterstitialPresenter *vastInterstitalPresenter = [[PNLiteVASTInterstitialPresenter alloc] initWithAd:ad withSkipOffset:skipOffset];
+            PNLiteVASTInterstitialPresenter *vastInterstitalPresenter = [[PNLiteVASTInterstitialPresenter alloc] initWithAd:ad withSkipOffset:skipOffset withCloseOnFinish:closeOnFinish];
             return vastInterstitalPresenter;
         }
         default:

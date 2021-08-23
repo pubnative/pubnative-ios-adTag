@@ -46,9 +46,15 @@
     NSString *result = nil;
     if(!self.coppa && NSClassFromString(@"ASIdentifierManager")) {
         if (@available(iOS 14, *)) {
-            if (ATTrackingManager.trackingAuthorizationStatus == ATTrackingManagerAuthorizationStatusAuthorized
-                || ATTrackingManager.trackingAuthorizationStatus == ATTrackingManagerAuthorizationStatusNotDetermined) {
-                result = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+            if (@available(iOS 14.5, *)) {
+                if (ATTrackingManager.trackingAuthorizationStatus == ATTrackingManagerAuthorizationStatusAuthorized) {
+                    result = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                }
+            } else {
+                if (ATTrackingManager.trackingAuthorizationStatus == ATTrackingManagerAuthorizationStatusAuthorized
+                    || ATTrackingManager.trackingAuthorizationStatus == ATTrackingManagerAuthorizationStatusNotDetermined) {
+                    result = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                }
             }
         } else {
             if([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
@@ -119,6 +125,8 @@
 }
 
 - (NSString *)deviceSound {
+    NSError* error;
+    [[AVAudioSession sharedInstance] setActive:YES error:&error];
     if ([AVAudioSession sharedInstance].outputVolume == 0) {
         return @"0";
     } else {

@@ -28,12 +28,15 @@
 #import "HyBidRemoteConfigModel.h"
 #import "HyBidAuction.h"
 #import "HyBidVastTagAdSource.h"
+#import "HyBidSignalDataProcessor.h"
+#import "HyBid.h"
 
-@interface HyBidAdView()
+@interface HyBidAdView() <HyBidSignalDataProcessorDelegate>
 
 @property (nonatomic, strong) HyBidAdPresenter *adPresenter;
 @property (nonatomic, strong) NSString *zoneID;
 @property (nonatomic, strong) NSMutableArray<HyBidAd*>* auctionResponses;
+@property (nonatomic, strong) UIView *container;
 
 @end
 
@@ -46,6 +49,8 @@
     self.adPresenter = nil;
     self.adRequest = nil;
     self.adSize = nil;
+
+    [self cleanUp];
 }
 
 - (void)awakeFromNib {
@@ -58,6 +63,9 @@
 - (instancetype)initWithSize:(HyBidAdSize *)adSize {
     self = [super initWithFrame:CGRectMake(0, 0, adSize.width, adSize.height)];
     if (self) {
+        if (![HyBid isInitialized]) {
+            [HyBidLogger warningLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"HyBid SDK was not initialized. Please initialize it before creating a HyBidAdView. Check out https://github.com/pubnative/pubnative-hybid-ios-sdk/wiki/Setup-HyBid for the setup process."];
+        }
         self.adRequest = [[HyBidAdRequest alloc] init];
         self.adRequest.openRTBAdType = BANNER;
         self.auctionResponses = [[NSMutableArray alloc]init];
@@ -69,6 +77,8 @@
 
 - (void)cleanUp {
     [self removeAllSubViewsFrom:self];
+    [self.container removeFromSuperview];
+    self.container = nil;
     self.ad = nil;
 }
 
@@ -77,6 +87,12 @@
     for (UIView *v in viewsToRemove) {
         [v removeFromSuperview];
     }
+}
+
+- (void)loadWithZoneID:(NSString *)zoneID withPosition:(HyBidBannerPosition)bannerPosition andWithDelegate:(NSObject<HyBidAdViewDelegate> *)delegate
+{
+    self.bannerPosition = bannerPosition;
+    [self loadWithZoneID:zoneID andWithDelegate:delegate];
 }
 
 - (void)loadWithZoneID:(NSString *)zoneID andWithDelegate:(NSObject<HyBidAdViewDelegate> *)delegate {
@@ -155,8 +171,54 @@
     [self renderAd];
 }
 
+- (void)show:(UIView *)adView withPosition:(HyBidBannerPosition)position
+{
+    if (self.container == nil) {
+        self.container = [[UIView alloc] init];
+    }
+    
+    [self.container addSubview:adView];
+    [[self containerViewController].view addSubview:self.container];
+    
+    switch (position) {
+        case BANNER_POSITION_UNKNOWN:
+            break;
+        case BANNER_POSITION_TOP:
+            [self setStickyBannerConstraintsAtPosition:BANNER_POSITION_TOP forView:self.container];
+            break;
+        case BANNER_POSITION_BOTTOM:
+            [self setStickyBannerConstraintsAtPosition:BANNER_POSITION_BOTTOM forView:self.container];
+            break;
+    }
+}
+
+- (UIViewController *)containerViewController
+{
+    return [[[UIApplication sharedApplication].delegate.window.rootViewController childViewControllers] lastObject];
+}
+
+- (void)setStickyBannerConstraintsAtPosition:(HyBidBannerPosition)position forView:(UIView *)adView
+{
+    adView.translatesAutoresizingMaskIntoConstraints = NO;
+    [adView.widthAnchor constraintEqualToConstant:self.adSize.width].active = YES;
+    [adView.heightAnchor constraintEqualToConstant:self.adSize.height].active = YES;
+    [adView.centerXAnchor constraintEqualToAnchor:[self containerViewController].view.centerXAnchor].active = YES;
+    if (@available(iOS 11.0, *)) {
+        [position == BANNER_POSITION_TOP ? adView.topAnchor : adView.bottomAnchor
+                                     constraintEqualToAnchor:
+         position == BANNER_POSITION_TOP ? [self containerViewController].view.safeAreaLayoutGuide.topAnchor : [self containerViewController].view.safeAreaLayoutGuide.bottomAnchor constant:position == BANNER_POSITION_TOP ? 8.0 : -8.0].active = YES;
+    } else {
+        // Fallback on earlier versions
+    }
+}
+
 - (void)setupAdView:(UIView *)adView {
-    [self addSubview:adView];
+    if (self.bannerPosition == BANNER_POSITION_UNKNOWN) {
+        [self addSubview:adView];
+    } else {
+        [self show:adView withPosition:self.bannerPosition];
+    }
+    
     if (self.autoShowOnLoad) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(adViewDidLoad:)]) {
             [self.delegate adViewDidLoad:self];
@@ -190,13 +252,16 @@
 - (void)processAdContent:(NSString *)adContent {
     HyBidSignalDataProcessor *signalDataProcessor = [[HyBidSignalDataProcessor alloc] init];
     signalDataProcessor.delegate = self;
-    [signalDataProcessor processSignalData:adContent withZoneID:self.zoneID];
+    [signalDataProcessor processSignalData:adContent];
 }
 
 - (void)startTracking {
     if (self.delegate && [self.delegate respondsToSelector:@selector(adViewDidTrackImpression:)]) {
         [self.adPresenter startTracking];
-        [self.delegate adViewDidTrackImpression:self];
+        
+        if (self.ad.adType != kHyBidAdTypeVideo) {
+            [self.delegate adViewDidTrackImpression:self];
+        }
     }
 }
 
@@ -223,7 +288,11 @@
         }
     } else {
         self.ad = ad;
-        self.ad.adType = kHyBidAdTypeHTML;
+        if (self.ad.vast != nil) {
+            self.ad.adType = kHyBidAdTypeVideo;
+        } else {
+            self.ad.adType = kHyBidAdTypeHTML;
+        }
         if (self.autoShowOnLoad) {
             [self renderAd];
         } else {
@@ -251,6 +320,11 @@
     } else {
         [self setupAdView:adView];
     }
+}
+
+- (void)adPresenterDidStartPlaying:(HyBidAdPresenter *)adPresenter
+{
+    [self.delegate adViewDidTrackImpression:self];
 }
 
 - (void)adPresenter:(HyBidAdPresenter *)adPresenter didFailWithError:(NSError *)error {

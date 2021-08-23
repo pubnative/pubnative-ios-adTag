@@ -6,6 +6,6 @@ target 'AdTag' do
   use_frameworks!
 
   # Pods for AdTag
-  pod 'HyBid', '2.4.1'
-  pod 'Google-Mobile-Ads-SDK'
+  pod 'GoogleMobileAds-HyBid-Adapters', '2.5.3.0'
+  pod 'MoPub-HyBid-Adapters', '2.5.3.0'
 end

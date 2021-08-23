@@ -21,6 +21,7 @@
 //
 
 import UIKit
+import MoPubSDK
 
 class MoPubLeaderboardViewController: BaseViewController {
     

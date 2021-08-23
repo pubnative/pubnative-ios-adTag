@@ -28,8 +28,8 @@ var MOPUB_INTERSTITIAL_AD_UNIT_ID : String = "07367831c98441c29b35d66ca7e40fa4"
 var MOPUB_LEADERBOARD_AD_UNIT_ID : String = "27222a784c814c3ab25fe64f410c9751"
 
 
-var DFP_BANNER_AD_UNIT_ID : String = "/6499/example/banner"
-var DFP_MRECT_AD_UNIT_ID : String = "/6499/example/banner"
-var DFP_INTERSTITIAL_AD_UNIT_ID : String = "/6499/example/interstitial"
-var DFP_LEADERBOARD_AD_UNIT_ID : String = "/6499/example/banner"
+var GAM_BANNER_AD_UNIT_ID : String = "/6499/example/banner"
+var GAM_MRECT_AD_UNIT_ID : String = "/6499/example/banner"
+var GAM_INTERSTITIAL_AD_UNIT_ID : String = "/6499/example/interstitial"
+var GAM_LEADERBOARD_AD_UNIT_ID : String = "/6499/example/banner"
 

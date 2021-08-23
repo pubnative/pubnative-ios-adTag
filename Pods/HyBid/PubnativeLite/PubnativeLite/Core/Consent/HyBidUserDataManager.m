@@ -205,6 +205,7 @@ NSInteger const PNLiteConsentStateDenied = 0;
 
 - (void)checkConsentGiven {
     PNLiteCheckConsentRequest * request = [[PNLiteCheckConsentRequest alloc] init];
+    request.delegate = self;
     [request checkConsentRequestWithDelegate:self
                                 withAppToken:[HyBidSettings sharedInstance].appToken
                                 withDeviceID:[HyBidSettings sharedInstance].advertisingId];
@@ -218,7 +219,7 @@ NSInteger const PNLiteConsentStateDenied = 0;
     BOOL askedForConsent = [[NSUserDefaults standardUserDefaults] objectForKey:PNLiteGDPRConsentStateKey];
     if (askedForConsent) {
         NSString *IDFA = [[NSUserDefaults standardUserDefaults] stringForKey:PNLiteGDPRAdvertisingIDKey];
-        if (IDFA != nil && IDFA.length > 0 && ![IDFA isEqualToString:[HyBidSettings sharedInstance].advertisingId]) {
+        if (IDFA != nil && IDFA.length > 0 && ![IDFA  isEqual: @"00000000-0000-0000-0000-000000000000"] && ![IDFA isEqualToString:[HyBidSettings sharedInstance].advertisingId]) {
             askedForConsent = NO;
         }
     }
@@ -370,17 +371,16 @@ NSInteger const PNLiteConsentStateDenied = 0;
 #pragma mark PNLiteCheckConsentRequestDelegate
 
 - (void)checkConsentRequestSuccess:(PNLiteUserConsentResponseModel *)model {
-    if ([model.status isEqualToString:[PNLiteUserConsentResponseStatus ok]]) {
-        if (model.consent != nil) {
-            if (model.consent.consented) {
-                [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Positive user consent has been notified"];
-            } else {
-                [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Negative user consent has been notified"];
-            }
+    BOOL hasValidConsentResponse = [model.status isEqualToString:[PNLiteUserConsentResponseStatus ok]];
+    if (hasValidConsentResponse) {
+        if (model.consent.consented) {
+            [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Positive user consent has been notified"];
+        } else {
+            [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Negative user consent has been notified"];
         }
         [HyBidLogger debugLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Check Consent Request finished."];
-        self.completionBlock(YES);
     }
+    self.completionBlock(hasValidConsentResponse);
 }
 
 - (void)checkConsentRequestFail:(NSError *)error {

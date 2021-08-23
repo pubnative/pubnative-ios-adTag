@@ -26,14 +26,18 @@
 #import "HyBidInterstitialPresenterFactory.h"
 #import "HyBidLogger.h"
 #import "HyBidIntegrationType.h"
+#import "HyBidSettings.h"
+#import "HyBidSignalDataProcessor.h"
+#import "HyBid.h"
 
-@interface HyBidInterstitialAd() <HyBidInterstitialPresenterDelegate, HyBidAdRequestDelegate>
+@interface HyBidInterstitialAd() <HyBidInterstitialPresenterDelegate, HyBidAdRequestDelegate, HyBidSignalDataProcessorDelegate>
 
 @property (nonatomic, strong) NSString *zoneID;
 @property (nonatomic, weak) NSObject<HyBidInterstitialAdDelegate> *delegate;
 @property (nonatomic, strong) HyBidInterstitialPresenter *interstitialPresenter;
 @property (nonatomic, strong) HyBidInterstitialAdRequest *interstitialAdRequest;
 @property (nonatomic) NSInteger skipOffset;
+@property (nonatomic) BOOL closeOnFinish;
 
 @end
 
@@ -54,21 +58,23 @@
 - (instancetype)initWithZoneID:(NSString *)zoneID andWithDelegate:(NSObject<HyBidInterstitialAdDelegate> *)delegate {
     self = [super init];
     if (self) {
+        if (![HyBid isInitialized]) {
+            [HyBidLogger warningLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"HyBid SDK was not initialized. Please initialize it before creating a HyBidInterstitialAd. Check out https://github.com/pubnative/pubnative-hybid-ios-sdk/wiki/Setup-HyBid for the setup process."];
+        }
         self.interstitialAdRequest = [[HyBidInterstitialAdRequest alloc] init];
         self.interstitialAdRequest.openRTBAdType = VIDEO;
         self.zoneID = zoneID;
         self.delegate = delegate;
+        // Global skipOffset will be used as placement offset if this one is not set previously.
+        if ([HyBidSettings sharedInstance].skipOffset > 0 && _skipOffset <= 0 ) {
+            [self setSkipOffset:[HyBidSettings sharedInstance].skipOffset];
+        }
     }
     return self;
 }
 
 - (instancetype)initWithDelegate:(NSObject<HyBidInterstitialAdDelegate> *)delegate {
-    self = [super init];
-    if (self) {
-        self.zoneID = @"";
-        self.delegate = delegate;
-    }
-    return self;
+    return [self initWithZoneID:@"" andWithDelegate:delegate];
 }
 
 - (void)load {
@@ -89,6 +95,11 @@
     }
 }
 
+- (void)setCloseOnFinish:(BOOL)closeOnFinish
+{
+    self->_closeOnFinish = closeOnFinish;
+}
+
 - (void)prepareAdWithContent:(NSString *)adContent {
     if (adContent && [adContent length] != 0) {
         [self processAdContent:adContent];
@@ -105,7 +116,7 @@
 - (void)processAdContent:(NSString *)adContent {
     HyBidSignalDataProcessor *signalDataProcessor = [[HyBidSignalDataProcessor alloc] init];
     signalDataProcessor.delegate = self;
-    [signalDataProcessor processSignalData:adContent withZoneID:self.zoneID];
+    [signalDataProcessor processSignalData:adContent];
 }
 
 - (void)show {
@@ -130,7 +141,7 @@
 
 - (void)renderAd:(HyBidAd *)ad {
     HyBidInterstitialPresenterFactory *interstitalPresenterFactory = [[HyBidInterstitialPresenterFactory alloc] init];
-    self.interstitialPresenter = [interstitalPresenterFactory createInterstitalPresenterWithAd:ad withSkipOffset:self.skipOffset withDelegate:self];
+    self.interstitialPresenter = [interstitalPresenterFactory createInterstitalPresenterWithAd:ad withSkipOffset:self.skipOffset withCloseOnFinish:self.closeOnFinish withDelegate:self];
     if (!self.interstitialPresenter) {
         [HyBidLogger errorLogFromClass:NSStringFromClass([self class]) fromMethod:NSStringFromSelector(_cmd) withMessage:@"Could not create valid interstitial presenter."];
         [self invokeDidFailWithError:[NSError errorWithDomain:@"The server has returned an unsupported ad asset." code:0 userInfo:nil]];

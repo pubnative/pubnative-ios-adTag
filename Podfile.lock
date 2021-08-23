@@ -1,76 +1,103 @@
 PODS:
-  - Google-Mobile-Ads-SDK (7.69.0):
-    - GoogleAppMeasurement (~> 7.0)
-    - GoogleUserMessagingPlatform (~> 1.1)
-  - GoogleAppMeasurement (7.4.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
-    - GoogleUtilities/MethodSwizzler (~> 7.0)
-    - GoogleUtilities/Network (~> 7.0)
-    - "GoogleUtilities/NSData+zlib (~> 7.0)"
-    - nanopb (~> 2.30907.0)
-  - GoogleUserMessagingPlatform (1.4.0)
-  - GoogleUtilities/AppDelegateSwizzler (7.2.2):
+  - Google-Mobile-Ads-SDK (8.7.0):
+    - GoogleAppMeasurement (< 9.0, >= 7.0)
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleAppMeasurement (8.3.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.3.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (8.3.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleMobileAds-HyBid-Adapters (2.5.3.0):
+    - Google-Mobile-Ads-SDK (~> 8.0)
+    - HyBid (= 2.5.3)
+  - GoogleUserMessagingPlatform (2.0.0)
+  - GoogleUtilities/AppDelegateSwizzler (7.5.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.2.2):
-    - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (7.2.2):
+  - GoogleUtilities/Environment (7.5.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.5.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.2.2):
+  - GoogleUtilities/MethodSwizzler (7.5.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.2.2):
+  - GoogleUtilities/Network (7.5.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.2.2)"
-  - GoogleUtilities/Reachability (7.2.2):
+  - "GoogleUtilities/NSData+zlib (7.5.0)"
+  - GoogleUtilities/Reachability (7.5.0):
     - GoogleUtilities/Logger
-  - HyBid (2.4.1):
-    - HyBid/Banner (= 2.4.1)
-    - HyBid/Core (= 2.4.1)
-    - HyBid/FullScreen (= 2.4.1)
-    - HyBid/Native (= 2.4.1)
-    - HyBid/RewardedVideo (= 2.4.1)
-  - HyBid/Banner (2.4.1):
+  - HyBid (2.5.3):
+    - HyBid/Banner (= 2.5.3)
+    - HyBid/Core (= 2.5.3)
+    - HyBid/FullScreen (= 2.5.3)
+    - HyBid/Native (= 2.5.3)
+    - HyBid/RewardedVideo (= 2.5.3)
+  - HyBid/Banner (2.5.3):
     - HyBid/Core
-  - HyBid/Core (2.4.1)
-  - HyBid/FullScreen (2.4.1):
+  - HyBid/Core (2.5.3)
+  - HyBid/FullScreen (2.5.3):
     - HyBid/Core
-  - HyBid/Native (2.4.1):
+  - HyBid/Native (2.5.3):
     - HyBid/Core
-  - HyBid/RewardedVideo (2.4.1):
+  - HyBid/RewardedVideo (2.5.3):
     - HyBid/Core
-  - nanopb (2.30907.0):
-    - nanopb/decode (= 2.30907.0)
-    - nanopb/encode (= 2.30907.0)
-  - nanopb/decode (2.30907.0)
-  - nanopb/encode (2.30907.0)
-  - PromisesObjC (1.2.12)
+  - MoPub-HyBid-Adapters (2.5.3.0):
+    - HyBid (= 2.5.3)
+    - mopub-ios-sdk (~> 5.17.0)
+  - mopub-ios-sdk (5.17.0):
+    - mopub-ios-sdk/MoPubSDK (= 5.17.0)
+  - mopub-ios-sdk/Core (5.17.0)
+  - mopub-ios-sdk/MoPubSDK (5.17.0):
+    - mopub-ios-sdk/Core
+    - mopub-ios-sdk/NativeAds
+  - mopub-ios-sdk/NativeAds (5.17.0):
+    - mopub-ios-sdk/Core
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
-  - Google-Mobile-Ads-SDK
-  - HyBid (= 2.4.1)
+  - GoogleMobileAds-HyBid-Adapters (= 2.5.3.0)
+  - MoPub-HyBid-Adapters (= 2.5.3.0)
 
 SPEC REPOS:
   trunk:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
+    - GoogleMobileAds-HyBid-Adapters
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - HyBid
+    - MoPub-HyBid-Adapters
+    - mopub-ios-sdk
     - nanopb
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: 2f288748a42920d1c744946a460896a95b0e9110
-  GoogleAppMeasurement: 688d7f00e2894d9e13823ed9a028b13b993bc277
-  GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
-  GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
-  HyBid: 27daae06cb2f2128ba249de1e0c1406bd50f0b67
-  nanopb: 59221d7f958fb711001e6a449489542d92ae113e
-  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Google-Mobile-Ads-SDK: e242f463fdb8564ac3f11847a30215a0e042c934
+  GoogleAppMeasurement: de70802583dedceb0bca18172b345307e8f410b8
+  GoogleMobileAds-HyBid-Adapters: 767dc735866bfb8fe9cfacf21e67d177337917d3
+  GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
+  GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
+  HyBid: 0c699367667239c15c6555cc3015944c5796c5e7
+  MoPub-HyBid-Adapters: 665136d6c974f49d8534bcc0d0bfe12f47bdbb62
+  mopub-ios-sdk: 36d322902674b79b0560a1cb8d15af0548d364ea
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 7408162eb25a54dba3daa7dc8fe26845fa918e75
+PODFILE CHECKSUM: 231ab64cca044c5b609b5024eeb7f887c7220921
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
